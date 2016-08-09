@@ -35,6 +35,8 @@ GLuint attributes[ATTRIBUTES_COUNT];
 @property (strong, nonatomic) TextureGL *texture;
 
 @property (assign, nonatomic) CGPoint lastPanLocation;
+@property (assign, nonatomic) CGPoint lastDoublePanLocation;
+@property (assign, nonatomic) CGFloat prevScale;
 
 @end
 
@@ -54,6 +56,8 @@ GLuint attributes[ATTRIBUTES_COUNT];
     GLfloat _rotationX;
     GLfloat _rotationY;
     GLfloat _scale;
+    GLfloat _positionY;
+    GLfloat _positionX;
 }
 
 #pragma mark - Lifecycle
@@ -68,6 +72,12 @@ GLuint attributes[ATTRIBUTES_COUNT];
         
         UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panInView:)];
         [_glView addGestureRecognizer:pan];
+        
+        UIPanGestureRecognizer *doublePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(doublePanInView:)];
+        doublePan.minimumNumberOfTouches = 2;
+        [_glView addGestureRecognizer:doublePan];
+
+        
         UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchInView:)];
         [_glView addGestureRecognizer:pinch];
         
@@ -90,6 +100,8 @@ GLuint attributes[ATTRIBUTES_COUNT];
         _scale = 1;
         _rotationX = 1;
         _rotationY = 1;
+        _positionY = 0;
+        _positionX = 0;
     }
     
     return self;
@@ -124,7 +136,7 @@ GLuint attributes[ATTRIBUTES_COUNT];
     GLfloat scale = 0.5 *_scale;
     GLKMatrix4 scaleMatrix = GLKMatrix4MakeScale(scale, scale, scale);
 
-    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, 0, -1, -5);
+    modelViewMatrix = GLKMatrix4Translate(modelViewMatrix, _positionX, _positionY, -5);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotationX, 0.0f, 1.0f, 0.0f);
     modelViewMatrix = GLKMatrix4Rotate(modelViewMatrix, _rotationY, 1.0f, 0.0f, 0.0f);
 
@@ -211,8 +223,15 @@ GLuint attributes[ATTRIBUTES_COUNT];
 - (void)pinchInView:(UIPinchGestureRecognizer *)gesture
 {
     switch (gesture.state) {
+        case UIGestureRecognizerStateBegan: {
+            self.prevScale = gesture.scale;
+            break;
+        }
+
         case UIGestureRecognizerStateChanged: {
-            _scale = gesture.scale;
+            float delta = gesture.scale - self.prevScale;
+            _scale += delta;
+            self.prevScale = gesture.scale;
             break;
         }
         default:
@@ -223,6 +242,10 @@ GLuint attributes[ATTRIBUTES_COUNT];
 - (void)panInView:(UIPanGestureRecognizer *)gesture
 {
     switch (gesture.state) {
+        case UIGestureRecognizerStateBegan: {
+            self.lastPanLocation = [gesture locationInView:gesture.view];
+            break;
+        }
         case UIGestureRecognizerStateChanged: {
             CGPoint neLocation = [gesture locationInView:gesture.view];
             CGFloat deltaX = neLocation.x - self.lastPanLocation.x;
@@ -231,6 +254,29 @@ GLuint attributes[ATTRIBUTES_COUNT];
             _rotationX += deltaX / 100;
             _rotationY += deltaY / 100;
             self.lastPanLocation = neLocation;
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)doublePanInView:(UIPanGestureRecognizer *)doublePan
+{
+    switch (doublePan.state) {
+        case UIGestureRecognizerStateBegan: {
+            self.lastDoublePanLocation = [doublePan locationInView:doublePan.view];
+            break;
+        }
+        case UIGestureRecognizerStateChanged: {
+            CGPoint neLocation = [doublePan locationInView:doublePan.view];
+            CGFloat deltaY = self.lastDoublePanLocation.y - neLocation.y;
+            CGFloat deltaX = self.lastDoublePanLocation.x - neLocation.x;
+            
+            _positionY += deltaY / 100;
+            _positionX += deltaX / 100;
+
+            self.lastDoublePanLocation = neLocation;
             break;
         }
         default:

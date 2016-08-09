@@ -58,11 +58,11 @@ GLuint attributes[ATTRIBUTES_COUNT];
 
 #pragma mark - Lifecycle
 
+//to separate per model
 - (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView model:(FBXModel)model
 {
     self = [super init];
     if (self) {
-        
         NSAssert(glView, @"glView cant be nil");
         _glView = glView;
         
@@ -74,15 +74,22 @@ GLuint attributes[ATTRIBUTES_COUNT];
         NSAssert(context, @"glContextCant be nil");
         _glContext = context;
         
-        NSAssert(model.numberOfIndises && model.numberOfNormals && model.numberOfVertices && model.numberOfTextCoords, @"glModel cant be empty");
+        NSAssert(model.numberOfIndises && model.numberOfVertices, @"glModel cant be empty");
         _drawModel = model;
         
-        _texture = [[TextureGL alloc] initFromImageNamed:@"cube_map_distribution"];
+        _texture = [[TextureGL alloc]
+//                    initFromImageNamed:@"cube_map_distribution"];
+                    initFromImageNamed:@"semtex texture.png"];
+//                    initFromImageNamed:@"chain.jpg"];
         
         [self setupGL];
         
         [_texture setupTexture];
         NSAssert(_texture.name, @"glTexture cant be prepared");
+        
+        _scale = 1;
+        _rotationX = 1;
+        _rotationY = 1;
     }
     
     return self;
@@ -108,20 +115,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
 {
     float aspect = self.glView.frame.size.width / self.glView.frame.size.height;
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100);
-//
-//    GLKMatrix4 baseModelViewMatrix = GLKMatrix4MakeTranslation(.0f, .0f, -6.0f);
-//    projectionMatrix = GLKMatrix4Multiply(projectionMatrix, baseModelViewMatrix);
-
-////    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotationX, 0.0f, 1.0f, 0.0f);
-////    baseModelViewMatrix = GLKMatrix4Rotate(baseModelViewMatrix, _rotationY, 1.0f, 0.0f, 0.0f);
-    
-//    GLKMatrix4 rotationObjMatrix = GLKMatrix4Identity;
-//    rotationObjMatrix = GLKMatrix4Rotate(rotationObjMatrix, -M_PI_4, 1.0f, 0.0f, 0.0f);
-//    rotationObjMatrix = GLKMatrix4Rotate(rotationObjMatrix, _rotationX, 1.0f, 1.0f, 1.0f);
-//
-//    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(baseModelViewMatrix), NULL);
-//    _mvpMatrix = GLKMatrix4Multiply(projectionMatrix, rotationObjMatrix);
-    
 //    //scale
 //    //rotate
 //    //translate
@@ -160,8 +153,9 @@ GLuint attributes[ATTRIBUTES_COUNT];
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, _texture.name);
     
-//    glDrawArrays(GL_TRIANGLES, 0, _drawModel.numberOfVertices);
-    glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    
+//    glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 }
 
@@ -217,45 +211,26 @@ GLuint attributes[ATTRIBUTES_COUNT];
 - (void)pinchInView:(UIPinchGestureRecognizer *)gesture
 {
     switch (gesture.state) {
-        case UIGestureRecognizerStateBegan: {
-            break;
-        }
         case UIGestureRecognizerStateChanged: {
             _scale = gesture.scale;
-            break;
-        }
-        case UIGestureRecognizerStateEnded: {
-
             break;
         }
         default:
             break;
     }
-
 }
 
 - (void)panInView:(UIPanGestureRecognizer *)gesture
 {
     switch (gesture.state) {
-        case UIGestureRecognizerStateBegan: {
-            self.lastPanLocation = [gesture locationInView:gesture.view];
-            break;
-        }
         case UIGestureRecognizerStateChanged: {
-            
             CGPoint neLocation = [gesture locationInView:gesture.view];
-            
             CGFloat deltaX = neLocation.x - self.lastPanLocation.x;
             CGFloat deltaY = neLocation.y - self.lastPanLocation.y;
 
             _rotationX += deltaX / 100;
             _rotationY += deltaY / 100;
-            
             self.lastPanLocation = neLocation;
-            break;
-        }
-        case UIGestureRecognizerStateEnded: {
-            
             break;
         }
         default:
@@ -316,7 +291,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
             glDeleteProgram(_programm);
             _programm = 0;
         }
-        
         return NO;
     }
     
@@ -337,7 +311,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
         glDetachShader(_programm, fragShader);
         glDeleteShader(fragShader);
     }
-    
     return YES;
 }
 
@@ -372,7 +345,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
         glDeleteShader(*shader);
         return NO;
     }
-    
     return YES;
 }
 
@@ -396,7 +368,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
     if (status == 0) {
         return NO;
     }
-    
     return YES;
 }
 
@@ -417,7 +388,6 @@ GLuint attributes[ATTRIBUTES_COUNT];
     if (status == 0) {
         return NO;
     }
-    
     return YES;
 }
 

@@ -28,11 +28,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.migrator = [[FBX2GLModelMigrator alloc]
-                     initWithModelNamed:@"TreeSet3.fbx"];
+//                     initWithModelNamed:@"TreeSet3.fbx"];
 //                     initWithModelNamed:@"Mine.fbx"];
 //                     initWithModelNamed:@"Mine3.fbx"];
 //                     initWithModelNamed:@"basketball.fbx"];
 //                     initWithModelNamed:@"cylinderProjection.fbx"];
+                     initWithModelNamed:@"semtex.fbx"];
+//                     initWithModelNamed:@"CubiModel.fbx"];
+//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
+//                     initWithModelNamed:@"bench.FBX"];
+
     
     
     

@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		935627901D5909FA00703284 /* CubiModel2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356278F1D5909FA00703284 /* CubiModel2.fbx */; };
-		935627941D590B9400703284 /* cylinderProjection.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627931D590B9400703284 /* cylinderProjection.fbx */; };
-		935627991D59C0DF00703284 /* humanoid.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627981D59C0DF00703284 /* humanoid.fbx */; };
-		9356279B1D59C1C600703284 /* bench.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9356279A1D59C1C100703284 /* bench.FBX */; };
-		9356279D1D59C4A700703284 /* Mine.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356279C1D59C4A700703284 /* Mine.fbx */; };
-		9356279F1D59C5D500703284 /* Mine2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356279E1D59C5D500703284 /* Mine2.fbx */; };
 		935627A11D59C75E00703284 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A01D59C75E00703284 /* 1.png */; };
 		935627A51D5A1CA100703284 /* VB2X4_006.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A41D5A1CA100703284 /* VB2X4_006.png */; };
-		935627A71D5A1DA700703284 /* basketball.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627A61D5A1DA700703284 /* basketball.fbx */; };
-		935627A91D5A1EC400703284 /* TreeSet3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627A81D5A1EC400703284 /* TreeSet3.fbx */; };
-		935627AB1D5A235D00703284 /* Mine3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627AA1D5A235D00703284 /* Mine3.fbx */; };
-		938092B81D57443E006C5D78 /* CubiModel.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 938092B71D57443E006C5D78 /* CubiModel.fbx */; };
+		935627AD1D5A349000703284 /* semtex texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627AC1D5A349000703284 /* semtex texture.png */; };
+		935627BD1D5A350200703284 /* basketball.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B11D5A350200703284 /* basketball.fbx */; };
+		935627BE1D5A350200703284 /* bench.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 935627B21D5A350200703284 /* bench.FBX */; };
+		935627BF1D5A350200703284 /* CubiModel.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B31D5A350200703284 /* CubiModel.fbx */; };
+		935627C01D5A350200703284 /* CubiModel2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B41D5A350200703284 /* CubiModel2.fbx */; };
+		935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B51D5A350200703284 /* cylinderProjection.fbx */; };
+		935627C21D5A350200703284 /* Mine.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B61D5A350200703284 /* Mine.fbx */; };
+		935627C31D5A350200703284 /* Mine2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B71D5A350200703284 /* Mine2.fbx */; };
+		935627C41D5A350200703284 /* Mine3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B81D5A350200703284 /* Mine3.fbx */; };
+		935627C51D5A350200703284 /* semtex.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B91D5A350200703284 /* semtex.fbx */; };
+		935627C61D5A350200703284 /* TreeSet3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627BA1D5A350200703284 /* TreeSet3.fbx */; };
+		935627C71D5A350200703284 /* Wood.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627BB1D5A350200703284 /* Wood.fbx */; };
+		935627C81D5A350200703284 /* Wood.obj in Resources */ = {isa = PBXBuildFile; fileRef = 935627BC1D5A350200703284 /* Wood.obj */; };
+		935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */; };
+		935627CD1D5A44B300703284 /* chain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 935627CC1D5A44B300703284 /* chain.jpg */; };
+		935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */; };
 		938092DC1D57C87E006C5D78 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DB1D57C87E006C5D78 /* GLKit.framework */; };
 		938092DE1D57C883006C5D78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DD1D57C883006C5D78 /* OpenGLES.framework */; };
 		938092E21D57C8DE006C5D78 /* GLDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 938092E11D57C8DE006C5D78 /* GLDrawer.m */; };
@@ -60,24 +66,28 @@
 		93909B931D5601B1001712B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93909B921D5601B0001712B3 /* Foundation.framework */; };
 		93909B951D5601B7001712B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93909B941D5601B7001712B3 /* CoreGraphics.framework */; };
 		93909B971D5601BD001712B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93909B961D5601BD001712B3 /* UIKit.framework */; };
-		93909C901D560660001712B3 /* Wood.obj in Resources */ = {isa = PBXBuildFile; fileRef = 93909C8F1D560660001712B3 /* Wood.obj */; };
-		93909C921D5606A6001712B3 /* Wood.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 93909C911D5606A6001712B3 /* Wood.fbx */; };
 		93909C9B1D5611D3001712B3 /* FBX2GLModelMigrator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 93909C9A1D5611D3001712B3 /* FBX2GLModelMigrator.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9356278F1D5909FA00703284 /* CubiModel2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel2.fbx; sourceTree = "<group>"; };
-		935627931D590B9400703284 /* cylinderProjection.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = cylinderProjection.fbx; sourceTree = "<group>"; };
-		935627981D59C0DF00703284 /* humanoid.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = humanoid.fbx; sourceTree = "<group>"; };
-		9356279A1D59C1C100703284 /* bench.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.FBX; sourceTree = "<group>"; };
-		9356279C1D59C4A700703284 /* Mine.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine.fbx; sourceTree = "<group>"; };
-		9356279E1D59C5D500703284 /* Mine2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine2.fbx; sourceTree = "<group>"; };
 		935627A01D59C75E00703284 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		935627A41D5A1CA100703284 /* VB2X4_006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VB2X4_006.png; sourceTree = "<group>"; };
-		935627A61D5A1DA700703284 /* basketball.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = basketball.fbx; sourceTree = "<group>"; };
-		935627A81D5A1EC400703284 /* TreeSet3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TreeSet3.fbx; sourceTree = "<group>"; };
-		935627AA1D5A235D00703284 /* Mine3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine3.fbx; sourceTree = "<group>"; };
-		938092B71D57443E006C5D78 /* CubiModel.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel.fbx; sourceTree = "<group>"; };
+		935627AC1D5A349000703284 /* semtex texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semtex texture.png"; sourceTree = "<group>"; };
+		935627B11D5A350200703284 /* basketball.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = basketball.fbx; sourceTree = "<group>"; };
+		935627B21D5A350200703284 /* bench.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.FBX; sourceTree = "<group>"; };
+		935627B31D5A350200703284 /* CubiModel.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel.fbx; sourceTree = "<group>"; };
+		935627B41D5A350200703284 /* CubiModel2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel2.fbx; sourceTree = "<group>"; };
+		935627B51D5A350200703284 /* cylinderProjection.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = cylinderProjection.fbx; sourceTree = "<group>"; };
+		935627B61D5A350200703284 /* Mine.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine.fbx; sourceTree = "<group>"; };
+		935627B71D5A350200703284 /* Mine2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine2.fbx; sourceTree = "<group>"; };
+		935627B81D5A350200703284 /* Mine3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine3.fbx; sourceTree = "<group>"; };
+		935627B91D5A350200703284 /* semtex.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = semtex.fbx; sourceTree = "<group>"; };
+		935627BA1D5A350200703284 /* TreeSet3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TreeSet3.fbx; sourceTree = "<group>"; };
+		935627BB1D5A350200703284 /* Wood.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wood.fbx; sourceTree = "<group>"; };
+		935627BC1D5A350200703284 /* Wood.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wood.obj; sourceTree = "<group>"; };
+		935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Low Poly Chainsaw_blend.fbx"; sourceTree = "<group>"; };
+		935627CC1D5A44B300703284 /* chain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chain.jpg; sourceTree = "<group>"; };
+		935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"; sourceTree = "<group>"; };
 		938092DB1D57C87E006C5D78 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		938092DD1D57C883006C5D78 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		938092E01D57C8DE006C5D78 /* GLDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDrawer.h; sourceTree = "<group>"; };
@@ -377,8 +387,6 @@
 		93909C8A1D5603BA001712B3 /* fbxrootnodeutility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxrootnodeutility.h; sourceTree = "<group>"; };
 		93909C8B1D5603BA001712B3 /* fbxusernotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxusernotification.h; sourceTree = "<group>"; };
 		93909C8C1D5603BA001712B3 /* fbxsdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxsdk.h; sourceTree = "<group>"; };
-		93909C8F1D560660001712B3 /* Wood.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Wood.obj; sourceTree = "<group>"; };
-		93909C911D5606A6001712B3 /* Wood.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wood.fbx; sourceTree = "<group>"; };
 		93909C941D56084C001712B3 /* ObjectStucture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectStucture.h; sourceTree = "<group>"; };
 		93909C981D560C0F001712B3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		93909C991D5611D3001712B3 /* FBX2GLModelMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLModelMigrator.h; sourceTree = "<group>"; };
@@ -403,6 +411,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		935627B01D5A34E100703284 /* fbxFiles */ = {
+			isa = PBXGroup;
+			children = (
+				935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */,
+				935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */,
+				935627B11D5A350200703284 /* basketball.fbx */,
+				935627B21D5A350200703284 /* bench.FBX */,
+				935627B31D5A350200703284 /* CubiModel.fbx */,
+				935627B41D5A350200703284 /* CubiModel2.fbx */,
+				935627B51D5A350200703284 /* cylinderProjection.fbx */,
+				935627B61D5A350200703284 /* Mine.fbx */,
+				935627B71D5A350200703284 /* Mine2.fbx */,
+				935627B81D5A350200703284 /* Mine3.fbx */,
+				935627B91D5A350200703284 /* semtex.fbx */,
+				935627BA1D5A350200703284 /* TreeSet3.fbx */,
+				935627BB1D5A350200703284 /* Wood.fbx */,
+				935627BC1D5A350200703284 /* Wood.obj */,
+			);
+			path = fbxFiles;
+			sourceTree = "<group>";
+		};
 		938092DF1D57C8D4006C5D78 /* GLDrawer */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +464,8 @@
 		938092F01D57D102006C5D78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				935627CC1D5A44B300703284 /* chain.jpg */,
+				935627AC1D5A349000703284 /* semtex texture.png */,
 				935627A41D5A1CA100703284 /* VB2X4_006.png */,
 				935627A01D59C75E00703284 /* 1.png */,
 				938092F11D57D109006C5D78 /* cube_map_distribution.png */,
@@ -467,21 +498,10 @@
 		939098EF1D55E596001712B3 /* testFBX */ = {
 			isa = PBXGroup;
 			children = (
+				935627B01D5A34E100703284 /* fbxFiles */,
 				938092F01D57D102006C5D78 /* Data */,
 				938092DF1D57C8D4006C5D78 /* GLDrawer */,
 				93909C931D560784001712B3 /* FBXWrapper */,
-				93909C911D5606A6001712B3 /* Wood.fbx */,
-				935627A81D5A1EC400703284 /* TreeSet3.fbx */,
-				93909C8F1D560660001712B3 /* Wood.obj */,
-				935627A61D5A1DA700703284 /* basketball.fbx */,
-				9356279C1D59C4A700703284 /* Mine.fbx */,
-				935627931D590B9400703284 /* cylinderProjection.fbx */,
-				9356278F1D5909FA00703284 /* CubiModel2.fbx */,
-				935627981D59C0DF00703284 /* humanoid.fbx */,
-				938092B71D57443E006C5D78 /* CubiModel.fbx */,
-				9356279A1D59C1C100703284 /* bench.FBX */,
-				9356279E1D59C5D500703284 /* Mine2.fbx */,
-				935627AA1D5A235D00703284 /* Mine3.fbx */,
 				93909B981D5603BA001712B3 /* include */,
 				93909B8E1D560192001712B3 /* libfbxsdk.a */,
 				939099071D55E5A6001712B3 /* FBX */,
@@ -984,25 +1004,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				938092E71D57CEC4006C5D78 /* Shader.vsh in Resources */,
-				935627A91D5A1EC400703284 /* TreeSet3.fbx in Resources */,
 				939099001D55E596001712B3 /* LaunchScreen.storyboard in Resources */,
-				935627901D5909FA00703284 /* CubiModel2.fbx in Resources */,
-				935627A71D5A1DA700703284 /* basketball.fbx in Resources */,
+				935627C51D5A350200703284 /* semtex.fbx in Resources */,
 				935627A51D5A1CA100703284 /* VB2X4_006.png in Resources */,
-				9356279B1D59C1C600703284 /* bench.FBX in Resources */,
-				935627AB1D5A235D00703284 /* Mine3.fbx in Resources */,
-				938092B81D57443E006C5D78 /* CubiModel.fbx in Resources */,
-				935627941D590B9400703284 /* cylinderProjection.fbx in Resources */,
-				935627991D59C0DF00703284 /* humanoid.fbx in Resources */,
+				935627C01D5A350200703284 /* CubiModel2.fbx in Resources */,
+				935627BD1D5A350200703284 /* basketball.fbx in Resources */,
+				935627CD1D5A44B300703284 /* chain.jpg in Resources */,
+				935627C61D5A350200703284 /* TreeSet3.fbx in Resources */,
+				935627C71D5A350200703284 /* Wood.fbx in Resources */,
+				935627C31D5A350200703284 /* Mine2.fbx in Resources */,
+				935627AD1D5A349000703284 /* semtex texture.png in Resources */,
+				935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */,
 				939098FD1D55E596001712B3 /* Assets.xcassets in Resources */,
-				93909C901D560660001712B3 /* Wood.obj in Resources */,
+				935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */,
+				935627BF1D5A350200703284 /* CubiModel.fbx in Resources */,
+				935627BE1D5A350200703284 /* bench.FBX in Resources */,
 				935627A11D59C75E00703284 /* 1.png in Resources */,
-				9356279F1D59C5D500703284 /* Mine2.fbx in Resources */,
-				93909C921D5606A6001712B3 /* Wood.fbx in Resources */,
 				938092E61D57CEC4006C5D78 /* Shader.fsh in Resources */,
 				939098FB1D55E596001712B3 /* Main.storyboard in Resources */,
 				938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */,
-				9356279D1D59C4A700703284 /* Mine.fbx in Resources */,
+				935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */,
+				935627C81D5A350200703284 /* Wood.obj in Resources */,
+				935627C41D5A350200703284 /* Mine3.fbx in Resources */,
+				935627C21D5A350200703284 /* Mine.fbx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

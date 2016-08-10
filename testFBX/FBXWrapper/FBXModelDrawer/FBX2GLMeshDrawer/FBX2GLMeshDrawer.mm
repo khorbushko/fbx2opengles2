@@ -80,14 +80,16 @@
     glUniformMatrix4fv(uniforms[UNIFORM_MODELVIEWPROJECTION_MATRIX], 1, 0, _mvpMatrix.m);
     glUniformMatrix3fv(uniforms[UNIFORM_NORMALS], 1, 0, _normalMatrix.m);
     
-    glUniform1i(uniforms[UNIFORM_TEXTURE], 0);
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, _texture.name);
+    if (_drawModel.numberOfTextCoords) {
+        glUniform1i(uniforms[UNIFORM_TEXTURE], 0);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, _texture.name);
+    }
     
     
-//    glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //        glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+//    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 }
 
 - (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix
@@ -127,26 +129,30 @@
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glVertexAttribPointer(GLKVertexAttribPosition, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, NULL);
     
-    //textures
-    glGenBuffers(1, &_indexBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, _indexBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * _drawModel.numberOfTextCoords, _drawModel.texCoords, GL_STATIC_DRAW);
-    
-    glEnableVertexAttribArray(attributes[ATTRIBUTES_TEXTURE_COORDINATE]);
-    glVertexAttribPointer(attributes[ATTRIBUTES_TEXTURE_COORDINATE], 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, NULL);
+    if (_drawModel.numberOfTextCoords) {
+        //textures
+        glGenBuffers(1, &_indexBuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, _indexBuffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * _drawModel.numberOfTextCoords, _drawModel.texCoords, GL_STATIC_DRAW);
+        
+        glEnableVertexAttribArray(attributes[ATTRIBUTES_TEXTURE_COORDINATE]);
+        glVertexAttribPointer(attributes[ATTRIBUTES_TEXTURE_COORDINATE], 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 2, NULL);
+    }
     
     //indices order
     glGenBuffers(1, &_indisesBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indisesBuffer);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _drawModel.numberOfIndises, _drawModel.indises, GL_STATIC_DRAW);
     
-    //normals
-    glGenBuffers(1, &_normalBuffer);
-    glBindBuffer(GL_ARRAY_BUFFER, _normalBuffer);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * _drawModel.numberOfNormals, _drawModel.normals, GL_STATIC_DRAW);
-    
-    glEnableVertexAttribArray(GLKVertexAttribNormal);
-    glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, NULL);
+    if (_drawModel.numberOfNormals) {
+        //normals
+        glGenBuffers(1, &_normalBuffer);
+        glBindBuffer(GL_ARRAY_BUFFER, _normalBuffer);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat) * _drawModel.numberOfNormals, _drawModel.normals, GL_STATIC_DRAW);
+        
+        glEnableVertexAttribArray(GLKVertexAttribNormal);
+        glVertexAttribPointer(GLKVertexAttribNormal, 3, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 3, NULL);
+    }
     
     glBindVertexArrayOES(0);
 }

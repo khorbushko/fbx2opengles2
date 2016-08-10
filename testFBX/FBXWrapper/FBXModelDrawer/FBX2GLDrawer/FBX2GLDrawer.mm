@@ -54,7 +54,7 @@
         
         [EAGLContext setCurrentContext:self.glContext];
         for (FBX2GLModel *meshModel in models) {
-            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:@"semtex texture.png"];
+            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:@"2.png"];
             [_glMeshDrawers addObject:drawer];
         }
         

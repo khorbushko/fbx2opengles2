@@ -6,8 +6,6 @@
 //  Copyright © 2016 - present Thinkmobiles. All rights reserved.
 //
 
-//#define PRINT_ENABLED
-
 #include <iostream>
 
 #import "FBX2GLModel.h"
@@ -108,7 +106,7 @@
             }
         }
     }
-    
+
     int indicessCount = index;
     int *testIndices = new int [indicessCount]; //workaround - need to find solution
     
@@ -409,7 +407,7 @@
 
 - (void)printObject
 {
-    std::cout<<"\n----Indices----"<<_displayModel.numberOfIndises;
+    std::cout<<"\n\n----------------\n"<<"\n----Indices----"<<_displayModel.numberOfIndises;
 #ifdef PRINT_ENABLED
     std::cout<<"\n";
     for (int i = 0; i < _displayModel.numberOfIndises; i++) {

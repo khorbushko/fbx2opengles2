@@ -35,10 +35,11 @@
 //                     initWithModelNamed:@"cylinderProjection.fbx"];
 //                     initWithModelNamed:@"semtex.fbx"];
 //                     initWithModelNamed:@"CubiModel.fbx"];
-                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
+//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
 //                     initWithModelNamed:@"bench.FBX"];
 //                     initWithModelNamed:@"Low Poly Chainsaw_blend.fbx"];//incorrect
 //                     initWithModelNamed:@"Robo8.fbx"];
+                     initWithModelNamed:@"Robo8_full.fbx"];
 
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];

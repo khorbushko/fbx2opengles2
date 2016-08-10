@@ -6,6 +6,8 @@
 //  Copyright © 2016 - present Thinkmobiles. All rights reserved.
 //
 
+//uncomment to see all points during parse FBX
+//#define PRINT_ENABLED
 
 #ifndef ObjectStucture_h
 #define ObjectStucture_h

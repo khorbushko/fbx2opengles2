@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "testFBX/ViewController.m"
-            timestampString = "492456681.226257"
+            filePath = "testFBX/FBXWrapper/FBX2GLModelMigrator.mm"
+            timestampString = "492513062.302942"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-parseDataFromModel"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

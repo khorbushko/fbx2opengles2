@@ -7,13 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjectStucture.h"
+#import "FBX2GLModel.h"
 
 @interface FBX2GLModelMigrator : NSObject
 
-@property (assign, nonatomic) FBXModel model;
+@property (strong, nonatomic) NSMutableArray <FBX2GLModel *> *avaliableModels;
 
 - (instancetype)initWithModelNamed:(NSString *)fileNamed;
-- (void)printObject;
 
 @end

@@ -6,15 +6,15 @@
 //  Copyright © 2016 - present Thinkmobiles. All rights reserved.
 //
 
-#import "TextureGL.h"
+#import "FBX2GLTexture.h"
 
-@interface TextureGL()
+@interface FBX2GLTexture()
 
 @property (strong, nonatomic) UIImage *cachedImage;
 
 @end
 
-@implementation TextureGL
+@implementation FBX2GLTexture
 
 #pragma mark - LifeCycle
 

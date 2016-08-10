@@ -9,15 +9,15 @@
 #import "ViewController.h"
 
 #import "FBX2GLModelMigrator.h"
-#import "GLDrawer.h"
-
+#import "FBX2GLModel.h"
+#import "FBX2GLDrawer.h"
 
 @interface ViewController ()
 
 @property (strong, nonatomic) EAGLContext *context;
 
 @property (strong, nonatomic) FBX2GLModelMigrator *migrator;
-@property (strong, nonatomic) GLDrawer *drawer;
+@property (strong, nonatomic) FBX2GLDrawer *drawer;
 
 @end
 
@@ -33,26 +33,28 @@
 //                     initWithModelNamed:@"Mine3.fbx"];
 //                     initWithModelNamed:@"basketball.fbx"];
 //                     initWithModelNamed:@"cylinderProjection.fbx"];
-                     initWithModelNamed:@"semtex.fbx"];
+//                     initWithModelNamed:@"semtex.fbx"];
 //                     initWithModelNamed:@"CubiModel.fbx"];
-//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
+                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
 //                     initWithModelNamed:@"bench.FBX"];
+//                     initWithModelNamed:@"Low Poly Chainsaw_blend.fbx"];//incorrect
+//                     initWithModelNamed:@"Robo8.fbx"];
 
-    
-    
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     if (!self.context) {
         NSLog(@"No Context");
     }
     
+    self.preferredFramesPerSecond = 60;
+    
     GLKView *view = ((GLKView *)self.view);
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+        
+    self.drawer = [[FBX2GLDrawer alloc] initWithContext:self.context withinView:view models:self.migrator.avaliableModels];
     
-    self.drawer = [[GLDrawer alloc] initWithContext:self.context withinView:view model:self.migrator.model];
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

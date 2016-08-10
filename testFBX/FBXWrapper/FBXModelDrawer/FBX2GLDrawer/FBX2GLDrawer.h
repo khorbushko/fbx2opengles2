@@ -8,11 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
-#import "ObjectStucture.h"
+#import "FBX2GLModel.h"
 
-@interface GLDrawer : NSObject
+@interface FBX2GLDrawer : NSObject
 
-- (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView model:(FBXModel)model;
+- (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView models:(NSArray <FBX2GLModel *> *)models;
+
 - (void)draw;
 - (void)updateGLView;
 - (void)tearDown;

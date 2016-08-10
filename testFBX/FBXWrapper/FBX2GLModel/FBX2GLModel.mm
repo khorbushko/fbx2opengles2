@@ -1,78 +1,90 @@
 //
-//  FBX2GLModelMigrator.m
+//  FBX2GLModel.m
 //  testFBX
 //
-//  Created by Kirill Gorbushko on 06.08.16.
+//  Created by Kirill Gorbushko on 10.08.16.
 //  Copyright © 2016 - present Thinkmobiles. All rights reserved.
 //
 
 //#define PRINT_ENABLED
 
-#import "FBX2GLModelMigrator.h"
+#include <iostream>
 
-#import "fbxsdk.h"
+#import "FBX2GLModel.h"
 #import "main.h"
 #import "Common.h"
 
-#include <iostream>
-
-@interface FBX2GLModelMigrator()
-
-@property (assign, nonatomic) FbxManager *fbxManager;
-@property (assign, nonatomic) FbxScene *fbxScene;
-
-@end
-
-@implementation FBX2GLModelMigrator
+@implementation FBX2GLModel
 
 #pragma mark - LifeCycle
 
-- (instancetype)initWithModelNamed:(NSString *)fileNamed
+- (instancetype)initWithMesh:(FbxMesh *)pMesh
 {
     self = [super init];
     if (self) {
-        [self prepareFBXObjects];
-        if (![self loadObjectNamed:fileNamed]) {
-            NSLog(@"Cant load model with name: %@", fileNamed);
-        } else {
-            [self parseDataFromModel];
-        }
+        [self generateModelWith:pMesh];
     }
     return self;
 }
 
-#pragma mark - Private
-
-- (void)prepareFBXObjects
+- (void)dealloc
 {
-    InitializeSdkObjects(_fbxManager, _fbxScene);
+    [self destroyModel];
 }
 
-- (BOOL)loadObjectNamed:(NSString *)objectName
-{
-    NSString *filePath =[[NSBundle mainBundle] pathForResource:[[objectName lastPathComponent] stringByDeletingPathExtension] ofType:[objectName pathExtension]];
-    
-    FbxString fbxSt([filePath cStringUsingEncoding:[NSString defaultCStringEncoding]]);
-    bool bResult = LoadScene(_fbxManager, _fbxScene, fbxSt.Buffer());
-    return (bResult);
+- (void)destroyModel
+{    
+    if (_displayModel.vertices) {
+        free(_displayModel.vertices);
+    }
+    if (_displayModel.normals) {
+        free(_displayModel.normals);
+    }
+    if (_displayModel.indises) {
+        free(_displayModel.indises);
+    }
+    if (_displayModel.texCoords) {
+        free(_displayModel.texCoords);
+    }
 }
 
-- (void)parseDataFromModel
+#pragma mark - Public
+
+- (void)printObjectWithDetails:(BOOL)details
 {
-    FbxNode* modelNode = _fbxScene->GetRootNode();
-    int childCount = modelNode->GetChildCount();
-    FbxNode *childNode = 0;
-    for (int i = 0; i < childCount; i++) {
-        childNode = modelNode->GetChild(i);
-        FbxMesh *mesh = childNode->GetMesh();
-        if (mesh != NULL) {
-            [self displaySelectedPolygons:mesh];
-#warning to make for multy mesh in model
+    std::cout<<"\n----Indices----"<<_displayModel.numberOfIndises;
+    if (details) {
+        std::cout<<"\n";
+        for (int i = 0; i < _displayModel.numberOfIndises; i++) {
+            std::cout<<_displayModel.indises[i]<<"\n";
+        }
+    }
+    std::cout<<"\n----Coordinates(Vertises)----"<<_displayModel.numberOfVertices;
+    if (details) {
+        std::cout<<"\n";
+        for (int i = 0; i < _displayModel.numberOfVertices; i= i + 3) {
+            std::cout<<_displayModel.vertices[i]<<" "<<_displayModel.vertices[i+1]<<" "<<_displayModel.vertices[i+2]<<" "<<"\n";
+        }
+    }
+    std::cout<<"\n----Texture UV----"<<_displayModel.numberOfTextCoords;
+    if (details) {
+        std::cout<<"\n";
+        for (int i = 0; i < _displayModel.numberOfTextCoords; i= i + 2) {
+            std::cout<<_displayModel.texCoords[i]<<" "<<_displayModel.texCoords[i+1]<<"\n";
+        }
+    }
+    std::cout<<"\n----Normal----"<<_displayModel.numberOfNormals;
+    if (details) {
+        std::cout<<"\n";
+        for (int i = 0; i < _displayModel.numberOfNormals; i= i + 3) {
+            std::cout<<_displayModel.normals[i]<<" "<<_displayModel.normals[i+1]<<" "<<_displayModel.normals[i+2]<<" "<<"\n";
         }
     }
 }
 
-- (void)displaySelectedPolygons:(FbxMesh *)pMesh
+#pragma mark - Private
+
+- (void)generateModelWith:(FbxMesh *)pMesh
 {
     int polygonCount = pMesh->GetPolygonCount();
     int totalObjSize = 0;
@@ -139,19 +151,18 @@
         }
     }
     
-    _model.vertices = new float[verticesOriginalCount];
-    _model.texCoords = new float[texturesUVCount];
-    _model.normals = new float[normalsOriginalCount];
-    _model.indises = testIndices;
+    _displayModel.vertices = new float[verticesOriginalCount];
+    _displayModel.texCoords = new float[texturesUVCount];
+    _displayModel.normals = new float[normalsOriginalCount];
+    _displayModel.indises = testIndices;
     
-    _model.numberOfVertices = verticesOriginalCount;
-    _model.numberOfIndises = indicessCount;
-    _model.numberOfTextCoords = texturesUVCount;
-    _model.numberOfNormals = normalsOriginalCount;
+    _displayModel.numberOfVertices = verticesOriginalCount;
+    _displayModel.numberOfIndises = indicessCount;
+    _displayModel.numberOfTextCoords = texturesUVCount;
+    _displayModel.numberOfNormals = normalsOriginalCount;
     
     int i, j, lPolygonCount = pMesh->GetPolygonCount();
     FbxVector4* lControlPoints = pMesh->GetControlPoints();
-
     
 #ifdef PRINT_ENABLED
     char header[100];
@@ -173,9 +184,9 @@
 #ifdef PRINT_ENABLED
             Display3DVector("            Coordinates: ", lControlPoints[lControlPointIndex]);
 #endif
-            _model.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][0];
-            _model.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][1];
-            _model.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][2];
+            _displayModel.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][0];
+            _displayModel.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][1];
+            _displayModel.vertices[verticesOffset++] = lControlPoints[lControlPointIndex][2];
             
             for (l = 0; l < pMesh->GetElementVertexColorCount(); l++) {
                 FbxGeometryElementVertexColor* leVtxc = pMesh->GetElementVertexColor( l);
@@ -242,8 +253,8 @@
 #ifdef PRINT_ENABLED
                                 Display2DVector(header, leUV->GetDirectArray().GetAt(lControlPointIndex));
 #endif
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lControlPointIndex)[0];
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lControlPointIndex)[1];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lControlPointIndex)[0];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lControlPointIndex)[1];
                                 
                                 break;
                             case FbxGeometryElement::eIndexToDirect: {
@@ -251,8 +262,8 @@
 #ifdef PRINT_ENABLED
                                 Display2DVector(header, leUV->GetDirectArray().GetAt(id));
 #endif
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[0];
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[1];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[0];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[1];
                                 
                             }
                                 break;
@@ -268,8 +279,8 @@
 #ifdef PRINT_ENABLED
                                 Display2DVector(header, leUV->GetDirectArray().GetAt(lTextureUVIndex));
 #endif
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[0];
-                                _model.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[1];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[0];
+                                _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[1];
                                 
                             }
                                 break;
@@ -295,9 +306,9 @@
 #ifdef PRINT_ENABLED
                             Display3DVector(header, leNormal->GetDirectArray().GetAt(vertexId));
 #endif
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[0];
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[1];
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[2];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[0];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[1];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[2];
                             
                             break;
                         case FbxGeometryElement::eIndexToDirect: {
@@ -305,9 +316,9 @@
 #ifdef PRINT_ENABLED
                             Display3DVector(header, leNormal->GetDirectArray().GetAt(id));
 #endif
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[0];
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[1];
-                            _model.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[2];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[0];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[1];
+                            _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[2];
                             
                         }
                             break;
@@ -398,34 +409,48 @@
 
 - (void)printObject
 {
-    std::cout<<"\n----Indices----"<<_model.numberOfIndises;
+    std::cout<<"\n----Indices----"<<_displayModel.numberOfIndises;
 #ifdef PRINT_ENABLED
     std::cout<<"\n";
-    for (int i = 0; i < _model.numberOfIndises; i++) {
-        std::cout<<_model.indises[i]<<"\n";
+    for (int i = 0; i < _displayModel.numberOfIndises; i++) {
+        std::cout<<_displayModel.indises[i]<<"\n";
     }
 #endif
-    std::cout<<"\n----Coordinates(Vertises)----"<<_model.numberOfVertices;
+    std::cout<<"\n----Coordinates(Vertises)----"<<_displayModel.numberOfVertices;
 #ifdef PRINT_ENABLED
     std::cout<<"\n";
-    for (int i = 0; i < _model.numberOfVertices; i= i + 3) {
-        std::cout<<_model.vertices[i]<<" "<<_model.vertices[i+1]<<" "<<_model.vertices[i+2]<<" "<<"\n";
+    for (int i = 0; i < _displayModel.numberOfVertices; i= i + 3) {
+        std::cout<<_displayModel.vertices[i]<<" "<<_displayModel.vertices[i+1]<<" "<<_displayModel.vertices[i+2]<<" "<<"\n";
     }
 #endif
-    std::cout<<"\n----Texture UV----"<<_model.numberOfTextCoords;
+    std::cout<<"\n----Texture UV----"<<_displayModel.numberOfTextCoords;
 #ifdef PRINT_ENABLED
     std::cout<<"\n";
-    for (int i = 0; i < _model.numberOfTextCoords; i= i + 2) {
-        std::cout<<_model.texCoords[i]<<" "<<_model.texCoords[i+1]<<"\n";
+    for (int i = 0; i < _displayModel.numberOfTextCoords; i= i + 2) {
+        std::cout<<_displayModel.texCoords[i]<<" "<<_displayModel.texCoords[i+1]<<"\n";
     }
 #endif
-    std::cout<<"\n----Normal----"<<_model.numberOfNormals;
+    std::cout<<"\n----Normal----"<<_displayModel.numberOfNormals;
 #ifdef PRINT_ENABLED
     std::cout<<"\n";
-    for (int i = 0; i < _model.numberOfNormals; i= i + 3) {
-        std::cout<<_model.normals[i]<<" "<<_model.normals[i+1]<<" "<<_model.normals[i+2]<<" "<<"\n";
+    for (int i = 0; i < _displayModel.numberOfNormals; i= i + 3) {
+        std::cout<<_displayModel.normals[i]<<" "<<_displayModel.normals[i+1]<<" "<<_displayModel.normals[i+2]<<" "<<"\n";
     }
 #endif
+}
+
+#pragma mark - Override
+
+- (NSString *)description
+{
+    NSDictionary *dic = @{
+                          @"Indices" : @(_displayModel.numberOfIndises),
+                          @"Coordinates(Vertises)" : @(_displayModel.numberOfVertices),
+                          @"Texture UV" : @(_displayModel.numberOfTextCoords),
+                          @"Normal" : @(_displayModel.numberOfNormals)
+                          };
+    
+    return [NSString stringWithFormat:@"%@", dic];
 }
 
 @end

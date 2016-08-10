@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
 
-@interface TextureGL : NSObject
+@interface FBX2GLTexture : NSObject
 
 @property (assign, nonatomic, readonly) GLuint name;
 
 - (instancetype)initFromImageNamed:(NSString *)imageNamed;
-//call this method only after preparing glMashine
-- (void)setupTexture;
+
+- (void)setupTexture; //call this method only after preparing glMashine
 - (void)cleanUpTexture;
 
 @end

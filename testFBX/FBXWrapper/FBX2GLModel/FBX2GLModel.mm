@@ -25,11 +25,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [self destroyModel];
-}
-
 - (void)destroyModel
 {    
     if (_displayModel.vertices) {
@@ -44,6 +39,7 @@
     if (_displayModel.texCoords) {
         free(_displayModel.texCoords);
     }
+//    free(&(_displayModel));
 }
 
 #pragma mark - Public
@@ -108,23 +104,23 @@
     }
 
     int indicessCount = index;
-    int *indices = new int [indicessCount]; //workaround - need to find solution
+    _displayModel.indises = new int [indicessCount]; //workaround - need to find solution
     
     index = 0;
     pairCounter = 0;
     for (int i = 0; i < polygonCount; i++) {
         int lPolygonSize = pMesh->GetPolygonSize(i);
         for (int j = 0; j< lPolygonSize; j++) {
-            indices[index++] = i*4 + j;
+            _displayModel.indises[index++] = i*4 + j;
             //  std::cout<<testIndices[index-1]<<"\n";
             if (j==2) {
                 pairCounter++;
                 if ((pairCounter % 2)) {
                     int firstIndex = index-3;
                     int secondIndex = index-1;
-                    indices[index++] = indices[firstIndex];
+                    _displayModel.indises[index++] = _displayModel.indises[firstIndex];
                     //    std::cout<<testIndices[index-1]<<"\n";
-                    indices[index++] = indices[secondIndex];
+                    _displayModel.indises[index++] = _displayModel.indises[secondIndex];
                     //  std::cout<<testIndices[index-1]<<"\n";
                     pairCounter = 0;
                 }
@@ -152,7 +148,7 @@
     _displayModel.vertices = new float[verticesOriginalCount];
     _displayModel.texCoords = new float[texturesUVCount];
     _displayModel.normals = new float[normalsOriginalCount];
-    _displayModel.indises = indices;
+//    _displayModel.indises = indices;
     
     _displayModel.numberOfVertices = verticesOriginalCount;
     _displayModel.numberOfIndises = indicessCount;

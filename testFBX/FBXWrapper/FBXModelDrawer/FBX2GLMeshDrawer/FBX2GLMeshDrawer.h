@@ -13,9 +13,8 @@
 #import "ObjectStucture.h"
 
 @interface FBX2GLMeshDrawer : NSObject
-{
-    GLKMatrix4 _mvpMatrix;
-}
+
+@property (assign, nonatomic) GLuint drawElementsMode;
 
 - (instancetype)initWithMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName;
 

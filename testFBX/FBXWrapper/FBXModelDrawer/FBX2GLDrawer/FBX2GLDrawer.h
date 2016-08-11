@@ -13,9 +13,12 @@
 @interface FBX2GLDrawer : NSObject
 
 - (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView models:(NSArray <FBX2GLModel *> *)models;
+- (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView models:(NSArray <FBX2GLModel *> *)models textureNamed:(NSString *)textureNamed;
 
 - (void)draw;
 - (void)updateGLView;
 - (void)tearDown;
+
+@property (assign, nonatomic) GLuint drawMode;
 
 @end

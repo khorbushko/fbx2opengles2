@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		935627A11D59C75E00703284 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A01D59C75E00703284 /* 1.png */; };
+		935627A11D59C75E00703284 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A01D59C75E00703284 /* 2.png */; };
 		935627AD1D5A349000703284 /* semtex texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627AC1D5A349000703284 /* semtex texture.png */; };
 		935627BD1D5A350200703284 /* basketball.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B11D5A350200703284 /* basketball.fbx */; };
 		935627BE1D5A350200703284 /* bench.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 935627B21D5A350200703284 /* bench.FBX */; };
@@ -34,13 +34,15 @@
 		935628001D5B336C00703284 /* FBX2GLMeshDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935627FF1D5B336C00703284 /* FBX2GLMeshDrawer.mm */; };
 		935628021D5B529400703284 /* Robo8.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628011D5B529400703284 /* Robo8.fbx */; };
 		935628041D5B544100703284 /* Robo8_full.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628031D5B544100703284 /* Robo8_full.fbx */; };
-		935628061D5B55CA00703284 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 935628051D5B55CA00703284 /* 2.png */; };
+		935628061D5B55CA00703284 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 935628051D5B55CA00703284 /* 1.png */; };
 		9356280A1D5B859700703284 /* Audi R8.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628091D5B859700703284 /* Audi R8.fbx */; };
 		9356280C1D5B859F00703284 /* sofa.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356280B1D5B859F00703284 /* sofa.fbx */; };
 		9356280E1D5B9C3900703284 /* Robo8_withoutPlane.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356280D1D5B9C3900703284 /* Robo8_withoutPlane.fbx */; };
 		935628121D5C70E300703284 /* topfpflanze_final.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628111D5C70E300703284 /* topfpflanze_final.fbx */; };
 		935628141D5C710800703284 /* Flor Cartoon.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628131D5C710800703284 /* Flor Cartoon.fbx */; };
 		935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */; };
+		935628191D5CC87100703284 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935628181D5CC87100703284 /* ListViewController.m */; };
+		9356281B1D5CC92000703284 /* DataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9356281A1D5CC92000703284 /* DataSource.plist */; };
 		938092DC1D57C87E006C5D78 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DB1D57C87E006C5D78 /* GLKit.framework */; };
 		938092DE1D57C883006C5D78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DD1D57C883006C5D78 /* OpenGLES.framework */; };
 		938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */ = {isa = PBXBuildFile; fileRef = 938092F11D57D109006C5D78 /* cube_map_distribution.png */; };
@@ -81,7 +83,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		935627A01D59C75E00703284 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		935627A01D59C75E00703284 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		935627AC1D5A349000703284 /* semtex texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semtex texture.png"; sourceTree = "<group>"; };
 		935627B11D5A350200703284 /* basketball.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = basketball.fbx; sourceTree = "<group>"; };
 		935627B21D5A350200703284 /* bench.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.FBX; sourceTree = "<group>"; };
@@ -114,13 +116,16 @@
 		935627FF1D5B336C00703284 /* FBX2GLMeshDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLMeshDrawer.mm; sourceTree = "<group>"; };
 		935628011D5B529400703284 /* Robo8.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8.fbx; sourceTree = "<group>"; };
 		935628031D5B544100703284 /* Robo8_full.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8_full.fbx; sourceTree = "<group>"; };
-		935628051D5B55CA00703284 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		935628051D5B55CA00703284 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		935628091D5B859700703284 /* Audi R8.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audi R8.fbx"; sourceTree = "<group>"; };
 		9356280B1D5B859F00703284 /* sofa.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = sofa.fbx; sourceTree = "<group>"; };
 		9356280D1D5B9C3900703284 /* Robo8_withoutPlane.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8_withoutPlane.fbx; sourceTree = "<group>"; };
 		935628111D5C70E300703284 /* topfpflanze_final.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = topfpflanze_final.fbx; sourceTree = "<group>"; };
 		935628131D5C710800703284 /* Flor Cartoon.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flor Cartoon.fbx"; sourceTree = "<group>"; };
 		935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChubbyCat_BasicMesh.fbx; sourceTree = "<group>"; };
+		935628171D5CC87100703284 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		935628181D5CC87100703284 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		9356281A1D5CC92000703284 /* DataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataSource.plist; sourceTree = "<group>"; };
 		938092DB1D57C87E006C5D78 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		938092DD1D57C883006C5D78 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		938092F11D57D109006C5D78 /* cube_map_distribution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_map_distribution.png; sourceTree = "<group>"; };
@@ -545,8 +550,8 @@
 			children = (
 				935627CC1D5A44B300703284 /* chain.jpg */,
 				935627AC1D5A349000703284 /* semtex texture.png */,
-				935627A01D59C75E00703284 /* 1.png */,
-				935628051D5B55CA00703284 /* 2.png */,
+				935627A01D59C75E00703284 /* 2.png */,
+				935628051D5B55CA00703284 /* 1.png */,
 				938092F11D57D109006C5D78 /* cube_map_distribution.png */,
 			);
 			path = Data;
@@ -587,10 +592,13 @@
 				939098F41D55E596001712B3 /* AppDelegate.m */,
 				939098F61D55E596001712B3 /* ViewController.h */,
 				939098F71D55E596001712B3 /* ViewController.mm */,
+				935628171D5CC87100703284 /* ListViewController.h */,
+				935628181D5CC87100703284 /* ListViewController.m */,
 				939098F91D55E596001712B3 /* Main.storyboard */,
 				939098FC1D55E596001712B3 /* Assets.xcassets */,
 				939098FE1D55E596001712B3 /* LaunchScreen.storyboard */,
 				939099011D55E596001712B3 /* Info.plist */,
+				9356281A1D5CC92000703284 /* DataSource.plist */,
 				939098F01D55E596001712B3 /* Supporting Files */,
 			);
 			path = testFBX;
@@ -1082,7 +1090,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935628061D5B55CA00703284 /* 2.png in Resources */,
+				935628061D5B55CA00703284 /* 1.png in Resources */,
 				939099001D55E596001712B3 /* LaunchScreen.storyboard in Resources */,
 				935627C51D5A350200703284 /* semtex.fbx in Resources */,
 				9356280C1D5B859F00703284 /* sofa.fbx in Resources */,
@@ -1102,10 +1110,11 @@
 				939098FD1D55E596001712B3 /* Assets.xcassets in Resources */,
 				935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */,
 				935627BF1D5A350200703284 /* CubiModel.fbx in Resources */,
+				9356281B1D5CC92000703284 /* DataSource.plist in Resources */,
 				935628121D5C70E300703284 /* topfpflanze_final.fbx in Resources */,
 				935627BE1D5A350200703284 /* bench.FBX in Resources */,
 				935628021D5B529400703284 /* Robo8.fbx in Resources */,
-				935627A11D59C75E00703284 /* 1.png in Resources */,
+				935627A11D59C75E00703284 /* 2.png in Resources */,
 				939098FB1D55E596001712B3 /* Main.storyboard in Resources */,
 				938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */,
 				935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */,
@@ -1126,6 +1135,7 @@
 			files = (
 				935627FC1D5B28DA00703284 /* FBX2GLTexture.m in Sources */,
 				93909A911D560177001712B3 /* DisplayPatch.cxx in Sources */,
+				935628191D5CC87100703284 /* ListViewController.m in Sources */,
 				935627E61D5B287700703284 /* FBX2GLModelMigrator.mm in Sources */,
 				93909A931D560177001712B3 /* DisplayPose.cxx in Sources */,
 				935628001D5B336C00703284 /* FBX2GLMeshDrawer.mm in Sources */,
@@ -1275,6 +1285,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/testFBX/PrefixHeader.pch";
 				INFOPLIST_FILE = testFBX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1300,6 +1311,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/testFBX/PrefixHeader.pch";
 				INFOPLIST_FILE = testFBX/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

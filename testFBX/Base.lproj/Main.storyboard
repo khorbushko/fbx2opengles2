@@ -1,10 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qvh-Fj-hEb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
+        <!--Select model-->
+        <scene sceneID="XB9-TT-J3h">
+            <objects>
+                <viewController storyboardIdentifier="ListViewController" id="dLg-z7-blz" customClass="ListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="44Q-9B-hMK"/>
+                        <viewControllerLayoutGuide type="bottom" id="GqU-dP-jAy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6E2-ss-a7y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aCX-0W-CzT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="87U-Ny-BBo">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="87U-Ny-BBo" id="N9P-nS-pmx">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="dLg-z7-blz" id="eDP-Nq-Pwn"/>
+                                    <outlet property="delegate" destination="dLg-z7-blz" id="PXS-ZB-jDI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GqU-dP-jAy" firstAttribute="top" secondItem="aCX-0W-CzT" secondAttribute="bottom" id="EKG-JP-aWe"/>
+                            <constraint firstAttribute="trailing" secondItem="aCX-0W-CzT" secondAttribute="trailing" id="IXW-4v-ZYD"/>
+                            <constraint firstItem="aCX-0W-CzT" firstAttribute="leading" secondItem="6E2-ss-a7y" secondAttribute="leading" id="jvw-DO-wec"/>
+                            <constraint firstItem="aCX-0W-CzT" firstAttribute="top" secondItem="6E2-ss-a7y" secondAttribute="top" id="vP3-LG-XH9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Select model" id="hve-xh-QlI"/>
+                    <connections>
+                        <outlet property="tableViewController" destination="aCX-0W-CzT" id="cS4-OX-xvQ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toGlViewControllerSegueIdentifier" id="1EK-jF-sK5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UkP-Jx-6aG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="348" y="341"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -18,9 +68,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="ov9-ic-fo1">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Triangles" id="aV5-0j-n0O">
+                                <connections>
+                                    <action selector="trianglesMode:" destination="BYZ-38-t0r" id="wFs-2g-82v"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Triangles_Strip" id="OxL-kw-fnx">
+                                <connections>
+                                    <action selector="trianglesStrip:" destination="BYZ-38-t0r" id="SyJ-8h-fAP"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Lines" id="tRh-01-bRI">
+                                <connections>
+                                    <action selector="linesMode:" destination="BYZ-38-t0r" id="d9X-pq-HKK"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1188" y="341"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mlW-DN-cfo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvh-Fj-hEb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbz-0h-sQ0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.56862745100000001" green="0.72941176470000002" blue="0.92941176469999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dLg-z7-blz" kind="relationship" relationship="rootViewController" id="NQb-LE-pf5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqq-fj-zqu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-464" y="341"/>
         </scene>
     </scenes>
 </document>

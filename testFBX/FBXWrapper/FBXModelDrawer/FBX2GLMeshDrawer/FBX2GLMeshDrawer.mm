@@ -32,6 +32,7 @@
     GLuint _indisesBuffer;
 
     GLKMatrix3 _normalMatrix;
+    GLKMatrix4 _mvpMatrix;
     
     GLuint uniforms[UNIFORM_COUNT];
     GLuint attributes[ATTRIBUTES_COUNT];
@@ -47,12 +48,12 @@
         NSAssert(meshModel.displayModel.numberOfIndises && meshModel.displayModel.numberOfVertices, @"glModel cant be empty");
         _drawModel = meshModel.displayModel;
         _source = meshModel;
+        _drawElementsMode = GL_TRIANGLES;
         
         [self setupGLMashine];
         
         _texture = [[FBX2GLTexture alloc] initFromImageNamed:textureName];
         [_texture setupTexture];
-        
     }
     return self;
 }
@@ -62,9 +63,9 @@
     glDeleteBuffers(1, &_vertexBuffer);
     glDeleteBuffers(1, &_normalBuffer);
     glDeleteBuffers(1, &_indisesBuffer);
+    glDeleteBuffers(1, &_indexBuffer);
     
     glDeleteVertexArraysOES(1, &_vertextArray);
-    
     [self.glProgram destroyProgram];
     [_source destroyModel];
     [_texture cleanUpTexture];
@@ -86,8 +87,8 @@
         glBindTexture(GL_TEXTURE_2D, _texture.name);
     }
     
-    glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-//    glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    glDrawElements(_drawElementsMode, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    //    glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_TRIANGLE_FAN, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 }

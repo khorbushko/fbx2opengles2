@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>TreeSet3.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Mine3.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Mine.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>basketball.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>cylinderProjection.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>semtex texture.png</string>
+		<key>name</key>
+		<string>semtex.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>cube_map_distribution.png</string>
+		<key>name</key>
+		<string>CubiModel.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>chain.jpg</string>
+		<key>name</key>
+		<string>Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>bench.FBX</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>chain.jpg</string>
+		<key>name</key>
+		<string>Low Poly Chainsaw_blend.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Robo8.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Robo8_full.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Audi R8.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>sofa.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Robo8_withoutPlane.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>Flor Cartoon.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>topfpflanze_final.fbx</string>
+	</dict>
+	<dict>
+		<key>texture</key>
+		<string>1.png</string>
+		<key>name</key>
+		<string>ChubbyCat_BasicMesh.fbx</string>
+	</dict>
+</array>
+</plist>

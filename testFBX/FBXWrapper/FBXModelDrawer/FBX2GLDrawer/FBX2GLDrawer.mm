@@ -39,6 +39,37 @@
 
 #pragma mark - Lifecycle
 
+- (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView models:(NSArray <FBX2GLModel *> *)models textureNamed:(NSString *)textureNamed
+{
+    self = [super init];
+    if (self) {
+        NSAssert(glView, @"glView cant be nil");
+        _glView = glView;
+        [self setupViewInteractions];
+        
+        NSAssert(context, @"glContextCant be nil");
+        _glContext = context;
+        
+        _glMeshDrawers = [NSMutableArray array];
+        
+        [EAGLContext setCurrentContext:self.glContext];
+        for (FBX2GLModel *meshModel in models) {
+            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:textureNamed];
+            [_glMeshDrawers addObject:drawer];
+        }
+        
+        _scale = 1;
+        _rotationX = 1;
+        _rotationY = 1;
+        _positionY = 0;
+        _positionX = 0;
+        
+        _drawMode = GL_TRIANGLES;
+    }
+    
+    return self;
+}
+
 - (instancetype)initWithContext:(EAGLContext *)context withinView:(GLKView *)glView models:(NSArray <FBX2GLModel *> *)models
 {
     self = [super init];
@@ -54,7 +85,7 @@
         
         [EAGLContext setCurrentContext:self.glContext];
         for (FBX2GLModel *meshModel in models) {
-            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:@"2.png"];
+            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:@"1.png"];
             [_glMeshDrawers addObject:drawer];
         }
         
@@ -63,6 +94,8 @@
         _rotationY = 1;
         _positionY = 0;
         _positionX = 0;
+        
+        _drawMode = GL_TRIANGLES;
     }
     
     return self;
@@ -80,7 +113,7 @@
 - (void)updateGLView
 {
     float aspect = self.glView.frame.size.width / self.glView.frame.size.height;
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.01f, 100);
     //scale
     //rotate
     //translate
@@ -111,10 +144,10 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     for (FBX2GLMeshDrawer *meshGlDrawer in _glMeshDrawers) {
+        meshGlDrawer.drawElementsMode = self.drawMode;
         [meshGlDrawer pefromMeshDraw];
     }
 }
-
 
 #pragma mark - Private
 

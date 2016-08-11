@@ -23,6 +23,8 @@
 @property (assign, nonatomic) FbxManager *fbxManager;
 @property (assign, nonatomic) FbxScene *fbxScene;
 
+@property (assign, nonatomic) BOOL hasAnimationInStack;
+
 @end
 
 @implementation FBX2GLModelMigrator
@@ -34,6 +36,7 @@
     self = [super init];
     if (self) {
         _avaliableModels = [NSMutableArray array];
+        _hasAnimationInStack = NO;
         
         [self prepareFBXObjects];
         if (![self loadObjectNamed:fileNamed]) {
@@ -48,10 +51,6 @@
 - (void)dealloc
 {
     DestroySdkObjects(_fbxManager, true);
-    
-    for (FBX2GLModel *model in self.avaliableModels) {
-        [model destroyModel];
-    }
 }
 
 #pragma mark - Private
@@ -67,6 +66,12 @@
     
     FbxString fbxSt([filePath cStringUsingEncoding:[NSString defaultCStringEncoding]]);
     bool bResult = LoadScene(_fbxManager, _fbxScene, fbxSt.Buffer());
+    
+    
+//    lAnimStackCount = lImporter->GetAnimStackCount();
+
+    
+    
     return (bResult);
 }
 
@@ -83,6 +88,7 @@
         if (mesh != NULL) {
             FBX2GLModel *meshSubModel = [[FBX2GLModel alloc] initWithMesh:mesh];
             if (meshSubModel.displayModel.numberOfIndises && meshSubModel.displayModel.numberOfVertices) {
+                
                 meshSubModel.globalTransfrorm = [self globalTransformNodeMatrix];
                 meshSubModel.localTransfrorm = [self localTransfromNodeMatrix:childNode];
                 

@@ -12,6 +12,8 @@
 
 @interface ViewController : GLKViewController
 
+@property (strong, nonatomic) NSString *fileName;
+@property (strong, nonatomic) NSString *textureName;
 
 @end
 

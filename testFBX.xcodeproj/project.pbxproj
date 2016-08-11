@@ -35,6 +35,12 @@
 		935628021D5B529400703284 /* Robo8.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628011D5B529400703284 /* Robo8.fbx */; };
 		935628041D5B544100703284 /* Robo8_full.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628031D5B544100703284 /* Robo8_full.fbx */; };
 		935628061D5B55CA00703284 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 935628051D5B55CA00703284 /* 2.png */; };
+		9356280A1D5B859700703284 /* Audi R8.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628091D5B859700703284 /* Audi R8.fbx */; };
+		9356280C1D5B859F00703284 /* sofa.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356280B1D5B859F00703284 /* sofa.fbx */; };
+		9356280E1D5B9C3900703284 /* Robo8_withoutPlane.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9356280D1D5B9C3900703284 /* Robo8_withoutPlane.fbx */; };
+		935628121D5C70E300703284 /* topfpflanze_final.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628111D5C70E300703284 /* topfpflanze_final.fbx */; };
+		935628141D5C710800703284 /* Flor Cartoon.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628131D5C710800703284 /* Flor Cartoon.fbx */; };
+		935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */; };
 		938092DC1D57C87E006C5D78 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DB1D57C87E006C5D78 /* GLKit.framework */; };
 		938092DE1D57C883006C5D78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DD1D57C883006C5D78 /* OpenGLES.framework */; };
 		938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */ = {isa = PBXBuildFile; fileRef = 938092F11D57D109006C5D78 /* cube_map_distribution.png */; };
@@ -109,6 +115,12 @@
 		935628011D5B529400703284 /* Robo8.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8.fbx; sourceTree = "<group>"; };
 		935628031D5B544100703284 /* Robo8_full.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8_full.fbx; sourceTree = "<group>"; };
 		935628051D5B55CA00703284 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		935628091D5B859700703284 /* Audi R8.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Audi R8.fbx"; sourceTree = "<group>"; };
+		9356280B1D5B859F00703284 /* sofa.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = sofa.fbx; sourceTree = "<group>"; };
+		9356280D1D5B9C3900703284 /* Robo8_withoutPlane.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8_withoutPlane.fbx; sourceTree = "<group>"; };
+		935628111D5C70E300703284 /* topfpflanze_final.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = topfpflanze_final.fbx; sourceTree = "<group>"; };
+		935628131D5C710800703284 /* Flor Cartoon.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Flor Cartoon.fbx"; sourceTree = "<group>"; };
+		935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ChubbyCat_BasicMesh.fbx; sourceTree = "<group>"; };
 		938092DB1D57C87E006C5D78 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		938092DD1D57C883006C5D78 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		938092F11D57D109006C5D78 /* cube_map_distribution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_map_distribution.png; sourceTree = "<group>"; };
@@ -427,6 +439,8 @@
 		935627B01D5A34E100703284 /* fbxFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9356280B1D5B859F00703284 /* sofa.fbx */,
+				935628091D5B859700703284 /* Audi R8.fbx */,
 				935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */,
 				935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */,
 				935627B11D5A350200703284 /* basketball.fbx */,
@@ -442,6 +456,10 @@
 				935628011D5B529400703284 /* Robo8.fbx */,
 				935628031D5B544100703284 /* Robo8_full.fbx */,
 				935627BB1D5A350200703284 /* Wood.fbx */,
+				9356280D1D5B9C3900703284 /* Robo8_withoutPlane.fbx */,
+				935628131D5C710800703284 /* Flor Cartoon.fbx */,
+				935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */,
+				935628111D5C70E300703284 /* topfpflanze_final.fbx */,
 				935627BC1D5A350200703284 /* Wood.obj */,
 			);
 			path = fbxFiles;
@@ -1067,19 +1085,24 @@
 				935628061D5B55CA00703284 /* 2.png in Resources */,
 				939099001D55E596001712B3 /* LaunchScreen.storyboard in Resources */,
 				935627C51D5A350200703284 /* semtex.fbx in Resources */,
+				9356280C1D5B859F00703284 /* sofa.fbx in Resources */,
 				935628041D5B544100703284 /* Robo8_full.fbx in Resources */,
 				935627C01D5A350200703284 /* CubiModel2.fbx in Resources */,
 				935627BD1D5A350200703284 /* basketball.fbx in Resources */,
 				935627CD1D5A44B300703284 /* chain.jpg in Resources */,
+				935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */,
+				9356280E1D5B9C3900703284 /* Robo8_withoutPlane.fbx in Resources */,
 				935627C61D5A350200703284 /* TreeSet3.fbx in Resources */,
 				935627C71D5A350200703284 /* Wood.fbx in Resources */,
 				935627F71D5B28AF00703284 /* Shader.vsh in Resources */,
 				935627C31D5A350200703284 /* Mine2.fbx in Resources */,
 				935627AD1D5A349000703284 /* semtex texture.png in Resources */,
+				9356280A1D5B859700703284 /* Audi R8.fbx in Resources */,
 				935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */,
 				939098FD1D55E596001712B3 /* Assets.xcassets in Resources */,
 				935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */,
 				935627BF1D5A350200703284 /* CubiModel.fbx in Resources */,
+				935628121D5C70E300703284 /* topfpflanze_final.fbx in Resources */,
 				935627BE1D5A350200703284 /* bench.FBX in Resources */,
 				935628021D5B529400703284 /* Robo8.fbx in Resources */,
 				935627A11D59C75E00703284 /* 1.png in Resources */,
@@ -1087,6 +1110,7 @@
 				938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */,
 				935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */,
 				935627C81D5A350200703284 /* Wood.obj in Resources */,
+				935628141D5C710800703284 /* Flor Cartoon.fbx in Resources */,
 				935627C41D5A350200703284 /* Mine3.fbx in Resources */,
 				935627F61D5B28AF00703284 /* Shader.fsh in Resources */,
 				935627C21D5A350200703284 /* Mine.fbx in Resources */,

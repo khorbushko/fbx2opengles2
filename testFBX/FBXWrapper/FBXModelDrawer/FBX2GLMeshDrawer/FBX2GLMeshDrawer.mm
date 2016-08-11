@@ -86,16 +86,21 @@
         glBindTexture(GL_TEXTURE_2D, _texture.name);
     }
     
-    
     glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-//        glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+//    glDrawElements(GL_TRIANGLE_FAN, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+//     glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 }
 
 - (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix
 {
-    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(baseMatrix), NULL);
-    _mvpMatrix = baseMatrix;
+    //scale
+    //rotate
+    //translate
+    _mvpMatrix = GLKMatrix4Multiply(baseMatrix, _source.globalTransfrorm);
+    _mvpMatrix = GLKMatrix4Multiply(_mvpMatrix, _source.localTransfrorm);
+
+    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_mvpMatrix), NULL);
 }
 
 #pragma mark - Private

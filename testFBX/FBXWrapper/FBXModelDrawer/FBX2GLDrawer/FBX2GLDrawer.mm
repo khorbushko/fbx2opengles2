@@ -81,9 +81,9 @@
 {
     float aspect = self.glView.frame.size.width / self.glView.frame.size.height;
     GLKMatrix4 projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(65.0f), aspect, 0.1f, 100);
-//    //scale
-//    //rotate
-//    //translate
+    //scale
+    //rotate
+    //translate
     GLKMatrix4 modelViewMatrix = GLKMatrix4MakeTranslation(0.0f, 0.0f, -1.5f);
     modelViewMatrix = GLKMatrix4Multiply(modelViewMatrix, projectionMatrix);
 
@@ -96,9 +96,6 @@
 
     modelViewMatrix = GLKMatrix4Multiply(scaleMatrix, modelViewMatrix);
     
-//    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(modelViewMatrix), NULL);
-//    _mvpMatrix = modelViewMatrix;
-
     for (FBX2GLMeshDrawer *meshGlDrawer in _glMeshDrawers) {
         [meshGlDrawer performMeshUpdateWithBaseMVPMatrix:modelViewMatrix];
     }

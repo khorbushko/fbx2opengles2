@@ -35,11 +35,17 @@
 //                     initWithModelNamed:@"cylinderProjection.fbx"];
 //                     initWithModelNamed:@"semtex.fbx"];
 //                     initWithModelNamed:@"CubiModel.fbx"];
-//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect texture?
+//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect draw
 //                     initWithModelNamed:@"bench.FBX"];
-//                     initWithModelNamed:@"Low Poly Chainsaw_blend.fbx"];//incorrect
+//                     initWithModelNamed:@"Low Poly Chainsaw_blend.fbx"];//incorrect draw
 //                     initWithModelNamed:@"Robo8.fbx"];
-                     initWithModelNamed:@"Robo8_full.fbx"];
+//                     initWithModelNamed:@"Robo8_full.fbx"];
+                     initWithModelNamed:@"Audi R8.fbx"];
+//                     initWithModelNamed:@"sofa.fbx"];
+//                     initWithModelNamed:@"Robo8_withoutPlane.fbx"];
+//                     initWithModelNamed:@"Flor Cartoon.fbx"];//particle not inmplemented
+//                     initWithModelNamed:@"topfpflanze_final.fbx"]; //ebene not implemented
+//                     initWithModelNamed:@"ChubbyCat_BasicMesh.fbx"]; //incorrect draw
 
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];

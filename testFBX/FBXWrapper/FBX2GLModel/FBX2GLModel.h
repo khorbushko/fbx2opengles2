@@ -18,6 +18,11 @@
 @property (assign, nonatomic) GLuint glIndex;
 @property (copy, nonatomic, readonly) NSString *textureFileName;
 
+@property (assign, nonatomic) GLKMatrix4 globalTransfrorm;
+@property (assign, nonatomic) GLKMatrix4 localTransfrorm;
+
+@property (copy, nonatomic) NSString *nodeName;
+
 - (instancetype)initWithMesh:(FbxMesh *)pMesh;
 
 - (void)printObjectWithDetails:(BOOL)details;

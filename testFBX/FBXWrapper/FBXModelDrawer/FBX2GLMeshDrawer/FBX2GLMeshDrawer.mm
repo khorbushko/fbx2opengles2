@@ -87,8 +87,8 @@
     }
     
     glDrawElements(GL_TRIANGLES, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+//    glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_TRIANGLE_FAN, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-//     glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 //    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
 }
 

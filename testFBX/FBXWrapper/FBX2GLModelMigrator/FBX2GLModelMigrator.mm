@@ -10,6 +10,7 @@
 
 #import "FBX2GLModelMigrator.h"
 #import "FBX2GLModel.h"
+#import "FBX2GLAnimationExtractor.h"
 
 #import "fbxsdk.h"
 #import "main.h"
@@ -22,6 +23,8 @@
 
 @property (assign, nonatomic) FbxManager *fbxManager;
 @property (assign, nonatomic) FbxScene *fbxScene;
+
+@property (strong, nonatomic) FBX2GLAnimationExtractor *fbxAnimator;
 
 @property (assign, nonatomic) BOOL hasAnimationInStack;
 
@@ -42,6 +45,7 @@
         if (![self loadObjectNamed:fileNamed]) {
             NSLog(@"Cant load model with name: %@", fileNamed);
         } else {
+            _fbxAnimator = [[FBX2GLAnimationExtractor alloc] initWithScene:_fbxScene];
             [self parseDataFromModel];
         }
     }
@@ -66,11 +70,7 @@
     
     FbxString fbxSt([filePath cStringUsingEncoding:[NSString defaultCStringEncoding]]);
     bool bResult = LoadScene(_fbxManager, _fbxScene, fbxSt.Buffer());
-    
-    
-//    lAnimStackCount = lImporter->GetAnimStackCount();
 
-    
     
     return (bResult);
 }

@@ -71,19 +71,38 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ov9-ic-fo1">
                         <rightBarButtonItems>
-                            <barButtonItem title="Triangles" id="aV5-0j-n0O">
+                            <barButtonItem image="triangles" id="aV5-0j-n0O">
+                                <color key="tintColor" red="0.34901960780000002" green="0.34509803919999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="trianglesMode:" destination="BYZ-38-t0r" id="wFs-2g-82v"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Triangles_Strip" id="OxL-kw-fnx">
+                            <barButtonItem image="fan" id="YI8-Nr-Xgc">
+                                <connections>
+                                    <action selector="fan:" destination="BYZ-38-t0r" id="JBr-dF-rgq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="tringles_strip" id="OxL-kw-fnx">
+                                <color key="tintColor" red="0.25882352939999997" green="0.27058823529999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="trianglesStrip:" destination="BYZ-38-t0r" id="SyJ-8h-fAP"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Lines" id="tRh-01-bRI">
+                            <barButtonItem image="Strip" id="tRh-01-bRI">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="linesMode:" destination="BYZ-38-t0r" id="d9X-pq-HKK"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Lines" id="z9X-rd-WOZ">
+                                <connections>
+                                    <action selector="lines:" destination="BYZ-38-t0r" id="1ec-Cv-o61"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Strip" id="oej-xI-2Bn">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="points:" destination="BYZ-38-t0r" id="KF8-9W-B5S"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -118,4 +137,11 @@
             <point key="canvasLocation" x="-464" y="341"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lines" width="32" height="32"/>
+        <image name="Strip" width="30" height="30"/>
+        <image name="fan" width="22" height="22"/>
+        <image name="triangles" width="32" height="32"/>
+        <image name="tringles_strip" width="32" height="32"/>
+    </resources>
 </document>

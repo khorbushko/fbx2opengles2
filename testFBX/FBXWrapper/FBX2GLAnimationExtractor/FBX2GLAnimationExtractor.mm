@@ -1,0 +1,56 @@
+//
+//  FBX2GLAnimationExtractor.m
+//  testFBX
+//
+//  Created by Kirill Gorbushko on 12.08.16.
+//  Copyright © 2016 - present Thinkmobiles. All rights reserved.
+//
+
+#import "FBX2GLAnimationExtractor.h"
+#import "FBX2GLAnimationPose.h"
+#import "FBX2GLAnimationStack.h"
+
+@implementation FBX2GLAnimationExtractor
+
+#pragma mark - LifeCycle
+
+- (instancetype)initWithScene:(FbxScene *)fbxScene
+{
+    self = [super init];
+    if (self) {
+        [self extractPosesFromScene:fbxScene];
+        [self extractAnimationStackFromScene:fbxScene];
+    }
+    return self;
+}
+
+#pragma mark - Private
+
+- (void)extractPosesFromScene:(FbxScene *)fbxScene
+{
+    int lPoseCount = fbxScene->GetPoseCount();
+    NSMutableArray *itemsPoses = [NSMutableArray array];
+    for (int i = 0; i < lPoseCount; i++) {
+        FbxPose* lPose = fbxScene->GetPose(i);
+        FBX2GLAnimationPose *pose = [[FBX2GLAnimationPose alloc] initItemPoseWithFbxPose:lPose];
+        [itemsPoses addObject:pose];
+    }
+    self.itemsPoses = itemsPoses;
+    
+    NSMutableArray *characterPoses = [NSMutableArray array];
+    lPoseCount = fbxScene->GetCharacterPoseCount();
+    for (int i = 0; i < lPoseCount; i++) {
+        FbxCharacterPose* lPose = fbxScene->GetCharacterPose(i);
+        
+        FBX2GLAnimationPose *pose = [[FBX2GLAnimationPose alloc] initCharacterPoseWithFbxPose:lPose];
+        [characterPoses addObject:pose];
+    }
+    self.charactersPoses = characterPoses;
+}
+
+- (void)extractAnimationStackFromScene:(FbxScene *)fbxScene
+{
+    self.animationStacks = [FBX2GLAnimationStack animationStacksFromScene:fbxScene];
+}
+
+@end

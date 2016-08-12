@@ -3,6 +3,12 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>name</key>
+		<string>dissolve.fbx</string>
+		<key>texture</key>
+		<string>1.png</string>
+	</dict>
+	<dict>
 		<key>texture</key>
 		<string>1.png</string>
 		<key>name</key>

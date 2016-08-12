@@ -11,7 +11,7 @@
 
 @interface FBX2GLModelMigrator : NSObject
 
-@property (strong, nonatomic) NSMutableArray <FBX2GLModel *> *avaliableModels;
+@property (strong, nonatomic) NSMutableArray <FBX2GLModel *> *avaliableModels; //meshes
 
 - (instancetype)initWithModelNamed:(NSString *)fileNamed;
 

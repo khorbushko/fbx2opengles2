@@ -104,6 +104,16 @@
     self.drawer.drawMode = GL_LINE_STRIP;
 }
 
+- (IBAction)lines:(id)sender
+{
+    self.drawer.drawMode = GL_LINES;
+}
+
+- (IBAction)points:(id)sender
+{
+    self.drawer.drawMode = GL_POINTS;
+}
+
 - (IBAction)trianglesMode:(UIBarButtonItem *)sender
 {
     self.drawer.drawMode = GL_TRIANGLES;
@@ -112,6 +122,11 @@
 - (IBAction)trianglesStrip:(UIBarButtonItem *)sender
 {
     self.drawer.drawMode = GL_TRIANGLE_STRIP;
+}
+
+- (IBAction)fan:(id)sender
+{
+    self.drawer.drawMode = GL_TRIANGLE_FAN;
 }
 
 @end

@@ -43,9 +43,20 @@
 		935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */; };
 		935628191D5CC87100703284 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935628181D5CC87100703284 /* ListViewController.m */; };
 		9356281B1D5CC92000703284 /* DataSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9356281A1D5CC92000703284 /* DataSource.plist */; };
+		9356281F1D5CF16A00703284 /* zomby_light.png in Resources */ = {isa = PBXBuildFile; fileRef = 9356281E1D5CF16A00703284 /* zomby_light.png */; };
+		935628211D5CF18300703284 /* zombie_normal.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628201D5CF18300703284 /* zombie_normal.fbx */; };
+		935628231D5CF20000703284 /* zombie_slow.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628221D5CF20000703284 /* zombie_slow.fbx */; };
+		935628251D5CF41F00703284 /* dissolve.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628241D5CF41F00703284 /* dissolve.fbx */; };
+		935628331D5DB03900703284 /* FBX2GLAnimationExtractor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */; };
+		935628371D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */; };
+		9356283B1D5DB44100703284 /* FBX2GLAnimationPose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */; };
 		938092DC1D57C87E006C5D78 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DB1D57C87E006C5D78 /* GLKit.framework */; };
 		938092DE1D57C883006C5D78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DD1D57C883006C5D78 /* OpenGLES.framework */; };
 		938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */ = {isa = PBXBuildFile; fileRef = 938092F11D57D109006C5D78 /* cube_map_distribution.png */; };
+		9389E26A1D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */; };
+		9389E26E1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */; };
+		9389E2721D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */; };
+		9389E2761D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */; };
 		939098F21D55E596001712B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F11D55E596001712B3 /* main.m */; };
 		939098F51D55E596001712B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F41D55E596001712B3 /* AppDelegate.m */; };
 		939098F81D55E596001712B3 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939098F71D55E596001712B3 /* ViewController.mm */; };
@@ -126,9 +137,27 @@
 		935628171D5CC87100703284 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		935628181D5CC87100703284 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		9356281A1D5CC92000703284 /* DataSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataSource.plist; sourceTree = "<group>"; };
+		9356281E1D5CF16A00703284 /* zomby_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zomby_light.png; sourceTree = "<group>"; };
+		935628201D5CF18300703284 /* zombie_normal.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie_normal.fbx; sourceTree = "<group>"; };
+		935628221D5CF20000703284 /* zombie_slow.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie_slow.fbx; sourceTree = "<group>"; };
+		935628241D5CF41F00703284 /* dissolve.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = dissolve.fbx; sourceTree = "<group>"; };
+		935628311D5DB03900703284 /* FBX2GLAnimationExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationExtractor.h; sourceTree = "<group>"; };
+		935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationExtractor.mm; sourceTree = "<group>"; };
+		935628351D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPoseMatrix.h; sourceTree = "<group>"; };
+		935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPoseMatrix.mm; sourceTree = "<group>"; };
+		935628391D5DB44100703284 /* FBX2GLAnimationPose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPose.h; sourceTree = "<group>"; };
+		9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPose.mm; sourceTree = "<group>"; };
 		938092DB1D57C87E006C5D78 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		938092DD1D57C883006C5D78 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		938092F11D57D109006C5D78 /* cube_map_distribution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_map_distribution.png; sourceTree = "<group>"; };
+		9389E2681D5E3AD600D5A6EE /* FBX2GLAnimationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationStack.h; sourceTree = "<group>"; };
+		9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationStack.mm; sourceTree = "<group>"; };
+		9389E26C1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationLayer.h; sourceTree = "<group>"; };
+		9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationLayer.mm; sourceTree = "<group>"; };
+		9389E2701D5E4A4400D5A6EE /* FBX2GlAnimationCurves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationCurves.h; sourceTree = "<group>"; };
+		9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationCurves.mm; sourceTree = "<group>"; };
+		9389E2741D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationCurveItem.h; sourceTree = "<group>"; };
+		9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationCurveItem.mm; sourceTree = "<group>"; };
 		939098ED1D55E596001712B3 /* testFBX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testFBX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939098F11D55E596001712B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		939098F31D55E596001712B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -444,6 +473,7 @@
 		935627B01D5A34E100703284 /* fbxFiles */ = {
 			isa = PBXGroup;
 			children = (
+				935628201D5CF18300703284 /* zombie_normal.fbx */,
 				9356280B1D5B859F00703284 /* sofa.fbx */,
 				935628091D5B859700703284 /* Audi R8.fbx */,
 				935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */,
@@ -465,6 +495,8 @@
 				935628131D5C710800703284 /* Flor Cartoon.fbx */,
 				935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */,
 				935628111D5C70E300703284 /* topfpflanze_final.fbx */,
+				935628221D5CF20000703284 /* zombie_slow.fbx */,
+				935628241D5CF41F00703284 /* dissolve.fbx */,
 				935627BC1D5A350200703284 /* Wood.obj */,
 			);
 			path = fbxFiles;
@@ -545,6 +577,39 @@
 			path = FBX2GLMeshDrawer;
 			sourceTree = "<group>";
 		};
+		935628301D5DB03900703284 /* FBX2GLAnimationExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				9389E2731D5E4E2800D5A6EE /* FBX2GLAnimationCurveItem */,
+				9389E26F1D5E4A3D00D5A6EE /* FBX2GLAnimationCurves */,
+				9389E26B1D5E3ECC00D5A6EE /* FBX2GlAnimationLayer */,
+				9389E2671D5E3ACC00D5A6EE /* FBX2GLAnimationStack */,
+				935628341D5DB17400703284 /* FBX2GLAnimationPoseMatrix */,
+				935628381D5DB43600703284 /* FBX2GLAnimationPose */,
+				935628311D5DB03900703284 /* FBX2GLAnimationExtractor.h */,
+				935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */,
+			);
+			path = FBX2GLAnimationExtractor;
+			sourceTree = "<group>";
+		};
+		935628341D5DB17400703284 /* FBX2GLAnimationPoseMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				935628351D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.h */,
+				935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */,
+			);
+			path = FBX2GLAnimationPoseMatrix;
+			sourceTree = "<group>";
+		};
+		935628381D5DB43600703284 /* FBX2GLAnimationPose */ = {
+			isa = PBXGroup;
+			children = (
+				935628391D5DB44100703284 /* FBX2GLAnimationPose.h */,
+				9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */,
+			);
+			path = FBX2GLAnimationPose;
+			sourceTree = "<group>";
+		};
 		938092F01D57D102006C5D78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,8 +618,45 @@
 				935627A01D59C75E00703284 /* 2.png */,
 				935628051D5B55CA00703284 /* 1.png */,
 				938092F11D57D109006C5D78 /* cube_map_distribution.png */,
+				9356281E1D5CF16A00703284 /* zomby_light.png */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		9389E2671D5E3ACC00D5A6EE /* FBX2GLAnimationStack */ = {
+			isa = PBXGroup;
+			children = (
+				9389E2681D5E3AD600D5A6EE /* FBX2GLAnimationStack.h */,
+				9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */,
+			);
+			path = FBX2GLAnimationStack;
+			sourceTree = "<group>";
+		};
+		9389E26B1D5E3ECC00D5A6EE /* FBX2GlAnimationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				9389E26C1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.h */,
+				9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */,
+			);
+			path = FBX2GlAnimationLayer;
+			sourceTree = "<group>";
+		};
+		9389E26F1D5E4A3D00D5A6EE /* FBX2GLAnimationCurves */ = {
+			isa = PBXGroup;
+			children = (
+				9389E2701D5E4A4400D5A6EE /* FBX2GlAnimationCurves.h */,
+				9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */,
+			);
+			path = FBX2GLAnimationCurves;
+			sourceTree = "<group>";
+		};
+		9389E2731D5E4E2800D5A6EE /* FBX2GLAnimationCurveItem */ = {
+			isa = PBXGroup;
+			children = (
+				9389E2741D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.h */,
+				9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */,
+			);
+			path = FBX2GLAnimationCurveItem;
 			sourceTree = "<group>";
 		};
 		939098E41D55E596001712B3 = {
@@ -1028,6 +1130,7 @@
 				93909C941D56084C001712B3 /* ObjectStucture.h */,
 				935627D11D5AFC7000703284 /* FBX2GLModel */,
 				935627E31D5B285F00703284 /* FBX2GLModelMigrator */,
+				935628301D5DB03900703284 /* FBX2GLAnimationExtractor */,
 				935627E71D5B28AF00703284 /* FBXModelDrawer */,
 			);
 			path = FBXWrapper;
@@ -1097,9 +1200,12 @@
 				935628041D5B544100703284 /* Robo8_full.fbx in Resources */,
 				935627C01D5A350200703284 /* CubiModel2.fbx in Resources */,
 				935627BD1D5A350200703284 /* basketball.fbx in Resources */,
+				935628251D5CF41F00703284 /* dissolve.fbx in Resources */,
 				935627CD1D5A44B300703284 /* chain.jpg in Resources */,
+				935628211D5CF18300703284 /* zombie_normal.fbx in Resources */,
 				935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */,
 				9356280E1D5B9C3900703284 /* Robo8_withoutPlane.fbx in Resources */,
+				935628231D5CF20000703284 /* zombie_slow.fbx in Resources */,
 				935627C61D5A350200703284 /* TreeSet3.fbx in Resources */,
 				935627C71D5A350200703284 /* Wood.fbx in Resources */,
 				935627F71D5B28AF00703284 /* Shader.vsh in Resources */,
@@ -1108,6 +1214,7 @@
 				9356280A1D5B859700703284 /* Audi R8.fbx in Resources */,
 				935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */,
 				939098FD1D55E596001712B3 /* Assets.xcassets in Resources */,
+				9356281F1D5CF16A00703284 /* zomby_light.png in Resources */,
 				935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */,
 				935627BF1D5A350200703284 /* CubiModel.fbx in Resources */,
 				9356281B1D5CC92000703284 /* DataSource.plist in Resources */,
@@ -1149,18 +1256,25 @@
 				93909A831D560177001712B3 /* DisplayAnimation.cxx in Sources */,
 				93909A881D560177001712B3 /* DisplayGlobalSettings.cxx in Sources */,
 				935627D41D5AFC7900703284 /* FBX2GLModel.mm in Sources */,
+				9356283B1D5DB44100703284 /* FBX2GLAnimationPose.mm in Sources */,
+				9389E26E1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm in Sources */,
 				93909A8B1D560177001712B3 /* DisplayLink.cxx in Sources */,
 				93909A951D560177001712B3 /* DisplaySkeleton.cxx in Sources */,
 				93909A891D560177001712B3 /* DisplayHierarchy.cxx in Sources */,
 				93909A871D560177001712B3 /* DisplayGenericInfo.cxx in Sources */,
 				935627F51D5B28AF00703284 /* FBX2GLProgram.m in Sources */,
+				9389E26A1D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm in Sources */,
 				93909A8E1D560177001712B3 /* DisplayMaterial.cxx in Sources */,
 				939098F81D55E596001712B3 /* ViewController.mm in Sources */,
+				935628371D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm in Sources */,
 				93909A841D560177001712B3 /* DisplayCache.cxx in Sources */,
 				93909A971D560177001712B3 /* DisplayUserProperties.cxx in Sources */,
 				939098F51D55E596001712B3 /* AppDelegate.m in Sources */,
+				9389E2761D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm in Sources */,
 				935627F41D5B28AF00703284 /* FBX2GLDrawer.mm in Sources */,
 				93909A961D560177001712B3 /* DisplayTexture.cxx in Sources */,
+				9389E2721D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm in Sources */,
+				935628331D5DB03900703284 /* FBX2GLAnimationExtractor.mm in Sources */,
 				939098F21D55E596001712B3 /* main.m in Sources */,
 				93909A8A1D560177001712B3 /* DisplayLight.cxx in Sources */,
 				93909A8D1D560177001712B3 /* DisplayMarker.cxx in Sources */,

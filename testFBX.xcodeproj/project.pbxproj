@@ -57,6 +57,14 @@
 		9389E26E1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */; };
 		9389E2721D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */; };
 		9389E2761D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */; };
+		9389E2791D5F03BC00D5A6EE /* Smiley_NoAnim.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */; };
+		9389E27A1D5F03BC00D5A6EE /* Smiley_Anim.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E2781D5F03BC00D5A6EE /* Smiley_Anim.FBX */; };
+		9389E27C1D5F0DB000D5A6EE /* smile_reimport.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */; };
+		9389E27E1D5F1E1B00D5A6EE /* zombii.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E27D1D5F1E1B00D5A6EE /* zombii.FBX */; };
+		9389E2801D5F277D00D5A6EE /* soldier.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E27F1D5F277D00D5A6EE /* soldier.FBX */; };
+		9389E2821D5F278900D5A6EE /* Soldier_new-1_diffuse.tga in Resources */ = {isa = PBXBuildFile; fileRef = 9389E2811D5F278900D5A6EE /* Soldier_new-1_diffuse.tga */; };
+		9389E3C41D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3C31D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx */; };
+		9389E3C61D5F512D00D5A6EE /* Bake_Col_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */; };
 		939098F21D55E596001712B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F11D55E596001712B3 /* main.m */; };
 		939098F51D55E596001712B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F41D55E596001712B3 /* AppDelegate.m */; };
 		939098F81D55E596001712B3 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939098F71D55E596001712B3 /* ViewController.mm */; };
@@ -158,6 +166,14 @@
 		9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationCurves.mm; sourceTree = "<group>"; };
 		9389E2741D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationCurveItem.h; sourceTree = "<group>"; };
 		9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationCurveItem.mm; sourceTree = "<group>"; };
+		9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smiley_NoAnim.FBX; sourceTree = "<group>"; };
+		9389E2781D5F03BC00D5A6EE /* Smiley_Anim.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smiley_Anim.FBX; sourceTree = "<group>"; };
+		9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = smile_reimport.fbx; sourceTree = "<group>"; };
+		9389E27D1D5F1E1B00D5A6EE /* zombii.FBX */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zombii.FBX; sourceTree = "<group>"; };
+		9389E27F1D5F277D00D5A6EE /* soldier.FBX */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = soldier.FBX; sourceTree = "<group>"; };
+		9389E2811D5F278900D5A6EE /* Soldier_new-1_diffuse.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Soldier_new-1_diffuse.tga"; sourceTree = "<group>"; };
+		9389E3C31D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx"; sourceTree = "<group>"; };
+		9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bake_Col_3.jpg; sourceTree = "<group>"; };
 		939098ED1D55E596001712B3 /* testFBX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testFBX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939098F11D55E596001712B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		939098F31D55E596001712B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -473,6 +489,10 @@
 		935627B01D5A34E100703284 /* fbxFiles */ = {
 			isa = PBXGroup;
 			children = (
+				9389E27F1D5F277D00D5A6EE /* soldier.FBX */,
+				9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */,
+				9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */,
+				9389E2781D5F03BC00D5A6EE /* Smiley_Anim.FBX */,
 				935628201D5CF18300703284 /* zombie_normal.fbx */,
 				9356280B1D5B859F00703284 /* sofa.fbx */,
 				935628091D5B859700703284 /* Audi R8.fbx */,
@@ -496,6 +516,8 @@
 				935628151D5C721A00703284 /* ChubbyCat_BasicMesh.fbx */,
 				935628111D5C70E300703284 /* topfpflanze_final.fbx */,
 				935628221D5CF20000703284 /* zombie_slow.fbx */,
+				9389E3C31D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx */,
+				9389E27D1D5F1E1B00D5A6EE /* zombii.FBX */,
 				935628241D5CF41F00703284 /* dissolve.fbx */,
 				935627BC1D5A350200703284 /* Wood.obj */,
 			);
@@ -613,6 +635,8 @@
 		938092F01D57D102006C5D78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */,
+				9389E2811D5F278900D5A6EE /* Soldier_new-1_diffuse.tga */,
 				935627CC1D5A44B300703284 /* chain.jpg */,
 				935627AC1D5A349000703284 /* semtex texture.png */,
 				935627A01D59C75E00703284 /* 2.png */,
@@ -1194,12 +1218,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				935628061D5B55CA00703284 /* 1.png in Resources */,
+				9389E2791D5F03BC00D5A6EE /* Smiley_NoAnim.FBX in Resources */,
 				939099001D55E596001712B3 /* LaunchScreen.storyboard in Resources */,
 				935627C51D5A350200703284 /* semtex.fbx in Resources */,
 				9356280C1D5B859F00703284 /* sofa.fbx in Resources */,
+				9389E27A1D5F03BC00D5A6EE /* Smiley_Anim.FBX in Resources */,
 				935628041D5B544100703284 /* Robo8_full.fbx in Resources */,
 				935627C01D5A350200703284 /* CubiModel2.fbx in Resources */,
 				935627BD1D5A350200703284 /* basketball.fbx in Resources */,
+				9389E3C61D5F512D00D5A6EE /* Bake_Col_3.jpg in Resources */,
+				9389E27C1D5F0DB000D5A6EE /* smile_reimport.fbx in Resources */,
 				935628251D5CF41F00703284 /* dissolve.fbx in Resources */,
 				935627CD1D5A44B300703284 /* chain.jpg in Resources */,
 				935628211D5CF18300703284 /* zombie_normal.fbx in Resources */,
@@ -1210,7 +1238,9 @@
 				935627C71D5A350200703284 /* Wood.fbx in Resources */,
 				935627F71D5B28AF00703284 /* Shader.vsh in Resources */,
 				935627C31D5A350200703284 /* Mine2.fbx in Resources */,
+				9389E3C41D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx in Resources */,
 				935627AD1D5A349000703284 /* semtex texture.png in Resources */,
+				9389E2801D5F277D00D5A6EE /* soldier.FBX in Resources */,
 				9356280A1D5B859700703284 /* Audi R8.fbx in Resources */,
 				935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */,
 				939098FD1D55E596001712B3 /* Assets.xcassets in Resources */,
@@ -1223,6 +1253,7 @@
 				935628021D5B529400703284 /* Robo8.fbx in Resources */,
 				935627A11D59C75E00703284 /* 2.png in Resources */,
 				939098FB1D55E596001712B3 /* Main.storyboard in Resources */,
+				9389E27E1D5F1E1B00D5A6EE /* zombii.FBX in Resources */,
 				938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */,
 				935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */,
 				935627C81D5A350200703284 /* Wood.obj in Resources */,
@@ -1230,6 +1261,7 @@
 				935627C41D5A350200703284 /* Mine3.fbx in Resources */,
 				935627F61D5B28AF00703284 /* Shader.fsh in Resources */,
 				935627C21D5A350200703284 /* Mine.fbx in Resources */,
+				9389E2821D5F278900D5A6EE /* Soldier_new-1_diffuse.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

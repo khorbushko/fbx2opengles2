@@ -4,6 +4,30 @@
 <array>
 	<dict>
 		<key>name</key>
+		<string>Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx</string>
+		<key>texture</key>
+		<string>Bake_Col_3.jpg</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>soldier.FBX</string>
+		<key>texture</key>
+		<string>Soldier_new-1_diffuse.tga</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>smile_reimport.fbx</string>
+		<key>texture</key>
+		<string>1.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Smiley_Anim.FBX</string>
+		<key>texture</key>
+		<string>1.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
 		<string>dissolve.fbx</string>
 		<key>texture</key>
 		<string>1.png</string>

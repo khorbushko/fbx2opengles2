@@ -13,7 +13,7 @@
 
 #pragma mark - LifeCYcle
 
-- (instancetype)initWithFbxAnimStack:(FbxAnimStack*)lAnimStack rootNode:(FbxNode *)pNode
+- (instancetype)initWithFbxAnimStack:(FbxAnimStack*)lAnimStack rootNode:(FbxNode *)pNode scene:(FbxScene *)pScene
 {
     self = [super init];
     if (self) {
@@ -21,7 +21,7 @@
         NSString *name = [NSString stringWithUTF8String:lAnimStack->GetName()];
         self.name = name;
         self.layersCount = lAnimStack->GetMemberCount<FbxAnimLayer>();
-        self.layers = [FBX2GlAnimationLayer parseLayersFromStack:lAnimStack rootNode:pNode];
+        self.layers = [FBX2GlAnimationLayer parseLayersFromStack:lAnimStack rootNode:pNode scene:pScene];
     }
     return self;
 }
@@ -35,7 +35,8 @@
         FbxAnimStack* lAnimStack = pScene->GetSrcObject<FbxAnimStack>(i);
 
         FBX2GLAnimationStack *stack = [[FBX2GLAnimationStack alloc] initWithFbxAnimStack:lAnimStack
-                                                                                rootNode:pScene->GetRootNode()];
+                                                                                rootNode:pScene->GetRootNode()
+                                                                                   scene:pScene];
         stack.index = i;
         
         [stacks addObject:stack];

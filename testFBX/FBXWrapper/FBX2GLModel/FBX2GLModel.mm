@@ -80,6 +80,7 @@
 
 - (void)generateModelWith:(FbxMesh *)pMesh
 {
+    
     int polygonCount = pMesh->GetPolygonCount();
     int totalObjSize = 0;
     for (int i = 0; i < polygonCount; ++i) {
@@ -93,12 +94,12 @@
         for (int j = 0; j< lPolygonSize; j++) {
             index++;
             if (j==2) {
-                pairCounter++;
-                if ((pairCounter % 2)) {
+                if ((pairCounter % 1)) {
                     index++;
                     index++;
                     pairCounter = 0;
                 }
+                pairCounter++;
             }
         }
     }
@@ -108,26 +109,26 @@
     
     index = 0;
     pairCounter = 0;
+    int indexElement = 0;
     for (int i = 0; i < polygonCount; i++) {
         int lPolygonSize = pMesh->GetPolygonSize(i);
         for (int j = 0; j< lPolygonSize; j++) {
-            _displayModel.indises[index++] = i*4 + j;
-            //  std::cout<<testIndices[index-1]<<"\n";
+            _displayModel.indises[index++] = indexElement + j;
             if (j==2) {
-                pairCounter++;
-                if ((pairCounter % 2)) {
+                if ((pairCounter % 1)) {
                     int firstIndex = index-3;
                     int secondIndex = index-1;
-                    _displayModel.indises[index++] = _displayModel.indises[firstIndex];
-                    //    std::cout<<testIndices[index-1]<<"\n";
                     _displayModel.indises[index++] = _displayModel.indises[secondIndex];
-                    //  std::cout<<testIndices[index-1]<<"\n";
+                    _displayModel.indises[index++] = _displayModel.indises[firstIndex];
                     pairCounter = 0;
                 }
+                pairCounter++;
             }
         }
+        indexElement += lPolygonSize;
     }
     
+
     int texturesUVCount = 0;
     int verticesOriginalCount = 0;
     int normalsOriginalCount = 0;
@@ -148,7 +149,6 @@
     _displayModel.vertices = new float[verticesOriginalCount];
     _displayModel.texCoords = new float[texturesUVCount];
     _displayModel.normals = new float[normalsOriginalCount];
-//    _displayModel.indises = indices;
     
     _displayModel.numberOfVertices = verticesOriginalCount;
     _displayModel.numberOfIndises = indicessCount;
@@ -157,6 +157,35 @@
     
     int i, j, lPolygonCount = pMesh->GetPolygonCount();
     FbxVector4* lControlPoints = pMesh->GetControlPoints();
+
+    //test area
+    
+//    _displayModel.numberOfIndises = pMesh->GetPolygonVertexCount();
+//    _displayModel.indises = new int[_displayModel.numberOfIndises];
+//    _displayModel.indises = pMesh->GetPolygonVertices();
+//
+    //
+//    NSMutableArray *indicesArray = [NSMutableArray array];
+//    for (int i =0; i< lPolygonCount; i++) {
+//        int indexCount = pMesh->GetPolygonSize(i);
+//        
+//        for (int j = 0; j< indexCount; j++) {
+//            [indicesArray addObject:@(pMesh->GetPolygonVertex(i, j))];
+//        }
+//    }
+//    
+//    _displayModel.indises = new int[indicesArray.count];
+//    for (int i = 0;i < indicesArray.count; i++) {
+//        _displayModel.indises[i] = (int)[indicesArray[i] integerValue];
+//    }
+//    _displayModel.numberOfIndises = (int)indicesArray.count;
+    
+//    assert(!(_displayModel.numberOfIndises % 3));
+//    for( auto it = 0; it < _displayModel.numberOfIndises; it += 3 ) {
+//        std::swap( _displayModel.indises[it], _displayModel.indises[it+2] );
+//    }
+
+    // end test area
     
 #ifdef PRINT_ENABLED
     char header[100];

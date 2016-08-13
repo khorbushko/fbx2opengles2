@@ -20,6 +20,8 @@
     if (self) {
         [self extractPosesFromScene:fbxScene];
         [self extractAnimationStackFromScene:fbxScene];
+        [self extractGlobalTimeSettingFromScene:fbxScene];
+        [self calculateExpectedTimingsForFrame];
     }
     return self;
 }
@@ -51,6 +53,30 @@
 - (void)extractAnimationStackFromScene:(FbxScene *)fbxScene
 {
     self.animationStacks = [FBX2GLAnimationStack animationStacksFromScene:fbxScene];
+}
+
+- (void)extractGlobalTimeSettingFromScene:(FbxScene *)fbxScene
+{
+    FbxGlobalSettings &pGlobalSettings = fbxScene->GetGlobalSettings();
+    
+    FbxTimeSpan lTs;
+    FbxTime lStart, lEnd;
+    pGlobalSettings.GetTimelineDefaultTimeSpan(lTs);
+    lStart = lTs.GetStart();
+    lEnd = lTs.GetStop();
+    char lTimeString[256];
+
+    _startTime = [[NSString stringWithUTF8String:lStart.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
+    _endTime = [[NSString stringWithUTF8String:lEnd.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
+    _duration = ABS(_startTime - _endTime);
+    
+    _timeModeFPS = [[NSString stringWithUTF8String:FbxGetTimeModeName(pGlobalSettings.GetTimeMode())] floatValue];
+}
+
+- (void)calculateExpectedTimingsForFrame
+{
+    NSInteger countOfLayers = [_animationStacks firstObject].layersCount;
+    
 }
 
 @end

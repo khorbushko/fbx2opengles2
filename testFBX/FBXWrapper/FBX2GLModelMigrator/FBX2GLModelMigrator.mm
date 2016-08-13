@@ -77,6 +77,9 @@
 
 - (void)parseDataFromModel
 {
+    FbxGeometryConverter converter(_fbxManager);
+    converter.Triangulate(_fbxScene, true);
+    
     FbxNode* modelNode = _fbxScene->GetRootNode();
     int childCount = modelNode->GetChildCount();
     FbxNode *childNode = 0;
@@ -84,6 +87,7 @@
     for (int i = 0; i < childCount; i++) {
         childNode = modelNode->GetChild(i);
         FbxMesh *mesh = childNode->GetMesh();
+        
         
         if (mesh != NULL) {
             FBX2GLModel *meshSubModel = [[FBX2GLModel alloc] initWithMesh:mesh];

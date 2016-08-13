@@ -39,13 +39,32 @@
 
 #pragma mark - Public
 
-+ (NSArray <FBX2GlAnimationLayer *> *)parseLayersFromStack:(FbxAnimStack *)pAnimStack rootNode:(FbxNode *)pNode
++ (NSArray <FBX2GlAnimationLayer *> *)parseLayersFromStack:(FbxAnimStack *)pAnimStack rootNode:(FbxNode *)pNode scene:(FbxScene *)pScene
 {
     NSMutableArray *layers = [NSMutableArray array];
+    
+    FbxArray<FbxString*> mAnimStackNameArray;
+    pScene->FillAnimStackNameArray(mAnimStackNameArray);
     
     int nbAnimLayers = pAnimStack->GetMemberCount<FbxAnimLayer>();
     for (int l = 0; l < nbAnimLayers; l++) {
         FbxAnimLayer* lAnimLayer = pAnimStack->GetMember<FbxAnimLayer>(l);
+        
+        FbxTakeInfo* lCurrentTakeInfo = pScene->GetTakeInfo(*(mAnimStackNameArray[l]));
+        if (lCurrentTakeInfo) {
+           FbxTime mStart = lCurrentTakeInfo->mLocalTimeSpan.GetStart();
+            double startSeconds = mStart.GetSecondDouble();
+            FbxTime mStop = lCurrentTakeInfo->mLocalTimeSpan.GetStop();
+            double endSeconds = mStop.GetSecondDouble();
+
+        } else {
+
+            FbxTimeSpan lTimeLineTimeSpan;
+            pScene->GetGlobalSettings().GetTimelineDefaultTimeSpan(lTimeLineTimeSpan);
+            
+            FbxTime mStart = lTimeLineTimeSpan.GetStart();
+            FbxTime mStop  = lTimeLineTimeSpan.GetStop();
+        }
         
         FBX2GlAnimationLayer *layer = [[FBX2GlAnimationLayer alloc] init];
         [layer fetchAnimationNameFromLayer:lAnimLayer rootNode:pNode];

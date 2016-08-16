@@ -16,6 +16,10 @@
 @property (strong, nonatomic) NSMutableArray *animationList;
 @property (strong, nonatomic) NSMutableArray <FBX2GlAnimationCurves *> *curves;
 
+@property (assign, nonatomic) double animationDurationSeconds;
+@property (assign, nonatomic) double animationStartSeconds;
+@property (assign, nonatomic) double animationEndSeconds;
+
 + (NSArray <FBX2GlAnimationLayer *> *)parseLayersFromStack:(FbxAnimStack *)pAnimStack rootNode:(FbxNode *)pNode scene:(FbxScene *)pScene;
 
 @end

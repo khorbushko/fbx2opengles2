@@ -24,6 +24,7 @@ typedef NS_ENUM(NSUInteger, PoseType) {
 @property (assign, nonatomic) PoseType type;
 
 @property (strong, nonatomic) NSArray <FBX2GLAnimationPoseMatrix *> *transfroms;
+@property (strong, nonatomic) NSMutableArray *acceptedTransformList;
 
 - (instancetype)initItemPoseWithFbxPose:(FbxPose *)pose;
 - (instancetype)initCharacterPoseWithFbxPose:(FbxCharacterPose *)pose;

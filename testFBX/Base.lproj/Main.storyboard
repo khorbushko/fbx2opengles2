@@ -66,12 +66,25 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GLKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0x-6D-mRN">
+                                <rect key="frame" x="20" y="72" width="77" height="30"/>
+                                <state key="normal" title="try animate"/>
+                                <connections>
+                                    <action selector="tryAnimateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FZs-Po-VpH"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Z0x-6D-mRN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="bGm-3e-RkX"/>
+                            <constraint firstItem="Z0x-6D-mRN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ugB-YN-xU2"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="ov9-ic-fo1">
                         <rightBarButtonItems>
-                            <barButtonItem image="triangles" id="aV5-0j-n0O">
+                            <barButtonItem image="Strip" id="aV5-0j-n0O">
                                 <color key="tintColor" red="0.34901960780000002" green="0.34509803919999998" blue="0.39607843139999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="trianglesMode:" destination="BYZ-38-t0r" id="wFs-2g-82v"/>
@@ -82,7 +95,7 @@
                                     <action selector="fan:" destination="BYZ-38-t0r" id="JBr-dF-rgq"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="tringles_strip" id="OxL-kw-fnx">
+                            <barButtonItem image="Strip" id="OxL-kw-fnx">
                                 <color key="tintColor" red="0.25882352939999997" green="0.27058823529999998" blue="0.28235294119999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="trianglesStrip:" destination="BYZ-38-t0r" id="SyJ-8h-fAP"/>
@@ -94,7 +107,7 @@
                                     <action selector="linesMode:" destination="BYZ-38-t0r" id="d9X-pq-HKK"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="Lines" id="z9X-rd-WOZ">
+                            <barButtonItem image="lines-1" id="z9X-rd-WOZ">
                                 <connections>
                                     <action selector="lines:" destination="BYZ-38-t0r" id="1ec-Cv-o61"/>
                                 </connections>
@@ -138,10 +151,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Lines" width="32" height="32"/>
         <image name="Strip" width="30" height="30"/>
         <image name="fan" width="22" height="22"/>
-        <image name="triangles" width="32" height="32"/>
-        <image name="tringles_strip" width="32" height="32"/>
+        <image name="lines-1" width="22" height="22"/>
     </resources>
 </document>

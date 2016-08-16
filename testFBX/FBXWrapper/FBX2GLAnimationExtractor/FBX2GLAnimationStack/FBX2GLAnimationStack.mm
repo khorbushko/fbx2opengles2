@@ -8,6 +8,8 @@
 
 #import "FBX2GLAnimationStack.h"
 #import "FBX2GlAnimationLayer.h"
+#import <GLKit/GLKit.h>
+
 
 @implementation FBX2GLAnimationStack
 
@@ -22,6 +24,13 @@
         self.name = name;
         self.layersCount = lAnimStack->GetMemberCount<FbxAnimLayer>();
         self.layers = [FBX2GlAnimationLayer parseLayersFromStack:lAnimStack rootNode:pNode scene:pScene];
+        
+        FbxTakeInfo *ltakeInfo  =  pScene->GetTakeInfo(lAnimStack->GetName());
+        FbxTime start = ltakeInfo->mLocalTimeSpan.GetStart();
+        FbxTime end = ltakeInfo->mLocalTimeSpan.GetStop();
+        
+        self.startTime = start.GetSecondDouble();
+        self.endTime = end.GetSecondDouble();
     }
     return self;
 }
@@ -33,12 +42,11 @@
     NSMutableArray *stacks = [NSMutableArray array];
     for (int i = 0; i < pScene->GetSrcObjectCount<FbxAnimStack>(); i++) {
         FbxAnimStack* lAnimStack = pScene->GetSrcObject<FbxAnimStack>(i);
-
+        
         FBX2GLAnimationStack *stack = [[FBX2GLAnimationStack alloc] initWithFbxAnimStack:lAnimStack
                                                                                 rootNode:pScene->GetRootNode()
                                                                                    scene:pScene];
         stack.index = i;
-        
         [stacks addObject:stack];
     }
     

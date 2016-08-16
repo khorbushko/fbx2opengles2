@@ -29,25 +29,6 @@
     
     NSAssert(self.fileName, @"filename cant be empty");
     self.migrator = [[FBX2GLModelMigrator alloc] initWithModelNamed:self.fileName];
-//                     initWithModelNamed:@"TreeSet3.fbx"];
-//                     initWithModelNamed:@"Mine.fbx"];
-//                     initWithModelNamed:@"Mine3.fbx"];
-//                     initWithModelNamed:@"basketball.fbx"];
-//                     initWithModelNamed:@"cylinderProjection.fbx"];
-//                     initWithModelNamed:@"semtex.fbx"];
-//                     initWithModelNamed:@"CubiModel.fbx"];
-//                     initWithModelNamed:@"Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"]; //incorrect draw
-//                     initWithModelNamed:@"bench.FBX"];
-//                     initWithModelNamed:@"Low Poly Chainsaw_blend.fbx"];//incorrect draw
-//                     initWithModelNamed:@"Robo8.fbx"];
-//                     initWithModelNamed:@"Robo8_full.fbx"];
-//                     initWithModelNamed:@"Audi R8.fbx"];
-//                     initWithModelNamed:@"sofa.fbx"];
-//                     initWithModelNamed:@"Robo8_withoutPlane.fbx"];
-//                     initWithModelNamed:@"Flor Cartoon.fbx"];//particle not inmplemented
-//                     initWithModelNamed:@"topfpflanze_final.fbx"]; //ebene not implemented
-//                     initWithModelNamed:@"ChubbyCat_BasicMesh.fbx"]; //incorrect draw
-
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     if (!self.context) {
@@ -61,6 +42,8 @@
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
         
     self.drawer = [[FBX2GLDrawer alloc] initWithContext:self.context withinView:view models:self.migrator.avaliableModels textureNamed:self.textureName];
+    [self.drawer attachAnimatorObject:self.migrator.fbxAnimator];
+    self.drawer.expectedFramerate = self.preferredFramesPerSecond;
 }
 
 - (void)didReceiveMemoryWarning
@@ -98,6 +81,11 @@
 }
 
 #pragma mark - IBactions
+
+- (IBAction)tryAnimateAction:(id)sender
+{
+    self.drawer.animate = !self.drawer.animate;
+}
 
 - (IBAction)linesMode:(UIBarButtonItem *)sender
 {

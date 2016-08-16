@@ -24,7 +24,6 @@
         }
     }
     return self;
-
 }
 
 #pragma mark - Public

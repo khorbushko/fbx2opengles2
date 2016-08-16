@@ -23,6 +23,9 @@
 
 @property (copy, nonatomic) NSString *nodeName;
 
+@property (assign, nonatomic) float *animationTransforms;
+@property (assign, nonatomic) GLuint animationTransformsCount;
+
 - (instancetype)initWithMesh:(FbxMesh *)pMesh;
 
 - (void)printObjectWithDetails:(BOOL)details;

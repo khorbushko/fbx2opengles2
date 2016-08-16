@@ -24,8 +24,6 @@
 @property (assign, nonatomic) FbxManager *fbxManager;
 @property (assign, nonatomic) FbxScene *fbxScene;
 
-@property (strong, nonatomic) FBX2GLAnimationExtractor *fbxAnimator;
-
 @property (assign, nonatomic) BOOL hasAnimationInStack;
 
 @end
@@ -88,20 +86,20 @@
         childNode = modelNode->GetChild(i);
         FbxMesh *mesh = childNode->GetMesh();
         
-        
         if (mesh != NULL) {
             FBX2GLModel *meshSubModel = [[FBX2GLModel alloc] initWithMesh:mesh];
             if (meshSubModel.displayModel.numberOfIndises && meshSubModel.displayModel.numberOfVertices) {
-                
                 meshSubModel.globalTransfrorm = [self globalTransformNodeMatrix];
                 meshSubModel.localTransfrorm = [self localTransfromNodeMatrix:childNode];
-                
                 const char* nodeName = childNode->GetName();
                 meshSubModel.nodeName = [NSString stringWithUTF8String:nodeName];
                 
                 [self.avaliableModels addObject:meshSubModel];
+                
+//                meshSubModel.animationTransforms = [self extractAnimFromMesh:mesh]; //test
+//                meshSubModel.animationTransformsCount = 121; //demo
             }
-          //  [self readTexturesNameFromNode:childNode];
+//            [self readTexturesNameFromNode:childNode];
         }
     }
 }
@@ -144,7 +142,7 @@
     return globalTransformationMatrix;
 }
 
-- (void)readTexturesNameFromNode:(FbxNode *)childNode
+/*- (void)readTexturesNameFromNode:(FbxNode *)childNode
 {
     int mCount = childNode->GetSrcObjectCount<FbxSurfaceMaterial>();
     
@@ -178,5 +176,112 @@
         }
     }
 }
+
+- (float *)extractAnimFromMesh:(FbxMesh *)mesh
+{
+    unsigned int numOfDeformers = mesh->GetDeformerCount();
+    float *elements;
+    
+    FbxNode* modelNode = _fbxScene->GetRootNode();
+    FbxAMatrix geometryTransform = GetGeometryTransformation(modelNode);
+    for (unsigned int deformerIndex = 0; deformerIndex < numOfDeformers; ++deformerIndex) {
+        FbxSkin* currSkin = reinterpret_cast<FbxSkin*>(mesh->GetDeformer(deformerIndex, FbxDeformer::eSkin));
+        if (!currSkin) {
+            continue;
+        }
+        unsigned int numOfClusters = currSkin->GetClusterCount();
+        float dur = 0;
+        for (unsigned int clusterIndex = 0; clusterIndex < numOfClusters; ++clusterIndex) {
+            FbxCluster* currCluster = currSkin->GetCluster(clusterIndex);
+            std::string currJointName = currCluster->GetLink()->GetName();
+
+            FbxAMatrix transformMatrix;
+            FbxAMatrix transformLinkMatrix;
+            FbxAMatrix globalBindposeInverseMatrix;
+            
+            currCluster->GetTransformMatrix(transformMatrix);	// The transformation of the mesh at binding time
+            currCluster->GetTransformLinkMatrix(transformLinkMatrix);	// The transformation of the cluster(joint) at binding time from joint space to world space
+            globalBindposeInverseMatrix = transformLinkMatrix.Inverse() * transformMatrix * geometryTransform;
+            
+            // Get animation information
+            // Now only supports one take
+            FbxAnimStack* currAnimStack = _fbxScene->GetSrcObject<FbxAnimStack>(0);
+            FbxString animStackName = currAnimStack->GetName();
+            char *mAnimationName = animStackName.Buffer();
+            FbxTakeInfo* takeInfo = _fbxScene->GetTakeInfo(animStackName);
+            FbxTime start = takeInfo->mLocalTimeSpan.GetStart();
+            FbxTime end = takeInfo->mLocalTimeSpan.GetStop();
+            FbxLongLong mAnimationLength = end.GetFrameCount(FbxTime::eFrames24) - start.GetFrameCount(FbxTime::eFrames24) + 1;
+
+            dur = end.GetSecondDouble() - start.GetSecondDouble();
+            
+            elements = new float [mAnimationLength * 16];
+            for (FbxLongLong i = start.GetFrameCount(FbxTime::eFrames24); i <= end.GetFrameCount(FbxTime::eFrames24); ++i) {
+                FbxTime currTime;
+                currTime.SetFrame(i, FbxTime::eFrames24);
+
+                FbxAMatrix currentTransformOffset = modelNode->EvaluateGlobalTransform(currTime) * geometryTransform;
+                FbxAMatrix mat = currentTransformOffset.Inverse() * currCluster->GetLink()->EvaluateGlobalTransform(currTime);
+                
+                FbxVector4 translation = mat.GetT();
+                
+                CGFloat kof = 100;
+                
+                translation[0] /= kof;
+                translation[1] /= kof;
+                translation[2] /= kof;
+                
+                float buf = translation[1];
+                translation[1] = translation[2];
+                translation[2] = buf;
+                
+                FbxVector4 rotation = mat.GetR();
+                
+                buf = rotation[1];
+                rotation[1] = rotation[2];
+                rotation[2] = buf;
+
+                FbxVector4 scale = mat.GetS();
+                
+                scale[0] /= kof;
+                scale[1] /= kof;
+                scale[2] /= kof;
+                
+                buf = scale[1];
+                scale[1] = scale[2];
+                scale[2] = buf;
+                
+                FbxAMatrix matrix = FbxAMatrix(translation, rotation, scale);
+                
+                mat.SetT(translation);
+                mat.SetR(rotation);
+                mat.SetS(scale);
+                
+                GLKMatrix4 localTransformGLK;
+                CGFloat *srcPointer = (CGFloat *)&mat;
+                GLfloat *destPointer = localTransformGLK.m;
+                for (int i = 0; i < 16; i++) {
+                    destPointer[i] = srcPointer[i];
+                    elements[i] = srcPointer[i];
+                }
+
+                NSLog(@"%@", NSStringFromGLKMatrix4(localTransformGLK));
+
+                
+            }
+            
+        }
+    }
+    return elements;
+}
+
+FbxAMatrix GetGeometryTransformation(FbxNode* inNode)
+{
+    const FbxVector4 lT = inNode->GetGeometricTranslation(FbxNode::eSourcePivot);
+    const FbxVector4 lR = inNode->GetGeometricRotation(FbxNode::eSourcePivot);
+    const FbxVector4 lS = inNode->GetGeometricScaling(FbxNode::eSourcePivot);
+    
+    return FbxAMatrix(lT, lR, lS);
+}*/
 
 @end

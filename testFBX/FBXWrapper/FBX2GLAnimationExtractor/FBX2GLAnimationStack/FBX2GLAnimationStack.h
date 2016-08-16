@@ -17,6 +17,9 @@
 @property (assign, nonatomic) NSInteger layersCount;
 @property (strong, nonatomic) NSString *name;
 
+@property (assign, nonatomic) double startTime;
+@property (assign, nonatomic) double endTime;
+
 @property (strong, nonatomic) NSArray <FBX2GlAnimationLayer *> *layers;
 
 + (NSArray <FBX2GLAnimationStack *> *)animationStacksFromScene:(FbxScene *)scene;

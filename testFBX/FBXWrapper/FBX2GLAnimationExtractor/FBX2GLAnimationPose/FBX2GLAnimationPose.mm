@@ -18,6 +18,7 @@
     self = [super init];
     if (self) {
         [self parseItemsSourcePose:pose];
+        [self prepareAcceptedTransformsList];
     }
     return self;
 }
@@ -27,6 +28,7 @@
     self = [super init];
     if (self) {
         [self parseCharacterSourcePose:pose];
+        [self prepareAcceptedTransformsList];
     }
     return self;
 }
@@ -50,6 +52,15 @@
     self.transfroms = [FBX2GLAnimationPoseMatrix extractCharactersPosesFromFBXCharacter:lCharacter];
     NSString *characterName = [NSString stringWithUTF8String:lCharacter->GetName()];
     self.poseName = characterName;
+}
+
+- (void)prepareAcceptedTransformsList
+{
+    _acceptedTransformList = [NSMutableArray array];
+    
+    for (FBX2GLAnimationPoseMatrix *mat in _transfroms) {
+        [_acceptedTransformList addObject:mat.itemName];
+    }
 }
 
 @end

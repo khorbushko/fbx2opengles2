@@ -17,8 +17,8 @@
 
 @property (strong, nonatomic) FBX2GLProgram *glProgram;
 @property (strong, nonatomic) FBX2GLTexture *texture;
-@property (strong, nonatomic) FBX2GLModel *source;
 @property (assign, nonatomic) FBXModel drawModel;
+@property (strong, nonatomic) FBX2GLModel *source;
 
 @end
 
@@ -44,11 +44,11 @@
 {
     self = [super self];
     if (self) {
-        
         NSAssert(meshModel.displayModel.numberOfIndises && meshModel.displayModel.numberOfVertices, @"glModel cant be empty");
         _drawModel = meshModel.displayModel;
         _source = meshModel;
         _drawElementsMode = GL_TRIANGLES;
+        _modelName = meshModel.nodeName;
         
         [self setupGLMashine];
         
@@ -88,9 +88,15 @@
     }
     
     glDrawElements(_drawElementsMode, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-    //    glDrawElements(GL_TRIANGLE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-//    glDrawElements(GL_TRIANGLE_FAN, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
-//    glDrawElements(GL_LINE_STRIP, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+}
+
+- (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix animMatrix:(GLKMatrix4)animMatrix
+{
+    _mvpMatrix = GLKMatrix4Multiply(baseMatrix, _source.globalTransfrorm);
+    _mvpMatrix = GLKMatrix4Multiply(_mvpMatrix, _source.localTransfrorm);
+    _mvpMatrix = GLKMatrix4Multiply(_mvpMatrix, animMatrix);
+    
+    _normalMatrix = GLKMatrix3InvertAndTranspose(GLKMatrix4GetMatrix3(_mvpMatrix), NULL);
 }
 
 - (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix

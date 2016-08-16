@@ -17,10 +17,9 @@
 {
     self = [super init];
     if (self) {
-        
         _curvesItems = [NSMutableArray array];
         
-        //general curver
+        //general curves
         FbxAnimCurve* lAnimCurve = NULL;
         lAnimCurve = pNode->LclTranslation.GetCurve(pAnimLayer, FBXSDK_CURVENODE_COMPONENT_X);
         if (lAnimCurve) {
@@ -59,40 +58,111 @@
             [self readCurve:lAnimCurve forName:CurveItemNameSZ];
         }
     }
-        
+    
+    _transformsCount = _curvesItems.count / 9;
+            
     return self;
 }
 
-//- (GLKMatrix4)curveMatrix
-//{
-//    GLKMatrix4 curveTranslate = GLKMatrix4Translate(GLKMatrix4Identity, _txValue, -_tyValue, _tzValue);
-//    GLKMatrix4 curveScale = GLKMatrix4MakeScale(_sxValue, -_syValue, _szValue);
-//    
-//    GLKMatrix4 curveRotate = GLKMatrix4MakeXRotation(GLKMathDegreesToRadians(_rxValue));
-//    curveRotate = GLKMatrix4RotateY(curveRotate, -GLKMathDegreesToRadians(_ryValue));
-//    curveRotate = GLKMatrix4RotateZ(curveRotate, GLKMathDegreesToRadians(_rzValue));
-//    
-//    GLKMatrix4 curveMatrix = GLKMatrix4Identity;
-//    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveScale);
-//    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveRotate);
-//    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveTranslate);
-//    
-//    return curveMatrix;
-//}
+- (GLKMatrix4)curveTransformForIndex:(NSInteger)transformIndex
+{
+    if (transformIndex >= _transformsCount) {
+        return GLKMatrix4Identity;
+    }
+    
+    float txValue = 0.0, tyValue = 0.0, tzValue = 0.0,
+          rxValue = 0.0, ryValue = 0.0, rzValue = 0.0,
+          sxValue = 0.0, syValue = 0.0, szValue = 0.0;
+    
+    int match = 0;
+    for (int i = 0 ;i < _transformsCount * 9; i++) {
+        FBX2GLAnimationCurveItem *item = self.curvesItems[i];
+        
+        if (item.index == transformIndex) {
+            switch (item.name) {
+                case CurveItemNameTX: {
+                    txValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameTY: {
+                    tyValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameTZ: {
+                    tzValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameRX: {
+                    rxValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameRY: {
+                    ryValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameRZ: {
+                    rzValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameSX: {
+                    sxValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameSY: {
+                    syValue = item.actualValue;
+                    match++;
+                    break;
+                }
+                case CurveItemNameSZ: {
+                    szValue = item.actualValue;
+                    match++;
+                    break;
+                }
+
+            }
+        }
+        if (match == 9) {
+            break;
+        }
+    }
+    
+    GLfloat divider = 1;
+
+    GLKMatrix4 curveTranslate = GLKMatrix4Translate(GLKMatrix4Identity, txValue / divider, tyValue/ divider, tzValue/ divider);
+    GLKMatrix4 curveScale = GLKMatrix4MakeScale(sxValue/ divider, syValue/ divider, szValue/ divider);
+
+    GLKMatrix4 curveRotate = GLKMatrix4MakeXRotation(GLKMathDegreesToRadians(rxValue));
+    curveRotate = GLKMatrix4RotateY(curveRotate, GLKMathDegreesToRadians(ryValue));
+    curveRotate = GLKMatrix4RotateZ(curveRotate, GLKMathDegreesToRadians(rzValue));
+
+    GLKMatrix4 curveMatrix = GLKMatrix4Identity;
+    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveScale);
+    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveRotate);
+    curveMatrix = GLKMatrix4Multiply(curveMatrix, curveTranslate);
+    
+    return curveMatrix;
+}
 
 #pragma mark - Private
 
 - (void)readCurve:(FbxAnimCurve *)curve forName:(CurveItemName)name
 {
     int lKeyCount = curve->KeyGetCount();
-    char lTimeString[256];
+
     for(int lCount = 0; lCount < lKeyCount; lCount++) {
-        float key = static_cast<float>(curve->KeyGetValue(lCount));
-        float value = [[NSString stringWithUTF8String:curve->KeyGetTime(lCount).GetTimeString(lTimeString, FbxUShort(256))] floatValue];
+        float actualValue = curve->KeyGetValue(lCount);
+        float value = curve->KeyGetTime(lCount).GetSecondDouble();
         
         FBX2GLAnimationCurveItem *item = [[FBX2GLAnimationCurveItem alloc] init];
-        item.key = key;
-        item.value = value;
+        item.actualValue = actualValue;
+        item.timingValue = value;
         item.name = name;
         item.index = lCount;
         

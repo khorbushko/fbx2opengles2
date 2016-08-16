@@ -9,6 +9,13 @@
 #import <OpenGLES/ES2/glext.h>
 #import "FBX2GLDrawer.h"
 #import "FBX2GLMeshDrawer.h"
+#import "FBX2GLAnimationExtractor.h"
+#import "FBX2GLAnimationPose.h"
+#import "FBX2GLAnimationStack.h"
+#import "FBX2GlAnimationLayer.h"
+#import "FBX2GlAnimationCurves.h"
+#import "FBX2GLAnimationCurveItem.h"
+#import "FBX2GLAnimationPoseMatrix.h"
 
 @interface FBX2GLDrawer()
 
@@ -20,6 +27,7 @@
 @property (assign, nonatomic) CGFloat prevScale;
 
 @property (strong, nonatomic) NSMutableArray <FBX2GLMeshDrawer *> *glMeshDrawers;
+@property (strong, nonatomic) FBX2GLAnimationExtractor *animator;
 
 @end
 
@@ -32,10 +40,9 @@
     GLfloat _scale;
     GLfloat _positionY;
     GLfloat _positionX;
-    
-    GLuint uniforms[UNIFORM_COUNT];
-    GLuint attributes[ATTRIBUTES_COUNT];
 }
+
+static GLint animationFrameCounter = 0;
 
 #pragma mark - Lifecycle
 
@@ -46,25 +53,17 @@
         NSAssert(glView, @"glView cant be nil");
         _glView = glView;
         [self setupViewInteractions];
-        
         NSAssert(context, @"glContextCant be nil");
         _glContext = context;
         
         _glMeshDrawers = [NSMutableArray array];
-        
         [EAGLContext setCurrentContext:self.glContext];
         for (FBX2GLModel *meshModel in models) {
             FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:textureNamed];
             [_glMeshDrawers addObject:drawer];
         }
         
-        _scale = 1;
-        _rotationX = 1;
-        _rotationY = 1;
-        _positionY = 0;
-        _positionX = 0;
-        
-        _drawMode = GL_TRIANGLES;
+        [self applyDefaultParameters];
     }
     
     return self;
@@ -77,28 +76,42 @@
         NSAssert(glView, @"glView cant be nil");
         _glView = glView;
         [self setupViewInteractions];
-        
         NSAssert(context, @"glContextCant be nil");
         _glContext = context;
         
         _glMeshDrawers = [NSMutableArray array];
-        
         [EAGLContext setCurrentContext:self.glContext];
         for (FBX2GLModel *meshModel in models) {
             FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:@"1.png"];
             [_glMeshDrawers addObject:drawer];
         }
-        
-        _scale = 1;
-        _rotationX = 1;
-        _rotationY = 1;
-        _positionY = 0;
-        _positionX = 0;
-        
-        _drawMode = GL_TRIANGLES;
+        [self applyDefaultParameters];
     }
     
     return self;
+}
+
+- (void)applyDefaultParameters
+{
+    _scale = 1;
+    _rotationX = 1;
+    _rotationY = 1;
+    _positionY = 0;
+    _positionX = 0;
+    
+    _drawMode = GL_TRIANGLES;
+}
+
+- (void)attachAnimatorObject:(FBX2GLAnimationExtractor *)animator
+{
+    _animator = animator;
+    animationFrameCounter = 0;
+}
+
+- (void)setAnimate:(GLboolean)animate
+{
+    _animate = animate;
+    animationFrameCounter = 0;
 }
 
 - (void)tearDown
@@ -130,7 +143,13 @@
     modelViewMatrix = GLKMatrix4Multiply(scaleMatrix, modelViewMatrix);
     
     for (FBX2GLMeshDrawer *meshGlDrawer in _glMeshDrawers) {
-        [meshGlDrawer performMeshUpdateWithBaseMVPMatrix:modelViewMatrix];
+        if (_animate && _animator) {
+            if (![self performAnimationForObject:meshGlDrawer withMatrix:modelViewMatrix]) {
+                [meshGlDrawer performMeshUpdateWithBaseMVPMatrix:modelViewMatrix];
+            }
+        } else {
+            [meshGlDrawer performMeshUpdateWithBaseMVPMatrix:modelViewMatrix];
+        }
     }
 }
 
@@ -162,6 +181,64 @@
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchInView:)];
     [_glView addGestureRecognizer:pinch];
+}
+
+#pragma mark - GLAnimations
+
+- (BOOL)performAnimationForObject:(FBX2GLMeshDrawer *)candidate withMatrix:(GLKMatrix4)mvpMatrix
+{
+    GLfloat koef = _animator.timeModeFPS / self.expectedFramerate;
+    GLint animTransformName = (int)(animationFrameCounter * koef);
+    
+    GLuint selectedStack = 0;
+    GLuint selectedLayer = 0;
+    
+    //        for (int i = 0; i < _animator.animationStacks.count; i++) { //basically 1, if more - few animations?
+    FBX2GLAnimationStack *currentStack = _animator.animationStacks[selectedStack];
+    //            for (int j = 0; j < currentStack.layers.count; j++) { //basically 1 if more - blended anim
+    FBX2GlAnimationLayer *currentlayer = currentStack.layers[selectedLayer];
+    if ([currentlayer.animationList containsObject:candidate.modelName]) {
+        //                    NSInteger indexOfMeshCurve = layer;//[currentlayer.animationList indexOfObject:candidate.modelName];
+        
+        GLKMatrix4 animMat = GLKMatrix4Identity;
+        for (int k = 0; k < currentlayer.curves.count; k++) {
+            FBX2GlAnimationCurves *currentCurves = currentlayer.curves[k];
+            GLKMatrix4 matItem = [currentCurves curveTransformForIndex:animTransformName];
+            if (isIdentityMatric(matItem)) {
+                continue;
+            }
+            //                            [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:matItem];
+            
+            animMat = GLKMatrix4Multiply(animMat, matItem);
+        }
+        [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:animMat];
+        
+    }
+    //            }
+    //        }
+    animationFrameCounter++;
+    if ( (GLfloat) animationFrameCounter * koef >= _animator.frameDuration) {
+        animationFrameCounter = 0;
+    }
+    //    }
+    
+    return YES;
+}
+
+#pragma mark - Utils
+
+GLboolean isIdentityMatric(GLKMatrix4 matrixToCompare) {
+    GLboolean isIdentty = YES;
+    GLKMatrix4 identity = GLKMatrix4Identity;
+    CGFloat *srcPointer = (CGFloat *)&identity;
+    GLfloat *destPointer = matrixToCompare.m;
+    for (int i = 0; i < 16; i++) {
+        if (destPointer[i] != srcPointer[i]) {
+            isIdentty = NO;
+            break;
+        }
+    }
+    return isIdentty;
 }
 
 #pragma mark - Interactions

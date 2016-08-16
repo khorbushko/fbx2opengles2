@@ -24,8 +24,8 @@ typedef NS_ENUM(NSUInteger, CurveItemName) {
 
 @interface FBX2GLAnimationCurveItem : NSObject
 
-@property (assign, nonatomic) CGFloat key;
-@property (assign, nonatomic) CGFloat value;
+@property (assign, nonatomic) CGFloat actualValue;
+@property (assign, nonatomic) CGFloat timingValue;
 @property (assign, nonatomic) CGFloat index;
 
 @property (assign, nonatomic) CurveItemName name;

@@ -14,9 +14,9 @@
 
 @interface FBX2GLAnimationExtractor : NSObject
 
-@property (assign, nonatomic) GLfloat startTime;
-@property (assign, nonatomic) GLfloat endTime;
-@property (assign, nonatomic) GLfloat duration;
+@property (assign, nonatomic) GLfloat startFameTime;
+@property (assign, nonatomic) GLfloat endFrameTime;
+@property (assign, nonatomic) GLfloat frameDuration;
 @property (assign, nonatomic) GLfloat timeModeFPS;
 
 @property (strong, nonatomic) NSArray <FBX2GLAnimationPose *> *itemsPoses;

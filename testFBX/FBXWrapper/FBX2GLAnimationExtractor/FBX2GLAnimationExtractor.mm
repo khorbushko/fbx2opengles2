@@ -21,7 +21,6 @@
         [self extractPosesFromScene:fbxScene];
         [self extractAnimationStackFromScene:fbxScene];
         [self extractGlobalTimeSettingFromScene:fbxScene];
-        [self calculateExpectedTimingsForFrame];
     }
     return self;
 }
@@ -66,17 +65,11 @@
     lEnd = lTs.GetStop();
     char lTimeString[256];
 
-    _startTime = [[NSString stringWithUTF8String:lStart.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
-    _endTime = [[NSString stringWithUTF8String:lEnd.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
-    _duration = ABS(_startTime - _endTime);
+    _startFameTime = [[NSString stringWithUTF8String:lStart.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
+    _endFrameTime = [[NSString stringWithUTF8String:lEnd.GetTimeString(lTimeString, FbxUShort(256))] floatValue];
+    _frameDuration = ABS(_startFameTime - _endFrameTime);
     
     _timeModeFPS = [[NSString stringWithUTF8String:FbxGetTimeModeName(pGlobalSettings.GetTimeMode())] floatValue];
-}
-
-- (void)calculateExpectedTimingsForFrame
-{
-    NSInteger countOfLayers = [_animationStacks firstObject].layersCount;
-    
 }
 
 @end

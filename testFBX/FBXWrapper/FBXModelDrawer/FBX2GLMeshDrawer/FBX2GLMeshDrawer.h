@@ -15,11 +15,13 @@
 @interface FBX2GLMeshDrawer : NSObject
 
 @property (assign, nonatomic) GLuint drawElementsMode;
+@property (strong, nonatomic) NSString *modelName;
 
 - (instancetype)initWithMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName;
 
 - (void)pefromMeshDraw;
 - (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix;
+- (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix animMatrix:(GLKMatrix4)animMatrix;
 
 - (void)tearDownGLDrawer;
 

@@ -80,7 +80,6 @@
 
 - (void)generateModelWith:(FbxMesh *)pMesh
 {
-    
     int polygonCount = pMesh->GetPolygonCount();
     int totalObjSize = 0;
     for (int i = 0; i < polygonCount; ++i) {
@@ -105,7 +104,7 @@
     }
 
     int indicessCount = index;
-    _displayModel.indises = new int [indicessCount]; //workaround - need to find solution
+    _displayModel.indises = new int [indicessCount];
     
     index = 0;
     pairCounter = 0;
@@ -127,7 +126,6 @@
         }
         indexElement += lPolygonSize;
     }
-    
 
     int texturesUVCount = 0;
     int verticesOriginalCount = 0;
@@ -158,35 +156,6 @@
     int i, j, lPolygonCount = pMesh->GetPolygonCount();
     FbxVector4* lControlPoints = pMesh->GetControlPoints();
 
-    //test area
-    
-//    _displayModel.numberOfIndises = pMesh->GetPolygonVertexCount();
-//    _displayModel.indises = new int[_displayModel.numberOfIndises];
-//    _displayModel.indises = pMesh->GetPolygonVertices();
-//
-    //
-//    NSMutableArray *indicesArray = [NSMutableArray array];
-//    for (int i =0; i< lPolygonCount; i++) {
-//        int indexCount = pMesh->GetPolygonSize(i);
-//        
-//        for (int j = 0; j< indexCount; j++) {
-//            [indicesArray addObject:@(pMesh->GetPolygonVertex(i, j))];
-//        }
-//    }
-//    
-//    _displayModel.indises = new int[indicesArray.count];
-//    for (int i = 0;i < indicesArray.count; i++) {
-//        _displayModel.indises[i] = (int)[indicesArray[i] integerValue];
-//    }
-//    _displayModel.numberOfIndises = (int)indicesArray.count;
-    
-//    assert(!(_displayModel.numberOfIndises % 3));
-//    for( auto it = 0; it < _displayModel.numberOfIndises; it += 3 ) {
-//        std::swap( _displayModel.indises[it], _displayModel.indises[it+2] );
-//    }
-
-    // end test area
-    
 #ifdef PRINT_ENABLED
     char header[100];
     DisplayString("    Polygons");
@@ -287,7 +256,6 @@
 #endif
                                 _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[0];
                                 _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(id)[1];
-                                
                             }
                                 break;
                             default:
@@ -304,7 +272,6 @@
 #endif
                                 _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[0];
                                 _displayModel.texCoords[texturesOffset++] = leUV->GetDirectArray().GetAt(lTextureUVIndex)[1];
-                                
                             }
                                 break;
                             default:
@@ -332,7 +299,6 @@
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[0];
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[1];
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(vertexId)[2];
-                            
                             break;
                         case FbxGeometryElement::eIndexToDirect: {
                             int id = leNormal->GetIndexArray().GetAt(vertexId);
@@ -342,7 +308,6 @@
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[0];
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[1];
                             _displayModel.normals[normalsOffset++] = leNormal->GetDirectArray().GetAt(id)[2];
-                            
                         }
                             break;
                         default:

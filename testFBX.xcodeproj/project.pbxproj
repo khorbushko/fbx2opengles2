@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930D70191D6C391E002315F3 /* 000001.obj in Resources */ = {isa = PBXBuildFile; fileRef = 930D70181D6C391E002315F3 /* 000001.obj */; };
+		930D701E1D6C7B3D002315F3 /* turtle.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 930D701D1D6C7B3D002315F3 /* turtle.fbx */; };
+		930D70201D6C7B47002315F3 /* turtleskingreen.tga in Resources */ = {isa = PBXBuildFile; fileRef = 930D701F1D6C7B47002315F3 /* turtleskingreen.tga */; };
 		935627A11D59C75E00703284 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A01D59C75E00703284 /* 2.png */; };
 		935627AD1D5A349000703284 /* semtex texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627AC1D5A349000703284 /* semtex texture.png */; };
 		935627BD1D5A350200703284 /* basketball.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B11D5A350200703284 /* basketball.fbx */; };
 		935627BE1D5A350200703284 /* bench.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 935627B21D5A350200703284 /* bench.FBX */; };
 		935627BF1D5A350200703284 /* CubiModel.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B31D5A350200703284 /* CubiModel.fbx */; };
-		935627C01D5A350200703284 /* CubiModel2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B41D5A350200703284 /* CubiModel2.fbx */; };
 		935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B51D5A350200703284 /* cylinderProjection.fbx */; };
 		935627C21D5A350200703284 /* Mine.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B61D5A350200703284 /* Mine.fbx */; };
-		935627C31D5A350200703284 /* Mine2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B71D5A350200703284 /* Mine2.fbx */; };
-		935627C41D5A350200703284 /* Mine3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B81D5A350200703284 /* Mine3.fbx */; };
 		935627C51D5A350200703284 /* semtex.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B91D5A350200703284 /* semtex.fbx */; };
 		935627C61D5A350200703284 /* TreeSet3.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627BA1D5A350200703284 /* TreeSet3.fbx */; };
 		935627C71D5A350200703284 /* Wood.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627BB1D5A350200703284 /* Wood.fbx */; };
@@ -67,8 +67,9 @@
 		9389E3C61D5F512D00D5A6EE /* Bake_Col_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */; };
 		9389E3C81D5F567600D5A6EE /* iPhone 6.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3C71D5F567600D5A6EE /* iPhone 6.fbx */; };
 		9389E3CA1D5F569C00D5A6EE /* iphone-6-02 (1).jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3C91D5F569C00D5A6EE /* iphone-6-02 (1).jpg */; };
-		9389E3D21D61F21400D5A6EE /* test.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3D11D61F21400D5A6EE /* test.fbx */; };
 		9389E3E31D62FB5E00D5A6EE /* Back Headlight.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3E21D62FB5E00D5A6EE /* Back Headlight.jpg */; };
+		9389E3E71D63175200D5A6EE /* FBX2GLBoneModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E3E61D63175200D5A6EE /* FBX2GLBoneModel.mm */; };
+		9389E3E91D63703800D5A6EE /* Rubik's Cube.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E3E81D63703800D5A6EE /* Rubik's Cube.FBX */; };
 		939098F21D55E596001712B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F11D55E596001712B3 /* main.m */; };
 		939098F51D55E596001712B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 939098F41D55E596001712B3 /* AppDelegate.m */; };
 		939098F81D55E596001712B3 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939098F71D55E596001712B3 /* ViewController.mm */; };
@@ -106,16 +107,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930D70181D6C391E002315F3 /* 000001.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 000001.obj; sourceTree = "<group>"; };
+		930D701D1D6C7B3D002315F3 /* turtle.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = turtle.fbx; sourceTree = "<group>"; };
+		930D701F1D6C7B47002315F3 /* turtleskingreen.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = turtleskingreen.tga; sourceTree = "<group>"; };
 		935627A01D59C75E00703284 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		935627AC1D5A349000703284 /* semtex texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semtex texture.png"; sourceTree = "<group>"; };
 		935627B11D5A350200703284 /* basketball.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = basketball.fbx; sourceTree = "<group>"; };
 		935627B21D5A350200703284 /* bench.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = bench.FBX; sourceTree = "<group>"; };
 		935627B31D5A350200703284 /* CubiModel.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel.fbx; sourceTree = "<group>"; };
-		935627B41D5A350200703284 /* CubiModel2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = CubiModel2.fbx; sourceTree = "<group>"; };
 		935627B51D5A350200703284 /* cylinderProjection.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = cylinderProjection.fbx; sourceTree = "<group>"; };
 		935627B61D5A350200703284 /* Mine.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine.fbx; sourceTree = "<group>"; };
-		935627B71D5A350200703284 /* Mine2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine2.fbx; sourceTree = "<group>"; };
-		935627B81D5A350200703284 /* Mine3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Mine3.fbx; sourceTree = "<group>"; };
 		935627B91D5A350200703284 /* semtex.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = semtex.fbx; sourceTree = "<group>"; };
 		935627BA1D5A350200703284 /* TreeSet3.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = TreeSet3.fbx; sourceTree = "<group>"; };
 		935627BB1D5A350200703284 /* Wood.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Wood.fbx; sourceTree = "<group>"; };
@@ -180,8 +181,10 @@
 		9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bake_Col_3.jpg; sourceTree = "<group>"; };
 		9389E3C71D5F567600D5A6EE /* iPhone 6.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iPhone 6.fbx"; sourceTree = "<group>"; };
 		9389E3C91D5F569C00D5A6EE /* iphone-6-02 (1).jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphone-6-02 (1).jpg"; sourceTree = "<group>"; };
-		9389E3D11D61F21400D5A6EE /* test.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.fbx; sourceTree = "<group>"; };
 		9389E3E21D62FB5E00D5A6EE /* Back Headlight.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Back Headlight.jpg"; sourceTree = "<group>"; };
+		9389E3E51D63175200D5A6EE /* FBX2GLBoneModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLBoneModel.h; sourceTree = "<group>"; };
+		9389E3E61D63175200D5A6EE /* FBX2GLBoneModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLBoneModel.mm; sourceTree = "<group>"; };
+		9389E3E81D63703800D5A6EE /* Rubik's Cube.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik's Cube.FBX"; sourceTree = "<group>"; };
 		939098ED1D55E596001712B3 /* testFBX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testFBX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		939098F11D55E596001712B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		939098F31D55E596001712B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -497,7 +500,8 @@
 		935627B01D5A34E100703284 /* fbxFiles */ = {
 			isa = PBXGroup;
 			children = (
-				9389E3D11D61F21400D5A6EE /* test.fbx */,
+				930D701D1D6C7B3D002315F3 /* turtle.fbx */,
+				9389E3E81D63703800D5A6EE /* Rubik's Cube.FBX */,
 				9389E27F1D5F277D00D5A6EE /* soldier.FBX */,
 				9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */,
 				9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */,
@@ -510,11 +514,8 @@
 				935627B11D5A350200703284 /* basketball.fbx */,
 				935627B21D5A350200703284 /* bench.FBX */,
 				935627B31D5A350200703284 /* CubiModel.fbx */,
-				935627B41D5A350200703284 /* CubiModel2.fbx */,
 				935627B51D5A350200703284 /* cylinderProjection.fbx */,
 				935627B61D5A350200703284 /* Mine.fbx */,
-				935627B71D5A350200703284 /* Mine2.fbx */,
-				935627B81D5A350200703284 /* Mine3.fbx */,
 				935627B91D5A350200703284 /* semtex.fbx */,
 				935627BA1D5A350200703284 /* TreeSet3.fbx */,
 				935628011D5B529400703284 /* Robo8.fbx */,
@@ -530,6 +531,7 @@
 				9389E3C71D5F567600D5A6EE /* iPhone 6.fbx */,
 				935628241D5CF41F00703284 /* dissolve.fbx */,
 				935627BC1D5A350200703284 /* Wood.obj */,
+				930D70181D6C391E002315F3 /* 000001.obj */,
 			);
 			path = fbxFiles;
 			sourceTree = "<group>";
@@ -537,6 +539,7 @@
 		935627D11D5AFC7000703284 /* FBX2GLModel */ = {
 			isa = PBXGroup;
 			children = (
+				9389E3E41D63174000D5A6EE /* FBX2GlBoneModel */,
 				935627D21D5AFC7900703284 /* FBX2GLModel.h */,
 				935627D31D5AFC7900703284 /* FBX2GLModel.mm */,
 			);
@@ -645,6 +648,7 @@
 		938092F01D57D102006C5D78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				930D701F1D6C7B47002315F3 /* turtleskingreen.tga */,
 				9389E3C51D5F512D00D5A6EE /* Bake_Col_3.jpg */,
 				9389E2811D5F278900D5A6EE /* Soldier_new-1_diffuse.tga */,
 				935627CC1D5A44B300703284 /* chain.jpg */,
@@ -693,6 +697,15 @@
 				9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */,
 			);
 			path = FBX2GLAnimationCurveItem;
+			sourceTree = "<group>";
+		};
+		9389E3E41D63174000D5A6EE /* FBX2GlBoneModel */ = {
+			isa = PBXGroup;
+			children = (
+				9389E3E51D63175200D5A6EE /* FBX2GLBoneModel.h */,
+				9389E3E61D63175200D5A6EE /* FBX2GLBoneModel.mm */,
+			);
+			path = FBX2GlBoneModel;
 			sourceTree = "<group>";
 		};
 		939098E41D55E596001712B3 = {
@@ -1229,15 +1242,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9389E3D21D61F21400D5A6EE /* test.fbx in Resources */,
 				935628061D5B55CA00703284 /* 1.png in Resources */,
 				9389E2791D5F03BC00D5A6EE /* Smiley_NoAnim.FBX in Resources */,
+				9389E3E91D63703800D5A6EE /* Rubik's Cube.FBX in Resources */,
 				939099001D55E596001712B3 /* LaunchScreen.storyboard in Resources */,
 				935627C51D5A350200703284 /* semtex.fbx in Resources */,
 				9356280C1D5B859F00703284 /* sofa.fbx in Resources */,
 				9389E27A1D5F03BC00D5A6EE /* Smiley_Anim.FBX in Resources */,
 				935628041D5B544100703284 /* Robo8_full.fbx in Resources */,
-				935627C01D5A350200703284 /* CubiModel2.fbx in Resources */,
 				935627BD1D5A350200703284 /* basketball.fbx in Resources */,
 				9389E3C61D5F512D00D5A6EE /* Bake_Col_3.jpg in Resources */,
 				9389E27C1D5F0DB000D5A6EE /* smile_reimport.fbx in Resources */,
@@ -1251,7 +1263,6 @@
 				935627C71D5A350200703284 /* Wood.fbx in Resources */,
 				935627F71D5B28AF00703284 /* Shader.vsh in Resources */,
 				9389E3E31D62FB5E00D5A6EE /* Back Headlight.jpg in Resources */,
-				935627C31D5A350200703284 /* Mine2.fbx in Resources */,
 				9389E3C41D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx in Resources */,
 				935627AD1D5A349000703284 /* semtex texture.png in Resources */,
 				9389E2801D5F277D00D5A6EE /* soldier.FBX in Resources */,
@@ -1269,15 +1280,17 @@
 				935628021D5B529400703284 /* Robo8.fbx in Resources */,
 				935627A11D59C75E00703284 /* 2.png in Resources */,
 				939098FB1D55E596001712B3 /* Main.storyboard in Resources */,
+				930D70191D6C391E002315F3 /* 000001.obj in Resources */,
 				9389E27E1D5F1E1B00D5A6EE /* zombii.FBX in Resources */,
+				930D701E1D6C7B3D002315F3 /* turtle.fbx in Resources */,
 				938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */,
 				935627C11D5A350200703284 /* cylinderProjection.fbx in Resources */,
 				935627C81D5A350200703284 /* Wood.obj in Resources */,
 				935628141D5C710800703284 /* Flor Cartoon.fbx in Resources */,
-				935627C41D5A350200703284 /* Mine3.fbx in Resources */,
 				935627F61D5B28AF00703284 /* Shader.fsh in Resources */,
 				935627C21D5A350200703284 /* Mine.fbx in Resources */,
 				9389E2821D5F278900D5A6EE /* Soldier_new-1_diffuse.tga in Resources */,
+				930D70201D6C7B47002315F3 /* turtleskingreen.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1301,6 +1314,7 @@
 				93909A981D560177001712B3 /* main.cxx in Sources */,
 				93909A8C1D560177001712B3 /* DisplayLodGroup.cxx in Sources */,
 				93909A821D560177001712B3 /* Common.cxx in Sources */,
+				9389E3E71D63175200D5A6EE /* FBX2GLBoneModel.mm in Sources */,
 				93909A831D560177001712B3 /* DisplayAnimation.cxx in Sources */,
 				93909A881D560177001712B3 /* DisplayGlobalSettings.cxx in Sources */,
 				935627D41D5AFC7900703284 /* FBX2GLModel.mm in Sources */,

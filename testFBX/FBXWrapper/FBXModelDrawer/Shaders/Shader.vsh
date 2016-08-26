@@ -27,7 +27,6 @@ void main()
     
     v_texCoordOut = vec2(a_texCoordIn.s, 1.0 - a_texCoordIn.t);//flip and mirror texture
 //    v_texCoordOut = vec2(1.0 - a_texCoordIn.s, 1.0 - a_texCoordIn.t);//flip and mirror and invert texture
-
     
 //    v_texCoordOut = a_texCoordIn;//original texture
 

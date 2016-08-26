@@ -6,6 +6,8 @@
 //  Copyright © 2016 - present Thinkmobiles. All rights reserved.
 //
 
+@class FBX2GLBoneModel;
+
 #include "fbxsdk.h"
 
 #import <Foundation/Foundation.h>
@@ -25,6 +27,8 @@
 
 @property (assign, nonatomic) float *animationTransforms;
 @property (assign, nonatomic) GLuint animationTransformsCount;
+
+@property (strong, nonatomic) NSMutableArray <FBX2GLBoneModel *> *bones;
 
 - (instancetype)initWithMesh:(FbxMesh *)pMesh;
 

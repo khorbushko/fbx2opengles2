@@ -16,6 +16,7 @@
 #import "FBX2GlAnimationCurves.h"
 #import "FBX2GLAnimationCurveItem.h"
 #import "FBX2GLAnimationPoseMatrix.h"
+#import "FBX2GLBoneModel.h"
 
 @interface FBX2GLDrawer()
 
@@ -28,6 +29,8 @@
 
 @property (strong, nonatomic) NSMutableArray <FBX2GLMeshDrawer *> *glMeshDrawers;
 @property (strong, nonatomic) FBX2GLAnimationExtractor *animator;
+
+@property (strong, nonatomic) FBX2GLModel *boneHolderMeshToClean;
 
 @end
 
@@ -58,11 +61,20 @@ static GLint animationFrameCounter = 0;
         
         _glMeshDrawers = [NSMutableArray array];
         [EAGLContext setCurrentContext:self.glContext];
-        for (FBX2GLModel *meshModel in models) {
-            FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:textureNamed];
-            [_glMeshDrawers addObject:drawer];
-        }
         
+        for (FBX2GLModel *meshModel in models) {
+            if (meshModel.bones.count) {
+                for (FBX2GLBoneModel *boneModel in meshModel.bones) {
+                    FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithBoneModel:boneModel parentMeshModel:meshModel textureName:textureNamed];
+                    [_glMeshDrawers addObject:drawer];
+                }
+                _boneHolderMeshToClean = meshModel;
+            } else {
+                FBX2GLMeshDrawer *drawer = [[FBX2GLMeshDrawer alloc] initWithMeshModel:meshModel textureName:textureNamed];
+                [_glMeshDrawers addObject:drawer];
+            }
+        }
+
         [self applyDefaultParameters];
     }
     
@@ -120,6 +132,10 @@ static GLint animationFrameCounter = 0;
     
     for (FBX2GLMeshDrawer *meshGlDrawer in _glMeshDrawers) {
         [meshGlDrawer tearDownGLDrawer];
+    }
+    
+    if (_boneHolderMeshToClean) {
+        [_boneHolderMeshToClean destroyModel];
     }
 }
 
@@ -187,40 +203,74 @@ static GLint animationFrameCounter = 0;
 
 - (BOOL)performAnimationForObject:(FBX2GLMeshDrawer *)candidate withMatrix:(GLKMatrix4)mvpMatrix
 {
-    GLfloat koef = _animator.timeModeFPS / self.expectedFramerate;
+    GLfloat koef = 0.05;//_animator.timeModeFPS / self.expectedFramerate;
     GLint animTransformName = (int)(animationFrameCounter * koef);
     
     GLuint selectedStack = 0;
     GLuint selectedLayer = 0;
     
-    //        for (int i = 0; i < _animator.animationStacks.count; i++) { //basically 1, if more - few animations?
-    FBX2GLAnimationStack *currentStack = _animator.animationStacks[selectedStack];
-    //            for (int j = 0; j < currentStack.layers.count; j++) { //basically 1 if more - blended anim
-    FBX2GlAnimationLayer *currentlayer = currentStack.layers[selectedLayer];
-    if ([currentlayer.animationList containsObject:candidate.modelName]) {
-        //                    NSInteger indexOfMeshCurve = layer;//[currentlayer.animationList indexOfObject:candidate.modelName];
+    //within curves
+//    if (!_animator.animationStacks.count) {
+//        return NO;
+//    }
+////    for (int i = 0; i < _animator.animationStacks.count; i++) { //basically 1, if more - few animations?
+//        FBX2GLAnimationStack *currentStack = _animator.animationStacks[selectedStack];
+////        for (int j = 0; j < currentStack.layers.count; j++) { //basically 1 if more - blended anim
+//            if (!currentStack.layers.count) {
+//                return NO;
+//            }
+//            FBX2GlAnimationLayer *currentlayer = currentStack.layers[selectedLayer];
+//    
+//                    if (candidate.boneModel) {
+//                        if ([currentlayer.animationList containsObject:candidate.boneModel.boneName]) {
+//                            NSInteger index = [currentlayer.animationList indexOfObject:candidate.boneModel.boneName];
+//                            FBX2GlAnimationCurves *currentCurves = currentlayer.curves[index];
+//                            GLKMatrix4 matItem = [currentCurves curveTransformForIndex:animTransformName];
+//                            [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:matItem];
+//                        }
+//                    }
+//
+//    //        }
+////    }
+//    animationFrameCounter++;
+//    if ( (GLfloat) animationFrameCounter * koef >= _animator.frameDuration) {
+//        animationFrameCounter = 0;
+//    }
+
+    
+    //within matrices
+    
+    if (candidate.boneModel) {
+        int offcet = (int)(animTransformName * 16);
+        GLKMatrix4 transform = GLKMatrix4Identity;
+        int startPoint = offcet + 0;
         
-        GLKMatrix4 animMat = GLKMatrix4Identity;
-        for (int k = 0; k < currentlayer.curves.count; k++) {
-            FBX2GlAnimationCurves *currentCurves = currentlayer.curves[k];
-            GLKMatrix4 matItem = [currentCurves curveTransformForIndex:animTransformName];
-            if (isIdentityMatric(matItem)) {
-                continue;
-            }
-            //                            [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:matItem];
-            
-            animMat = GLKMatrix4Multiply(animMat, matItem);
+        transform = GLKMatrix4Make(candidate.boneModel.rawMatrixData[startPoint],
+                                   candidate.boneModel.rawMatrixData[startPoint+1],
+                                   candidate.boneModel.rawMatrixData[startPoint+2],
+                                   candidate.boneModel.rawMatrixData[startPoint+3],
+                                   candidate.boneModel.rawMatrixData[startPoint+4],
+                                   candidate.boneModel.rawMatrixData[startPoint+5],
+                                   candidate.boneModel.rawMatrixData[startPoint+6],
+                                   candidate.boneModel.rawMatrixData[startPoint+7],
+                                   candidate.boneModel.rawMatrixData[startPoint+8],
+                                   candidate.boneModel.rawMatrixData[startPoint+9],
+                                   candidate.boneModel.rawMatrixData[startPoint+10],
+                                   candidate.boneModel.rawMatrixData[startPoint+11],
+                                   candidate.boneModel.rawMatrixData[startPoint+12],
+                                   candidate.boneModel.rawMatrixData[startPoint+13],
+                                   candidate.boneModel.rawMatrixData[startPoint+14],
+                                   candidate.boneModel.rawMatrixData[startPoint+15]);
+        
+        [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:transform];
+
+        animationFrameCounter++;
+        if ( (GLfloat) animationFrameCounter * koef >= candidate.boneModel.matrixCount) {
+            animationFrameCounter = 0;
         }
-        [candidate performMeshUpdateWithBaseMVPMatrix:mvpMatrix animMatrix:animMat];
-        
+
     }
-    //            }
-    //        }
-    animationFrameCounter++;
-    if ( (GLfloat) animationFrameCounter * koef >= _animator.frameDuration) {
-        animationFrameCounter = 0;
-    }
-    //    }
+    
     
     return YES;
 }

@@ -9,6 +9,8 @@
 #include <iostream>
 
 #import "FBX2GLModel.h"
+#import "FBX2GLBoneModel.h"
+
 #import "main.h"
 #import "Common.h"
 
@@ -20,6 +22,7 @@
 {
     self = [super init];
     if (self) {
+        _bones = [NSMutableArray array];
         [self generateModelWith:pMesh];
     }
     return self;
@@ -39,7 +42,10 @@
     if (_displayModel.texCoords) {
         free(_displayModel.texCoords);
     }
-//    free(&(_displayModel));
+    
+    for (FBX2GLBoneModel *bone in self.bones) {
+        [bone cleanUp];
+    }
 }
 
 #pragma mark - Public
@@ -126,7 +132,7 @@
         }
         indexElement += lPolygonSize;
     }
-
+    
     int texturesUVCount = 0;
     int verticesOriginalCount = 0;
     int normalsOriginalCount = 0;

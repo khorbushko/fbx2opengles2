@@ -12,6 +12,7 @@
 #import "FBX2GLTexture.h"
 #import "FBX2GLProgram.h"
 #import "FBX2GLModel.h"
+#import "FBX2GLBoneModel.h"
 
 @interface FBX2GLMeshDrawer()
 
@@ -40,6 +41,26 @@
 
 #pragma mark - LifeCycle
 
+- (instancetype)initWithBoneModel:(FBX2GLBoneModel *)boneModel parentMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName
+{
+    self = [super self];
+    if (self) {
+//        NSAssert(meshModel.displayModel.numberOfIndises && meshModel.displayModel.numberOfVertices, @"glModel cant be empty");
+        _drawModel = meshModel.displayModel;
+        _source = meshModel;
+        _drawElementsMode = GL_TRIANGLES;
+        _modelName = meshModel.nodeName;
+        _boneModel = boneModel;
+        
+        [self setupGLMashine];
+        
+        _texture = [[FBX2GLTexture alloc] initFromImageNamed:textureName];
+        [_texture setupTexture];
+    }
+    return self;
+}
+
+
 - (instancetype)initWithMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName
 {
     self = [super self];
@@ -67,7 +88,9 @@
     
     glDeleteVertexArraysOES(1, &_vertextArray);
     [self.glProgram destroyProgram];
-    [_source destroyModel];
+    if (!_boneModel) {
+        [_source destroyModel];
+    }
     [_texture cleanUpTexture];
 }
 
@@ -87,7 +110,14 @@
         glBindTexture(GL_TEXTURE_2D, _texture.name);
     }
     
-    glDrawElements(_drawElementsMode, _drawModel.numberOfIndises, GL_UNSIGNED_INT, 0);
+    GLuint offcetPoint = 0;
+
+//    if (_boneModel) {
+//        glDrawElements(_drawElementsMode, _boneModel.indicesCount, GL_UNSIGNED_INT, (GLvoid*) (sizeof(GLuint) * offcetPoint));
+//    } else {
+        glDrawElements(_drawElementsMode, _drawModel.numberOfIndises, GL_UNSIGNED_INT, (GLvoid*) (sizeof(GLuint) * offcetPoint));
+//    }
+
 }
 
 - (void)performMeshUpdateWithBaseMVPMatrix:(GLKMatrix4)baseMatrix animMatrix:(GLKMatrix4)animMatrix
@@ -154,7 +184,12 @@
     //indices order
     glGenBuffers(1, &_indisesBuffer);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, _indisesBuffer);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _drawModel.numberOfIndises, _drawModel.indises, GL_STATIC_DRAW);
+
+//    if (_boneModel) {
+//        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _boneModel.indicesCount, _boneModel.indices, GL_STATIC_DRAW);
+//    } else {
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(GLuint) * _drawModel.numberOfIndises, _drawModel.indises, GL_STATIC_DRAW);
+//    }
     
     if (_drawModel.numberOfNormals) {
         //normals

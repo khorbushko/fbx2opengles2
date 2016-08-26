@@ -4,15 +4,27 @@
 <array>
 	<dict>
 		<key>name</key>
-		<string>zombii.FBX</string>
+		<string>turtle.fbx</string>
 		<key>texture</key>
-		<string>zomby_light.png</string>
+		<string>turtleskingreen.tga</string>
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>test.fbx</string>
+		<string>Wood.obj</string>
 		<key>texture</key>
 		<string>1.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Rubik&apos;s Cube.FBX</string>
+		<key>texture</key>
+		<string>1.png</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>zombii.FBX</string>
+		<key>texture</key>
+		<string>zomby_light.png</string>
 	</dict>
 	<dict>
 		<key>name</key>
@@ -34,12 +46,6 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>smile_reimport.fbx</string>
-		<key>texture</key>
-		<string>1.png</string>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>Smiley_Anim.FBX</string>
 		<key>texture</key>
 		<string>1.png</string>
@@ -55,12 +61,6 @@
 		<string>1.png</string>
 		<key>name</key>
 		<string>TreeSet3.fbx</string>
-	</dict>
-	<dict>
-		<key>texture</key>
-		<string>1.png</string>
-		<key>name</key>
-		<string>Mine3.fbx</string>
 	</dict>
 	<dict>
 		<key>texture</key>

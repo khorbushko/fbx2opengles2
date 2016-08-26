@@ -7,6 +7,7 @@
 //
 
 @class FBX2GLModel;
+@class FBX2GLBoneModel;
 
 #import <Foundation/Foundation.h>
 #import <GLKit/GLKit.h>
@@ -16,7 +17,9 @@
 
 @property (assign, nonatomic) GLuint drawElementsMode;
 @property (strong, nonatomic) NSString *modelName;
+@property (strong, nonatomic) FBX2GLBoneModel *boneModel;
 
+- (instancetype)initWithBoneModel:(FBX2GLBoneModel *)boneModel parentMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName;
 - (instancetype)initWithMeshModel:(FBX2GLModel *)meshModel textureName:(NSString *)textureName;
 
 - (void)pefromMeshDraw;

@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930D73241D702F58002315F3 /* FBX2GLAnimationCurveItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D72FB1D702F58002315F3 /* FBX2GLAnimationCurveItem.mm */; };
+		930D73251D702F58002315F3 /* FBX2GlAnimationCurves.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D72FE1D702F58002315F3 /* FBX2GlAnimationCurves.mm */; };
+		930D73261D702F58002315F3 /* FBX2GLAnimationExtractor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73001D702F58002315F3 /* FBX2GLAnimationExtractor.mm */; };
+		930D73271D702F58002315F3 /* FBX2GlAnimationLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73031D702F58002315F3 /* FBX2GlAnimationLayer.mm */; };
+		930D73281D702F58002315F3 /* FBX2GLAnimationPose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73061D702F58002315F3 /* FBX2GLAnimationPose.mm */; };
+		930D73291D702F58002315F3 /* FBX2GLAnimationPoseMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73091D702F58002315F3 /* FBX2GLAnimationPoseMatrix.mm */; };
+		930D732A1D702F58002315F3 /* FBX2GLAnimationStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D730C1D702F58002315F3 /* FBX2GLAnimationStack.mm */; };
+		930D732B1D702F58002315F3 /* FBX2GLModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D730F1D702F58002315F3 /* FBX2GLModel.mm */; };
+		930D732C1D702F58002315F3 /* FBX2GLModelMigrator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73121D702F58002315F3 /* FBX2GLModelMigrator.mm */; };
+		930D732D1D702F58002315F3 /* FBX2GLDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73161D702F58002315F3 /* FBX2GLDrawer.mm */; };
+		930D732E1D702F58002315F3 /* FBX2GLMeshDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 930D73191D702F58002315F3 /* FBX2GLMeshDrawer.mm */; };
+		930D732F1D702F58002315F3 /* FBX2GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D731C1D702F58002315F3 /* FBX2GLProgram.m */; };
+		930D73301D702F58002315F3 /* FBX2GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 930D731F1D702F58002315F3 /* FBX2GLTexture.m */; };
+		930D73311D702F58002315F3 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 930D73211D702F58002315F3 /* Shader.fsh */; };
+		930D73321D702F58002315F3 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 930D73221D702F58002315F3 /* Shader.vsh */; };
 		935627A11D59C75E00703284 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627A01D59C75E00703284 /* 2.png */; };
 		935627AD1D5A349000703284 /* semtex texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 935627AC1D5A349000703284 /* semtex texture.png */; };
 		935627BD1D5A350200703284 /* basketball.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627B11D5A350200703284 /* basketball.fbx */; };
@@ -24,14 +39,6 @@
 		935627CB1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */; };
 		935627CD1D5A44B300703284 /* chain.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 935627CC1D5A44B300703284 /* chain.jpg */; };
 		935627CF1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */; };
-		935627D41D5AFC7900703284 /* FBX2GLModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935627D31D5AFC7900703284 /* FBX2GLModel.mm */; };
-		935627E61D5B287700703284 /* FBX2GLModelMigrator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935627E51D5B287700703284 /* FBX2GLModelMigrator.mm */; };
-		935627F41D5B28AF00703284 /* FBX2GLDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935627EA1D5B28AF00703284 /* FBX2GLDrawer.mm */; };
-		935627F51D5B28AF00703284 /* FBX2GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 935627ED1D5B28AF00703284 /* FBX2GLProgram.m */; };
-		935627F61D5B28AF00703284 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 935627EF1D5B28AF00703284 /* Shader.fsh */; };
-		935627F71D5B28AF00703284 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 935627F01D5B28AF00703284 /* Shader.vsh */; };
-		935627FC1D5B28DA00703284 /* FBX2GLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 935627FB1D5B28DA00703284 /* FBX2GLTexture.m */; };
-		935628001D5B336C00703284 /* FBX2GLMeshDrawer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935627FF1D5B336C00703284 /* FBX2GLMeshDrawer.mm */; };
 		935628021D5B529400703284 /* Robo8.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628011D5B529400703284 /* Robo8.fbx */; };
 		935628041D5B544100703284 /* Robo8_full.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628031D5B544100703284 /* Robo8_full.fbx */; };
 		935628061D5B55CA00703284 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 935628051D5B55CA00703284 /* 1.png */; };
@@ -47,16 +54,9 @@
 		935628211D5CF18300703284 /* zombie_normal.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628201D5CF18300703284 /* zombie_normal.fbx */; };
 		935628231D5CF20000703284 /* zombie_slow.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628221D5CF20000703284 /* zombie_slow.fbx */; };
 		935628251D5CF41F00703284 /* dissolve.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 935628241D5CF41F00703284 /* dissolve.fbx */; };
-		935628331D5DB03900703284 /* FBX2GLAnimationExtractor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */; };
-		935628371D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm in Sources */ = {isa = PBXBuildFile; fileRef = 935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */; };
-		9356283B1D5DB44100703284 /* FBX2GLAnimationPose.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */; };
 		938092DC1D57C87E006C5D78 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DB1D57C87E006C5D78 /* GLKit.framework */; };
 		938092DE1D57C883006C5D78 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 938092DD1D57C883006C5D78 /* OpenGLES.framework */; };
 		938092F21D57D109006C5D78 /* cube_map_distribution.png in Resources */ = {isa = PBXBuildFile; fileRef = 938092F11D57D109006C5D78 /* cube_map_distribution.png */; };
-		9389E26A1D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */; };
-		9389E26E1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */; };
-		9389E2721D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */; };
-		9389E2761D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */; };
 		9389E2791D5F03BC00D5A6EE /* Smiley_NoAnim.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */; };
 		9389E27A1D5F03BC00D5A6EE /* Smiley_Anim.FBX in Resources */ = {isa = PBXBuildFile; fileRef = 9389E2781D5F03BC00D5A6EE /* Smiley_Anim.FBX */; };
 		9389E27C1D5F0DB000D5A6EE /* smile_reimport.fbx in Resources */ = {isa = PBXBuildFile; fileRef = 9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */; };
@@ -106,6 +106,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		930D72FA1D702F58002315F3 /* FBX2GLAnimationCurveItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationCurveItem.h; sourceTree = "<group>"; };
+		930D72FB1D702F58002315F3 /* FBX2GLAnimationCurveItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationCurveItem.mm; sourceTree = "<group>"; };
+		930D72FD1D702F58002315F3 /* FBX2GlAnimationCurves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationCurves.h; sourceTree = "<group>"; };
+		930D72FE1D702F58002315F3 /* FBX2GlAnimationCurves.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationCurves.mm; sourceTree = "<group>"; };
+		930D72FF1D702F58002315F3 /* FBX2GLAnimationExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationExtractor.h; sourceTree = "<group>"; };
+		930D73001D702F58002315F3 /* FBX2GLAnimationExtractor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationExtractor.mm; sourceTree = "<group>"; };
+		930D73021D702F58002315F3 /* FBX2GlAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationLayer.h; sourceTree = "<group>"; };
+		930D73031D702F58002315F3 /* FBX2GlAnimationLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationLayer.mm; sourceTree = "<group>"; };
+		930D73051D702F58002315F3 /* FBX2GLAnimationPose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPose.h; sourceTree = "<group>"; };
+		930D73061D702F58002315F3 /* FBX2GLAnimationPose.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPose.mm; sourceTree = "<group>"; };
+		930D73081D702F58002315F3 /* FBX2GLAnimationPoseMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPoseMatrix.h; sourceTree = "<group>"; };
+		930D73091D702F58002315F3 /* FBX2GLAnimationPoseMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPoseMatrix.mm; sourceTree = "<group>"; };
+		930D730B1D702F58002315F3 /* FBX2GLAnimationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationStack.h; sourceTree = "<group>"; };
+		930D730C1D702F58002315F3 /* FBX2GLAnimationStack.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationStack.mm; sourceTree = "<group>"; };
+		930D730E1D702F58002315F3 /* FBX2GLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLModel.h; sourceTree = "<group>"; };
+		930D730F1D702F58002315F3 /* FBX2GLModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLModel.mm; sourceTree = "<group>"; };
+		930D73111D702F58002315F3 /* FBX2GLModelMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLModelMigrator.h; sourceTree = "<group>"; };
+		930D73121D702F58002315F3 /* FBX2GLModelMigrator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLModelMigrator.mm; sourceTree = "<group>"; };
+		930D73151D702F58002315F3 /* FBX2GLDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLDrawer.h; sourceTree = "<group>"; };
+		930D73161D702F58002315F3 /* FBX2GLDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLDrawer.mm; sourceTree = "<group>"; };
+		930D73181D702F58002315F3 /* FBX2GLMeshDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLMeshDrawer.h; sourceTree = "<group>"; };
+		930D73191D702F58002315F3 /* FBX2GLMeshDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLMeshDrawer.mm; sourceTree = "<group>"; };
+		930D731B1D702F58002315F3 /* FBX2GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLProgram.h; sourceTree = "<group>"; };
+		930D731C1D702F58002315F3 /* FBX2GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBX2GLProgram.m; sourceTree = "<group>"; };
+		930D731E1D702F58002315F3 /* FBX2GLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLTexture.h; sourceTree = "<group>"; };
+		930D731F1D702F58002315F3 /* FBX2GLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBX2GLTexture.m; sourceTree = "<group>"; };
+		930D73211D702F58002315F3 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		930D73221D702F58002315F3 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		930D73231D702F58002315F3 /* ObjectStucture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectStucture.h; sourceTree = "<group>"; };
 		935627A01D59C75E00703284 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
 		935627AC1D5A349000703284 /* semtex texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "semtex texture.png"; sourceTree = "<group>"; };
 		935627B11D5A350200703284 /* basketball.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = basketball.fbx; sourceTree = "<group>"; };
@@ -123,20 +152,6 @@
 		935627CA1D5A44A000703284 /* Low Poly Chainsaw_blend.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Low Poly Chainsaw_blend.fbx"; sourceTree = "<group>"; };
 		935627CC1D5A44B300703284 /* chain.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chain.jpg; sourceTree = "<group>"; };
 		935627CE1D5A470400703284 /* Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Low Poly Chainsaw_blend_Shape_Keys_Animation2.fbx"; sourceTree = "<group>"; };
-		935627D21D5AFC7900703284 /* FBX2GLModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLModel.h; sourceTree = "<group>"; };
-		935627D31D5AFC7900703284 /* FBX2GLModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLModel.mm; sourceTree = "<group>"; };
-		935627E41D5B287700703284 /* FBX2GLModelMigrator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLModelMigrator.h; sourceTree = "<group>"; };
-		935627E51D5B287700703284 /* FBX2GLModelMigrator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLModelMigrator.mm; sourceTree = "<group>"; };
-		935627E91D5B28AF00703284 /* FBX2GLDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLDrawer.h; sourceTree = "<group>"; };
-		935627EA1D5B28AF00703284 /* FBX2GLDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLDrawer.mm; sourceTree = "<group>"; };
-		935627EC1D5B28AF00703284 /* FBX2GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLProgram.h; sourceTree = "<group>"; };
-		935627ED1D5B28AF00703284 /* FBX2GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBX2GLProgram.m; sourceTree = "<group>"; };
-		935627EF1D5B28AF00703284 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
-		935627F01D5B28AF00703284 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
-		935627FA1D5B28DA00703284 /* FBX2GLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLTexture.h; sourceTree = "<group>"; };
-		935627FB1D5B28DA00703284 /* FBX2GLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBX2GLTexture.m; sourceTree = "<group>"; };
-		935627FE1D5B336C00703284 /* FBX2GLMeshDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLMeshDrawer.h; sourceTree = "<group>"; };
-		935627FF1D5B336C00703284 /* FBX2GLMeshDrawer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLMeshDrawer.mm; sourceTree = "<group>"; };
 		935628011D5B529400703284 /* Robo8.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8.fbx; sourceTree = "<group>"; };
 		935628031D5B544100703284 /* Robo8_full.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robo8_full.fbx; sourceTree = "<group>"; };
 		935628051D5B55CA00703284 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
@@ -153,23 +168,9 @@
 		935628201D5CF18300703284 /* zombie_normal.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie_normal.fbx; sourceTree = "<group>"; };
 		935628221D5CF20000703284 /* zombie_slow.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = zombie_slow.fbx; sourceTree = "<group>"; };
 		935628241D5CF41F00703284 /* dissolve.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = dissolve.fbx; sourceTree = "<group>"; };
-		935628311D5DB03900703284 /* FBX2GLAnimationExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationExtractor.h; sourceTree = "<group>"; };
-		935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationExtractor.mm; sourceTree = "<group>"; };
-		935628351D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPoseMatrix.h; sourceTree = "<group>"; };
-		935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPoseMatrix.mm; sourceTree = "<group>"; };
-		935628391D5DB44100703284 /* FBX2GLAnimationPose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationPose.h; sourceTree = "<group>"; };
-		9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationPose.mm; sourceTree = "<group>"; };
 		938092DB1D57C87E006C5D78 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		938092DD1D57C883006C5D78 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		938092F11D57D109006C5D78 /* cube_map_distribution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_map_distribution.png; sourceTree = "<group>"; };
-		9389E2681D5E3AD600D5A6EE /* FBX2GLAnimationStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationStack.h; sourceTree = "<group>"; };
-		9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationStack.mm; sourceTree = "<group>"; };
-		9389E26C1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationLayer.h; sourceTree = "<group>"; };
-		9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationLayer.mm; sourceTree = "<group>"; };
-		9389E2701D5E4A4400D5A6EE /* FBX2GlAnimationCurves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GlAnimationCurves.h; sourceTree = "<group>"; };
-		9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GlAnimationCurves.mm; sourceTree = "<group>"; };
-		9389E2741D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBX2GLAnimationCurveItem.h; sourceTree = "<group>"; };
-		9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = FBX2GLAnimationCurveItem.mm; sourceTree = "<group>"; };
 		9389E2771D5F03BC00D5A6EE /* Smiley_NoAnim.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smiley_NoAnim.FBX; sourceTree = "<group>"; };
 		9389E2781D5F03BC00D5A6EE /* Smiley_Anim.FBX */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smiley_Anim.FBX; sourceTree = "<group>"; };
 		9389E27B1D5F0DB000D5A6EE /* smile_reimport.fbx */ = {isa = PBXFileReference; lastKnownFileType = file; path = smile_reimport.fbx; sourceTree = "<group>"; };
@@ -472,7 +473,6 @@
 		93909C8A1D5603BA001712B3 /* fbxrootnodeutility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxrootnodeutility.h; sourceTree = "<group>"; };
 		93909C8B1D5603BA001712B3 /* fbxusernotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxusernotification.h; sourceTree = "<group>"; };
 		93909C8C1D5603BA001712B3 /* fbxsdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fbxsdk.h; sourceTree = "<group>"; };
-		93909C941D56084C001712B3 /* ObjectStucture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjectStucture.h; sourceTree = "<group>"; };
 		93909C981D560C0F001712B3 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -494,6 +494,162 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930D72F71D702F58002315F3 /* FBXWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				930D72F81D702F58002315F3 /* FBX2GLAnimationExtractor */,
+				930D730D1D702F58002315F3 /* FBX2GLModel */,
+				930D73101D702F58002315F3 /* FBX2GLModelMigrator */,
+				930D73131D702F58002315F3 /* FBXModelDrawer */,
+				930D73231D702F58002315F3 /* ObjectStucture.h */,
+			);
+			path = FBXWrapper;
+			sourceTree = "<group>";
+		};
+		930D72F81D702F58002315F3 /* FBX2GLAnimationExtractor */ = {
+			isa = PBXGroup;
+			children = (
+				930D72F91D702F58002315F3 /* FBX2GLAnimationCurveItem */,
+				930D72FC1D702F58002315F3 /* FBX2GLAnimationCurves */,
+				930D72FF1D702F58002315F3 /* FBX2GLAnimationExtractor.h */,
+				930D73001D702F58002315F3 /* FBX2GLAnimationExtractor.mm */,
+				930D73011D702F58002315F3 /* FBX2GlAnimationLayer */,
+				930D73041D702F58002315F3 /* FBX2GLAnimationPose */,
+				930D73071D702F58002315F3 /* FBX2GLAnimationPoseMatrix */,
+				930D730A1D702F58002315F3 /* FBX2GLAnimationStack */,
+			);
+			path = FBX2GLAnimationExtractor;
+			sourceTree = "<group>";
+		};
+		930D72F91D702F58002315F3 /* FBX2GLAnimationCurveItem */ = {
+			isa = PBXGroup;
+			children = (
+				930D72FA1D702F58002315F3 /* FBX2GLAnimationCurveItem.h */,
+				930D72FB1D702F58002315F3 /* FBX2GLAnimationCurveItem.mm */,
+			);
+			path = FBX2GLAnimationCurveItem;
+			sourceTree = "<group>";
+		};
+		930D72FC1D702F58002315F3 /* FBX2GLAnimationCurves */ = {
+			isa = PBXGroup;
+			children = (
+				930D72FD1D702F58002315F3 /* FBX2GlAnimationCurves.h */,
+				930D72FE1D702F58002315F3 /* FBX2GlAnimationCurves.mm */,
+			);
+			path = FBX2GLAnimationCurves;
+			sourceTree = "<group>";
+		};
+		930D73011D702F58002315F3 /* FBX2GlAnimationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				930D73021D702F58002315F3 /* FBX2GlAnimationLayer.h */,
+				930D73031D702F58002315F3 /* FBX2GlAnimationLayer.mm */,
+			);
+			path = FBX2GlAnimationLayer;
+			sourceTree = "<group>";
+		};
+		930D73041D702F58002315F3 /* FBX2GLAnimationPose */ = {
+			isa = PBXGroup;
+			children = (
+				930D73051D702F58002315F3 /* FBX2GLAnimationPose.h */,
+				930D73061D702F58002315F3 /* FBX2GLAnimationPose.mm */,
+			);
+			path = FBX2GLAnimationPose;
+			sourceTree = "<group>";
+		};
+		930D73071D702F58002315F3 /* FBX2GLAnimationPoseMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				930D73081D702F58002315F3 /* FBX2GLAnimationPoseMatrix.h */,
+				930D73091D702F58002315F3 /* FBX2GLAnimationPoseMatrix.mm */,
+			);
+			path = FBX2GLAnimationPoseMatrix;
+			sourceTree = "<group>";
+		};
+		930D730A1D702F58002315F3 /* FBX2GLAnimationStack */ = {
+			isa = PBXGroup;
+			children = (
+				930D730B1D702F58002315F3 /* FBX2GLAnimationStack.h */,
+				930D730C1D702F58002315F3 /* FBX2GLAnimationStack.mm */,
+			);
+			path = FBX2GLAnimationStack;
+			sourceTree = "<group>";
+		};
+		930D730D1D702F58002315F3 /* FBX2GLModel */ = {
+			isa = PBXGroup;
+			children = (
+				930D730E1D702F58002315F3 /* FBX2GLModel.h */,
+				930D730F1D702F58002315F3 /* FBX2GLModel.mm */,
+			);
+			path = FBX2GLModel;
+			sourceTree = "<group>";
+		};
+		930D73101D702F58002315F3 /* FBX2GLModelMigrator */ = {
+			isa = PBXGroup;
+			children = (
+				930D73111D702F58002315F3 /* FBX2GLModelMigrator.h */,
+				930D73121D702F58002315F3 /* FBX2GLModelMigrator.mm */,
+			);
+			path = FBX2GLModelMigrator;
+			sourceTree = "<group>";
+		};
+		930D73131D702F58002315F3 /* FBXModelDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				930D73141D702F58002315F3 /* FBX2GLDrawer */,
+				930D73171D702F58002315F3 /* FBX2GLMeshDrawer */,
+				930D731A1D702F58002315F3 /* FBX2GLProgram */,
+				930D731D1D702F58002315F3 /* FBX2GLTexture */,
+				930D73201D702F58002315F3 /* Shaders */,
+			);
+			path = FBXModelDrawer;
+			sourceTree = "<group>";
+		};
+		930D73141D702F58002315F3 /* FBX2GLDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				930D73151D702F58002315F3 /* FBX2GLDrawer.h */,
+				930D73161D702F58002315F3 /* FBX2GLDrawer.mm */,
+			);
+			path = FBX2GLDrawer;
+			sourceTree = "<group>";
+		};
+		930D73171D702F58002315F3 /* FBX2GLMeshDrawer */ = {
+			isa = PBXGroup;
+			children = (
+				930D73181D702F58002315F3 /* FBX2GLMeshDrawer.h */,
+				930D73191D702F58002315F3 /* FBX2GLMeshDrawer.mm */,
+			);
+			path = FBX2GLMeshDrawer;
+			sourceTree = "<group>";
+		};
+		930D731A1D702F58002315F3 /* FBX2GLProgram */ = {
+			isa = PBXGroup;
+			children = (
+				930D731B1D702F58002315F3 /* FBX2GLProgram.h */,
+				930D731C1D702F58002315F3 /* FBX2GLProgram.m */,
+			);
+			path = FBX2GLProgram;
+			sourceTree = "<group>";
+		};
+		930D731D1D702F58002315F3 /* FBX2GLTexture */ = {
+			isa = PBXGroup;
+			children = (
+				930D731E1D702F58002315F3 /* FBX2GLTexture.h */,
+				930D731F1D702F58002315F3 /* FBX2GLTexture.m */,
+			);
+			path = FBX2GLTexture;
+			sourceTree = "<group>";
+		};
+		930D73201D702F58002315F3 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				930D73211D702F58002315F3 /* Shader.fsh */,
+				930D73221D702F58002315F3 /* Shader.vsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		935627B01D5A34E100703284 /* fbxFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,114 +690,6 @@
 			path = fbxFiles;
 			sourceTree = "<group>";
 		};
-		935627D11D5AFC7000703284 /* FBX2GLModel */ = {
-			isa = PBXGroup;
-			children = (
-				935627D21D5AFC7900703284 /* FBX2GLModel.h */,
-				935627D31D5AFC7900703284 /* FBX2GLModel.mm */,
-			);
-			path = FBX2GLModel;
-			sourceTree = "<group>";
-		};
-		935627E31D5B285F00703284 /* FBX2GLModelMigrator */ = {
-			isa = PBXGroup;
-			children = (
-				935627E41D5B287700703284 /* FBX2GLModelMigrator.h */,
-				935627E51D5B287700703284 /* FBX2GLModelMigrator.mm */,
-			);
-			path = FBX2GLModelMigrator;
-			sourceTree = "<group>";
-		};
-		935627E71D5B28AF00703284 /* FBXModelDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				935627EB1D5B28AF00703284 /* FBX2GLProgram */,
-				935627FD1D5B336500703284 /* FBX2GLMeshDrawer */,
-				935627E81D5B28AF00703284 /* FBX2GLDrawer */,
-				935627EE1D5B28AF00703284 /* Shaders */,
-				935627F91D5B28DA00703284 /* FBX2GLTexture */,
-			);
-			path = FBXModelDrawer;
-			sourceTree = "<group>";
-		};
-		935627E81D5B28AF00703284 /* FBX2GLDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				935627E91D5B28AF00703284 /* FBX2GLDrawer.h */,
-				935627EA1D5B28AF00703284 /* FBX2GLDrawer.mm */,
-			);
-			path = FBX2GLDrawer;
-			sourceTree = "<group>";
-		};
-		935627EB1D5B28AF00703284 /* FBX2GLProgram */ = {
-			isa = PBXGroup;
-			children = (
-				935627EC1D5B28AF00703284 /* FBX2GLProgram.h */,
-				935627ED1D5B28AF00703284 /* FBX2GLProgram.m */,
-			);
-			path = FBX2GLProgram;
-			sourceTree = "<group>";
-		};
-		935627EE1D5B28AF00703284 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				935627EF1D5B28AF00703284 /* Shader.fsh */,
-				935627F01D5B28AF00703284 /* Shader.vsh */,
-			);
-			path = Shaders;
-			sourceTree = "<group>";
-		};
-		935627F91D5B28DA00703284 /* FBX2GLTexture */ = {
-			isa = PBXGroup;
-			children = (
-				935627FA1D5B28DA00703284 /* FBX2GLTexture.h */,
-				935627FB1D5B28DA00703284 /* FBX2GLTexture.m */,
-			);
-			path = FBX2GLTexture;
-			sourceTree = "<group>";
-		};
-		935627FD1D5B336500703284 /* FBX2GLMeshDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				935627FE1D5B336C00703284 /* FBX2GLMeshDrawer.h */,
-				935627FF1D5B336C00703284 /* FBX2GLMeshDrawer.mm */,
-			);
-			path = FBX2GLMeshDrawer;
-			sourceTree = "<group>";
-		};
-		935628301D5DB03900703284 /* FBX2GLAnimationExtractor */ = {
-			isa = PBXGroup;
-			children = (
-				9389E2731D5E4E2800D5A6EE /* FBX2GLAnimationCurveItem */,
-				9389E26F1D5E4A3D00D5A6EE /* FBX2GLAnimationCurves */,
-				9389E26B1D5E3ECC00D5A6EE /* FBX2GlAnimationLayer */,
-				9389E2671D5E3ACC00D5A6EE /* FBX2GLAnimationStack */,
-				935628341D5DB17400703284 /* FBX2GLAnimationPoseMatrix */,
-				935628381D5DB43600703284 /* FBX2GLAnimationPose */,
-				935628311D5DB03900703284 /* FBX2GLAnimationExtractor.h */,
-				935628321D5DB03900703284 /* FBX2GLAnimationExtractor.mm */,
-			);
-			path = FBX2GLAnimationExtractor;
-			sourceTree = "<group>";
-		};
-		935628341D5DB17400703284 /* FBX2GLAnimationPoseMatrix */ = {
-			isa = PBXGroup;
-			children = (
-				935628351D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.h */,
-				935628361D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm */,
-			);
-			path = FBX2GLAnimationPoseMatrix;
-			sourceTree = "<group>";
-		};
-		935628381D5DB43600703284 /* FBX2GLAnimationPose */ = {
-			isa = PBXGroup;
-			children = (
-				935628391D5DB44100703284 /* FBX2GLAnimationPose.h */,
-				9356283A1D5DB44100703284 /* FBX2GLAnimationPose.mm */,
-			);
-			path = FBX2GLAnimationPose;
-			sourceTree = "<group>";
-		};
 		938092F01D57D102006C5D78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,42 +705,6 @@
 				9356281E1D5CF16A00703284 /* zomby_light.png */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		9389E2671D5E3ACC00D5A6EE /* FBX2GLAnimationStack */ = {
-			isa = PBXGroup;
-			children = (
-				9389E2681D5E3AD600D5A6EE /* FBX2GLAnimationStack.h */,
-				9389E2691D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm */,
-			);
-			path = FBX2GLAnimationStack;
-			sourceTree = "<group>";
-		};
-		9389E26B1D5E3ECC00D5A6EE /* FBX2GlAnimationLayer */ = {
-			isa = PBXGroup;
-			children = (
-				9389E26C1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.h */,
-				9389E26D1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm */,
-			);
-			path = FBX2GlAnimationLayer;
-			sourceTree = "<group>";
-		};
-		9389E26F1D5E4A3D00D5A6EE /* FBX2GLAnimationCurves */ = {
-			isa = PBXGroup;
-			children = (
-				9389E2701D5E4A4400D5A6EE /* FBX2GlAnimationCurves.h */,
-				9389E2711D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm */,
-			);
-			path = FBX2GLAnimationCurves;
-			sourceTree = "<group>";
-		};
-		9389E2731D5E4E2800D5A6EE /* FBX2GLAnimationCurveItem */ = {
-			isa = PBXGroup;
-			children = (
-				9389E2741D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.h */,
-				9389E2751D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm */,
-			);
-			path = FBX2GLAnimationCurveItem;
 			sourceTree = "<group>";
 		};
 		939098E41D55E596001712B3 = {
@@ -722,10 +734,10 @@
 			children = (
 				935627B01D5A34E100703284 /* fbxFiles */,
 				938092F01D57D102006C5D78 /* Data */,
-				93909C931D560784001712B3 /* FBXWrapper */,
 				93909B981D5603BA001712B3 /* include */,
 				93909B8E1D560192001712B3 /* libfbxsdk.a */,
 				939099071D55E5A6001712B3 /* FBX */,
+				930D72F71D702F58002315F3 /* FBXWrapper */,
 				939098F31D55E596001712B3 /* AppDelegate.h */,
 				939098F41D55E596001712B3 /* AppDelegate.m */,
 				939098F61D55E596001712B3 /* ViewController.h */,
@@ -1160,18 +1172,6 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		93909C931D560784001712B3 /* FBXWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				93909C941D56084C001712B3 /* ObjectStucture.h */,
-				935627D11D5AFC7000703284 /* FBX2GLModel */,
-				935627E31D5B285F00703284 /* FBX2GLModelMigrator */,
-				935628301D5DB03900703284 /* FBX2GLAnimationExtractor */,
-				935627E71D5B28AF00703284 /* FBXModelDrawer */,
-			);
-			path = FBXWrapper;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1229,6 +1229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930D73311D702F58002315F3 /* Shader.fsh in Resources */,
 				9389E3D21D61F21400D5A6EE /* test.fbx in Resources */,
 				935628061D5B55CA00703284 /* 1.png in Resources */,
 				9389E2791D5F03BC00D5A6EE /* Smiley_NoAnim.FBX in Resources */,
@@ -1243,13 +1244,13 @@
 				9389E27C1D5F0DB000D5A6EE /* smile_reimport.fbx in Resources */,
 				935628251D5CF41F00703284 /* dissolve.fbx in Resources */,
 				935627CD1D5A44B300703284 /* chain.jpg in Resources */,
+				930D73321D702F58002315F3 /* Shader.vsh in Resources */,
 				935628211D5CF18300703284 /* zombie_normal.fbx in Resources */,
 				935628161D5C721A00703284 /* ChubbyCat_BasicMesh.fbx in Resources */,
 				9356280E1D5B9C3900703284 /* Robo8_withoutPlane.fbx in Resources */,
 				935628231D5CF20000703284 /* zombie_slow.fbx in Resources */,
 				935627C61D5A350200703284 /* TreeSet3.fbx in Resources */,
 				935627C71D5A350200703284 /* Wood.fbx in Resources */,
-				935627F71D5B28AF00703284 /* Shader.vsh in Resources */,
 				9389E3E31D62FB5E00D5A6EE /* Back Headlight.jpg in Resources */,
 				935627C31D5A350200703284 /* Mine2.fbx in Resources */,
 				9389E3C41D5F510A00D5A6EE /* Laptop_High-Polay_HP_BI_2_blend_Animation_fbx.fbx in Resources */,
@@ -1275,7 +1276,6 @@
 				935627C81D5A350200703284 /* Wood.obj in Resources */,
 				935628141D5C710800703284 /* Flor Cartoon.fbx in Resources */,
 				935627C41D5A350200703284 /* Mine3.fbx in Resources */,
-				935627F61D5B28AF00703284 /* Shader.fsh in Resources */,
 				935627C21D5A350200703284 /* Mine.fbx in Resources */,
 				9389E2821D5F278900D5A6EE /* Soldier_new-1_diffuse.tga in Resources */,
 			);
@@ -1288,43 +1288,43 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				935627FC1D5B28DA00703284 /* FBX2GLTexture.m in Sources */,
+				930D73271D702F58002315F3 /* FBX2GlAnimationLayer.mm in Sources */,
 				93909A911D560177001712B3 /* DisplayPatch.cxx in Sources */,
 				935628191D5CC87100703284 /* ListViewController.m in Sources */,
-				935627E61D5B287700703284 /* FBX2GLModelMigrator.mm in Sources */,
 				93909A931D560177001712B3 /* DisplayPose.cxx in Sources */,
-				935628001D5B336C00703284 /* FBX2GLMeshDrawer.mm in Sources */,
 				93909A941D560177001712B3 /* DisplayShape.cxx in Sources */,
+				930D732C1D702F58002315F3 /* FBX2GLModelMigrator.mm in Sources */,
 				93909A851D560177001712B3 /* DisplayCamera.cxx in Sources */,
 				93909A861D560177001712B3 /* DisplayCommon.cxx in Sources */,
+				930D73301D702F58002315F3 /* FBX2GLTexture.m in Sources */,
+				930D732F1D702F58002315F3 /* FBX2GLProgram.m in Sources */,
 				93909A921D560177001712B3 /* DisplayPivotsAndLimits.cxx in Sources */,
+				930D732D1D702F58002315F3 /* FBX2GLDrawer.mm in Sources */,
 				93909A981D560177001712B3 /* main.cxx in Sources */,
+				930D73251D702F58002315F3 /* FBX2GlAnimationCurves.mm in Sources */,
 				93909A8C1D560177001712B3 /* DisplayLodGroup.cxx in Sources */,
 				93909A821D560177001712B3 /* Common.cxx in Sources */,
 				93909A831D560177001712B3 /* DisplayAnimation.cxx in Sources */,
 				93909A881D560177001712B3 /* DisplayGlobalSettings.cxx in Sources */,
-				935627D41D5AFC7900703284 /* FBX2GLModel.mm in Sources */,
-				9356283B1D5DB44100703284 /* FBX2GLAnimationPose.mm in Sources */,
-				9389E26E1D5E3ED400D5A6EE /* FBX2GlAnimationLayer.mm in Sources */,
+				930D73241D702F58002315F3 /* FBX2GLAnimationCurveItem.mm in Sources */,
 				93909A8B1D560177001712B3 /* DisplayLink.cxx in Sources */,
 				93909A951D560177001712B3 /* DisplaySkeleton.cxx in Sources */,
+				930D73261D702F58002315F3 /* FBX2GLAnimationExtractor.mm in Sources */,
 				93909A891D560177001712B3 /* DisplayHierarchy.cxx in Sources */,
 				93909A871D560177001712B3 /* DisplayGenericInfo.cxx in Sources */,
-				935627F51D5B28AF00703284 /* FBX2GLProgram.m in Sources */,
-				9389E26A1D5E3AD600D5A6EE /* FBX2GLAnimationStack.mm in Sources */,
+				930D732A1D702F58002315F3 /* FBX2GLAnimationStack.mm in Sources */,
 				93909A8E1D560177001712B3 /* DisplayMaterial.cxx in Sources */,
+				930D732E1D702F58002315F3 /* FBX2GLMeshDrawer.mm in Sources */,
+				930D732B1D702F58002315F3 /* FBX2GLModel.mm in Sources */,
 				939098F81D55E596001712B3 /* ViewController.mm in Sources */,
-				935628371D5DB17D00703284 /* FBX2GLAnimationPoseMatrix.mm in Sources */,
 				93909A841D560177001712B3 /* DisplayCache.cxx in Sources */,
 				93909A971D560177001712B3 /* DisplayUserProperties.cxx in Sources */,
 				939098F51D55E596001712B3 /* AppDelegate.m in Sources */,
-				9389E2761D5E4E3100D5A6EE /* FBX2GLAnimationCurveItem.mm in Sources */,
-				935627F41D5B28AF00703284 /* FBX2GLDrawer.mm in Sources */,
 				93909A961D560177001712B3 /* DisplayTexture.cxx in Sources */,
-				9389E2721D5E4A4400D5A6EE /* FBX2GlAnimationCurves.mm in Sources */,
-				935628331D5DB03900703284 /* FBX2GLAnimationExtractor.mm in Sources */,
+				930D73281D702F58002315F3 /* FBX2GLAnimationPose.mm in Sources */,
 				939098F21D55E596001712B3 /* main.m in Sources */,
 				93909A8A1D560177001712B3 /* DisplayLight.cxx in Sources */,
+				930D73291D702F58002315F3 /* FBX2GLAnimationPoseMatrix.mm in Sources */,
 				93909A8D1D560177001712B3 /* DisplayMarker.cxx in Sources */,
 				93909A8F1D560177001712B3 /* DisplayMesh.cxx in Sources */,
 				93909A901D560177001712B3 /* DisplayNurb.cxx in Sources */,
@@ -1442,6 +1442,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/testFBX/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1457,7 +1458,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thinkmobiles.testFBX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainbowElephant.fbxTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/testFBX/include/ $(PROJECT_DIR)/testFBX/include/fbxsdk/";
 			};
@@ -1468,6 +1469,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/testFBX/";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1483,7 +1485,7 @@
 					"-ObjC",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thinkmobiles.testFBX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rainbowElephant.fbxTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/testFBX/include/ $(PROJECT_DIR)/testFBX/include/fbxsdk/";
 			};

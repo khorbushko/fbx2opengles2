@@ -42,6 +42,7 @@
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
         
     self.drawer = [[FBX2GLDrawer alloc] initWithContext:self.context withinView:view models:self.migrator.avaliableModels textureNamed:self.textureName];
+    //anim TBD
     [self.drawer attachAnimatorObject:self.migrator.fbxAnimator];
     self.drawer.expectedFramerate = self.preferredFramesPerSecond;
 }
